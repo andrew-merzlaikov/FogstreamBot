@@ -12,7 +12,8 @@ class UserView(APIView):
 
         if serializer.is_valid(raise_exception=True):
             user_saved = serializer.save()
-            return Response({"success": "User '{user_saved}'" 
+            return Response({"success": "User '{user_saved}' " 
                                         "created successfully".\
-                                        format(user_saved=user_saved)})
+                                        format(user_saved=user_saved)},
+                                        content_type="json\application")
 
