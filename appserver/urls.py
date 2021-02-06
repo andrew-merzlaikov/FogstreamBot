@@ -5,5 +5,5 @@ app_name = "appserver"
 # app_name will help us do a reverse look-up latter.
 
 urlpatterns = [
-    path('create/user', UserView.as_view()),
+    path('users', UserView.as_view()),
 ]
