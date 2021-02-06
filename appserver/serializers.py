@@ -7,5 +7,9 @@ class UserSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=30)
 
     def create(self, validated_data):
+        
+        if User.objects.filter(username=validated_data['username']).exists():
+            return False
+        
         return User.objects.create(**validated_data)
     
