@@ -1,0 +1,95 @@
+2021-02-09 07:54:01,565 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 07:55:10,335 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:55:50,991 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 07:55:53,321 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:55:53,485 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:56:44,623 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 07:58:47,556 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 07:58:47,556 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:58:48,372 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 07:58:51,101 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 07:58:51,102 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:58:51,889 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 07:59:16,016 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 07:59:16,017 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:59:17,205 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 07:59:33,130 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 07:59:33,131 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:59:33,899 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 07:59:58,045 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 07:59:58,046 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 07:59:58,768 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:00:02,024 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:00:02,024 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:00:02,540 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:00:07,803 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:00:07,803 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:00:08,502 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:00:11,738 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:00:11,741 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:00:12,480 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:00:24,980 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:00:24,981 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:00:25,485 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:01:26,835 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:01:26,836 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:01:27,534 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:01:40,949 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:01:40,950 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:01:41,508 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:02:18,792 django.request ERROR    Internal Server Error: /api/users
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 21, in post
+    logger.info("User '{user_saved}' "
+  File "/usr/lib/python3.8/logging/__init__.py", line 1434, in info
+    self._log(INFO, msg, args, **kwargs)
+TypeError: _log() got an unexpected keyword argument 'content_type'
+2021-02-09 08:03:27,499 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:03:27,500 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:03:28,639 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:03:30,386 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:03:30,386 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:03:31,042 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:03:56,404 django.request ERROR    Internal Server Error: /api/users
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 21, in post
+    logger.debug("User '{user_saved}' "
+  File "/usr/lib/python3.8/logging/__init__.py", line 1422, in debug
+    self._log(DEBUG, msg, args, **kwargs)
+TypeError: _log() got an unexpected keyword argument 'content_type'
+2021-02-09 08:07:08,153 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-09 08:07:08,189 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:07:11,062 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:08:26,531 appserver.views DEBUG    User 'tgvoluzhev' created successfully
