@@ -6,5 +6,9 @@ class User(models.Model):
     last_name = models.CharField(max_length=30)
     username = models.CharField(max_length=30)
 
+    first_name.null = True
+    last_name.null = True
+    username.null = True
+
     def __str__(self):
         return "{username}".format(username=self.username)
