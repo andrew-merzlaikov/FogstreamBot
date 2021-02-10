@@ -1,7 +1,10 @@
 from django.db import models
 
 
-class User(models.Model):
+class UserTelegram(models.Model):
+    """
+    Stores a single user entry, related to :model:`use.User`
+    """
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     username = models.CharField(max_length=30)
@@ -11,4 +14,9 @@ class User(models.Model):
     username.null = True
 
     def __str__(self):
-        return "{username}".format(username=self.username)
+        """ Representation the User """
+       
+        return "{first_name} {last_name} {username} ".format(
+                                                            username=self.username,
+                                                            first_name=self.first_name,
+                                                            last_name=self.last_name)

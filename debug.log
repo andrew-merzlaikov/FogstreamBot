@@ -93,3 +93,85 @@ TypeError: _log() got an unexpected keyword argument 'content_type'
 2021-02-09 08:07:08,189 asyncio      DEBUG    Using selector: EpollSelector
 2021-02-09 08:07:11,062 django.utils.autoreload INFO     Watching for file changes with StatReloader
 2021-02-09 08:08:26,531 appserver.views DEBUG    User 'tgvoluzhev' created successfully
+2021-02-09 08:19:10,933 appserver.views DEBUG    User 'None' created successfully
+2021-02-09 08:44:17,349 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:44:17,387 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:44:29,765 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:45:11,968 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:45:11,968 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:45:12,817 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:46:10,435 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:46:10,436 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:46:11,223 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:46:14,823 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:46:14,824 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:46:15,367 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:46:16,817 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:46:16,817 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:46:17,531 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:47:03,936 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:47:03,937 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:47:04,498 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:47:25,399 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:47:25,400 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:47:26,006 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-09 08:47:29,467 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-09 08:47:29,468 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-09 08:47:30,112 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:11:04,001 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-10 05:11:06,043 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:11:13,988 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:11:57,462 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/models.py changed, reloading.
+2021-02-10 05:11:57,463 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:11:58,003 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:11:59,990 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:12:00,520 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:13:17,618 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:13:38,698 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:14:23,645 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:14:51,030 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:15:30,271 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:28:37,846 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-10 05:28:38,256 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:28:56,032 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:29:19,062 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-10 05:29:19,063 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:29:20,724 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:29:35,416 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-10 05:29:35,431 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:29:37,722 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:29:40,573 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-10 05:29:40,576 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:29:41,318 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:32:48,395 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:33:18,885 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-10 05:33:18,886 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:33:19,677 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:35:45,799 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-10 05:35:54,651 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:38:30,907 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-10 05:38:33,692 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:38:34,492 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:38:48,485 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-10 05:38:48,486 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:38:49,359 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:40:29,640 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-10 05:40:29,641 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:40:30,270 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 05:41:07,436 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-10 05:41:07,439 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-10 05:41:08,099 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-10 06:47:19,192 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 06:47:37,882 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 06:47:52,886 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 06:47:57,555 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 06:48:00,366 django.request WARNING  Not Found: /
+2021-02-10 06:48:00,668 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 06:50:58,403 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 06:57:14,064 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 06:57:16,975 django.request WARNING  Not Found: /
+2021-02-10 06:57:19,172 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 07:01:00,551 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 07:05:39,667 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 07:05:41,523 django.request WARNING  Not Found: /favicon.ico
+2021-02-10 07:06:40,327 django.request WARNING  Not Found: /favicon.ico

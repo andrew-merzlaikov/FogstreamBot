@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import User
+from .models import UserTelegram
 from .serializers import UserSerializer
 import json
 import logging
@@ -18,11 +18,11 @@ class UserView(APIView):
         if serializer.is_valid(raise_exception=True):
             user_saved = serializer.save()
             
-            logger.debug("User '{user_saved}' " 
+            logger.debug("TelegramUser '{user_saved}' " 
                                         "created successfully".\
                                         format(user_saved=user_saved))
 
-            return Response({"success": "User '{user_saved}' " 
+            return Response({"success": "TelegramUser '{user_saved}' " 
                                         "created successfully".\
                                         format(user_saved=user_saved)},
                                         content_type="json\application")

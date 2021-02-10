@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import UserTelegram
 
 
 class UserSerializer(serializers.Serializer):
@@ -9,8 +9,8 @@ class UserSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         
-        if User.objects.filter(username=validated_data['username']).exists():
+        if UserTelegram.objects.filter(username=validated_data['username']).exists():
             return False
         
-        return User.objects.create(**validated_data)
+        return UserTelegram.objects.create(**validated_data)
     
