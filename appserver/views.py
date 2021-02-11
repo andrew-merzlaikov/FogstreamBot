@@ -10,6 +10,9 @@ logger = logging.getLogger(__name__)
 
 class UserView(APIView):
     
+    def get(self):
+        return Response("TEST")
+
     def post(self, request):
         
         data_user = json.loads(request.data)['user'] 

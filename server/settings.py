@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
+LOGIN_REDIRECT_URL =  '/bot/settings'
 
 LOGGING = {
     'version': 1,
