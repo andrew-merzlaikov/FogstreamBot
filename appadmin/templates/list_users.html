@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Имя </th>
+        <th scope="col">Фамилия </th>
+        <th scope="col">Никнейм </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users_telegram %}
+        <tr>
+        <th scope="row">{{user.id}}</th>
+        
+        {% if user.first_name == None %}
+            <td>Не установлено </td>
+        {% else %}
+            <td>{{ user.first_name }}</td>
+        {% endif %}
+
+        {% if user.last_name == None %}
+            <td>Не установлена</td>
+        {% else %}
+            <td>{{ user.last_name }}</td>
+        {% endif %}
+        
+        {% if user.username == None %}
+            <td>Не установлен</td>
+        {% else %}
+            <td>{{ user.username }}</td>
+        {% endif %}
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

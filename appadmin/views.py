@@ -7,6 +7,7 @@ from .models import (Message_Question,
                     Message, 
                     Question)
 from .forms import MessageForm, QuestionForm
+from appserver.models import UserTelegram
 
 
 class ViewMain(TemplateView):
@@ -25,9 +26,12 @@ class ViewMessage(TemplateView):
         if request.user.is_authenticated:
             message_form = MessageForm()
 
+            all_messages = Message.objects.all()
+
             return render(request, 
                          "create_message.html",
-                         {"form": message_form})
+                         {"form": message_form,
+                          "messages": all_messages})
         else:
             return HttpResponse("You not auth bro")
     
@@ -58,20 +62,23 @@ class ViewQuestion(TemplateView):
         if request.user.is_authenticated:
             question_form = QuestionForm()
 
+            all_questions = Question.objects.all()
+
+
             return render(request, 
                          "create_question.html",
-                         {"form": question_form})
+                         {"form": question_form,
+                          "questions": all_questions})
         else:
             return render("You not auth bro")
     
     def post(self, request):
-        if request.method == "POST" and request.user.is_authenticated:
+        if request.user.is_authenticated:
             question_form = QuestionForm(request.POST)
             
             if question_form.is_valid():
                 context_data = {
                     "question": question_form.cleaned_data["question"],
-                    "confirm": question_form.cleaned_data["confirm"],
                     "question_confirm": question_form.\
                                         cleaned_data["question_confirm"],
                     "question_not_confirm": question_form.\
@@ -79,7 +86,6 @@ class ViewQuestion(TemplateView):
                 }
 
                 Question.objects.create(question=context_data['question'],
-                                        confirm=context_data['confirm'],
                                         question_confirm=context_data['question_confirm'],
                                         question_not_confirm=context_data['question_not_confirm'])
 
@@ -92,3 +98,25 @@ class ViewQuestion(TemplateView):
             return render(request, 
                          "create_message.html",
                          {"form": question_form})
+        
+
+
+class ViewUser(TemplateView):
+    def get(self, request):
+        if request.user.is_authenticated:
+            users_telegrams = UserTelegram.objects.all()
+
+            return render(request, 
+                         "users.html",
+                         {"users_telegram": users_telegrams})
+        else:
+            return HttpResponse("Not auth bro")
+
+
+class ViewLogic(TemplateView):
+    def get(self, request):
+        if request.user.is_authenticated:
+            return render(request,
+                          "logic.html")
+        else:
+            return HttpResponse("Not auth bro")

@@ -1,0 +1,20 @@
+<table class="table mt-2">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Текст вопроса </th>
+        <th scope="col">Если утвердительно </th>
+        <th scope="col">Если отрицательно </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for question in questions %}
+        <tr>
+           <th scope="row">{{question.id}}</th>
+           <td>{{question.question}}</td>
+           <td>{{question.question_confirm}}</td>
+           <td>{{question.question_not_confirm}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
