@@ -4,7 +4,8 @@ from .views import (ViewMain,
                     ViewMessage, 
                     ViewQuestion,
                     ViewUser,
-                    ViewLogic)
+                    ViewLogic, 
+                    show_logic)
 
 app_name = "appserver"
 # app_name will help us do a reverse look-up latter.
@@ -14,6 +15,7 @@ urlpatterns = [
     path('message', ViewMessage.as_view()),
     path('question', ViewQuestion.as_view()),
     path('create/message', ViewMessage.as_view()),
+    path('show/logic', show_logic),
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('users', ViewUser.as_view()),

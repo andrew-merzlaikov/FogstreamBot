@@ -11,5 +11,77 @@
 
     {% include 'header.html' %}
 
+    <div class="container mt-3">
+        
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Задайте логику общения</h4>
+            <p>Чтобы создать логику общения вам необходимо указать порядок в котором будут следовать вопросы или
+                сообщения. Ниже вам представлены вопросы и сообщения, и форма в которой вы можете
+                указать число порядка
+            </p>
+            <hr>
+            <p class="mb-0">
+                Например, если вопрос будет первым, то в форме должно стоять число 1
+            </p>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="p-3 mb-2 bg-secondary text-white">Сообщения</div>
+                    </div>
+                </div>
+            
+                <div class="row">           
+                    {% for message in messages %}
+                    <div class="col-md-4">        
+                        <div class="card text-white bg-info mb-3" >
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ message }}</h5>
+                            <div class="form-control">
+                                <input type="text" class="form-control"
+                                    id="{{ field.name }}"
+                                    placeholder="Номер порядка"
+                                    name="message {{follow_number}}{{message.id}}">
+                                {{ field }}
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="p-3 mb-2 bg-secondary text-white">Вопросы</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for question in questions %}
+                    <div class="col-md-4">
+                        <div class="card text-white bg-primary mb-3">
+                            <div class="card-body">
+                                <div class="card-title">{{ question }}</div>
+                                <div class="form-control">
+                                    <input type="text" class="form-control"
+                                        name="question {{ follow_number}} {{question.id}}"
+                                        id="{{ field.name }}"
+                                        value="{{ field.name }}" 
+                                        placeholder="Номер порядка">
+                                    {{ field }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <button type="submit" class="btn btn-success">Создать логику общения</button>
+        </form>
+    </div>
+
+
 </body>
 </html>

@@ -6,9 +6,28 @@ from django.shortcuts import redirect
 from .models import (Message_Question, 
                     Message, 
                     Question)
-from .forms import MessageForm, QuestionForm
+from .forms import (MessageForm, 
+                    QuestionForm,
+                    FollowForm)
 from appserver.models import UserTelegram
 
+
+def show_logic(request):
+    if request.user.is_authenticated:
+        message_questions = Message_Question.objects.all()
+        list_msg_question = list()
+
+        for msg_qu in message_questions:
+            if msg_qu.message_id is not None:
+                msg = Message.objects.get(pk=msg_qu.message_id)
+                list_msg_question.append(msg)
+            else:
+                que = Question.objects.get(pk=msg_qu.question_id)
+                list_msg_question.append(que)
+
+        return render(request, 
+                      "show_logic.html",
+                      {'list_msg_questions': list_msg_question})
 
 class ViewMain(TemplateView):
     def get(self, request):
@@ -116,7 +135,33 @@ class ViewUser(TemplateView):
 class ViewLogic(TemplateView):
     def get(self, request):
         if request.user.is_authenticated:
+            
+            all_questions = Question.objects.all()
+            all_messages = Message.objects.all()
+            follow_form = FollowForm(request.POST)
+
             return render(request,
-                          "logic.html")
+                          "logic.html", 
+                          {"questions": all_questions,
+                           "messages": all_messages,
+                           "follow_form": follow_form})
+        else:
+            return HttpResponse("Not auth bro")
+    
+    def post(self, request):
+        if request.user.is_authenticated:
+            
+            msg_question = Message_Question()
+            logic_squence = msg_question.set_logic_dict(request.POST.items())
+
+            for entities_info in logic_squence: 
+                if entities_info[0] == "message":
+                    message = Message.objects.get(pk=int(entities_info[1]))  
+                    Message_Question.objects.create(message=message)
+                elif entities_info[0] == "question":
+                    question = Question.objects.get(pk=int(entities_info[1]))  
+                    Message_Question.objects.create(question=question)
+
+            return redirect('/bot/logic')
         else:
             return HttpResponse("Not auth bro")

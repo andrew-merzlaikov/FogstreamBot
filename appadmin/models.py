@@ -34,6 +34,34 @@ class Message_Question(models.Model):
     message.null = True
     question.null = True
 
+    def set_logic_dict(self, array_from_POST):
+        array_from_POST = list(array_from_POST)
+        array_from_POST.sort(key=lambda x: x[1])
+
+        entities_info = list()
+
+        for item_post in array_from_POST:
+
+            if (item_post[0][0:7] == "message" and 
+                item_post[1] != ''):
+                
+                info_entity = ("message", item_post[0][-1], item_post[1])
+
+                entities_info.append(info_entity)
+            
+            if (item_post[0][0:8] == "question" and 
+                item_post[1] != ''):
+
+                info_entity = ("question", item_post[0][-1], item_post[1])
+
+                entities_info.append(info_entity)
+        
+        return entities_info
+    
+    def __str__(self):
+        return "{msg} {quest}".format(msg=self.message,
+                                      quest=self.question)
+
 
 class Answers_Users(models.Model):
     question = models.OneToOneField(Question, 
