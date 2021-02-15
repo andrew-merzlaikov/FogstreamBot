@@ -7,17 +7,16 @@ from .views import (ViewMain,
                     ViewLogic, 
                     show_logic)
 
-app_name = "appserver"
-# app_name will help us do a reverse look-up latter.
+
+app_name = "appadmin"
 
 urlpatterns = [
-    path('settings', ViewMain.as_view()),
-    path('message', ViewMessage.as_view()),
-    path('question', ViewQuestion.as_view()),
-    path('create/message', ViewMessage.as_view()),
-    path('show/logic', show_logic),
+    path('main', ViewMain.as_view(), name='main'),
+    path('create/question', ViewQuestion.as_view(), name='create_question'),
+    path('create/message', ViewMessage.as_view(), name='create_message'),
+    path('show/logic', show_logic, name='show_logic'),
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
-    path('users', ViewUser.as_view()),
-    path('logic', ViewLogic.as_view())
+    path('show/users', ViewUser.as_view(), name='show_users'),
+    path('create/logic', ViewLogic.as_view(), name='create_logic')
 ]

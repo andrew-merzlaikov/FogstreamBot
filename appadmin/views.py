@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from django.template.response import TemplateResponse
 from django.shortcuts import redirect
-from .models import (Message_Question, 
+from .models import (Sequence_Logic, 
                     Message, 
                     Question)
 from .forms import (MessageForm, 
@@ -14,7 +14,7 @@ from appserver.models import UserTelegram
 
 def show_logic(request):
     if request.user.is_authenticated:
-        message_questions = Message_Question.objects.all()
+        message_questions =  Sequence_Logic.objects.all()
         list_msg_question = list()
 
         for msg_qu in message_questions:
@@ -24,20 +24,23 @@ def show_logic(request):
             else:
                 que = Question.objects.get(pk=msg_qu.question_id)
                 list_msg_question.append(que)
+        
+        exists_logic =  Sequence_Logic.objects.all().exists()
 
         return render(request, 
-                      "show_logic.html",
-                      {'list_msg_questions': list_msg_question})
+                      "logic/show_logic.html",
+                      {'list_msg_questions': list_msg_question,
+                      'exists_logic': exists_logic})
 
 class ViewMain(TemplateView):
     def get(self, request):
         if request.user.is_authenticated:
-            exists_data = Message_Question.objects.all().exists()
+            exists_data = Sequence_Logic.objects.all().exists()
             return render(request, 
                          "main.html", 
                           context={'exists_data': exists_data})
         else:
-            return HttpResponse("You not auth bro")
+            return render(request, "http_response/error_401.html", status=401)
 
 
 class ViewMessage(TemplateView):
@@ -48,12 +51,12 @@ class ViewMessage(TemplateView):
             all_messages = Message.objects.all()
 
             return render(request, 
-                         "create_message.html",
+                         "messages/create_message.html",
                          {"form": message_form,
                           "messages": all_messages})
         else:
-            return HttpResponse("You not auth bro")
-    
+            return render(request, "http_response/error_401.html", status=401)
+
     def post(self, request):
         if request.method == "POST" and request.user.is_authenticated:
             message_form = MessageForm(request.POST)
@@ -67,12 +70,12 @@ class ViewMessage(TemplateView):
 
                 return redirect('/bot/message?' + 'status_msg=OK')
             else:
-                return HttpResponse("Invalid Data")
+                return render(request, "http_response/error_401.html", status=401)
         else:
             message_form = MessageForm()
 
             return render(request, 
-                         "create_message.html",
+                         "messages/create_message.html",
                          {"form": message_form})
 
 
@@ -85,11 +88,11 @@ class ViewQuestion(TemplateView):
 
 
             return render(request, 
-                         "create_question.html",
+                         "questions/create_question.html",
                          {"form": question_form,
                           "questions": all_questions})
         else:
-            return render("You not auth bro")
+            return render(request, "http_response/error_401.html", status=401)
     
     def post(self, request):
         if request.user.is_authenticated:
@@ -114,10 +117,7 @@ class ViewQuestion(TemplateView):
         else:
             question_form = QuestionForm()
 
-            return render(request, 
-                         "create_message.html",
-                         {"form": question_form})
-        
+            return render(request, "http_response/error_401.html", status=401)
 
 
 class ViewUser(TemplateView):
@@ -126,10 +126,10 @@ class ViewUser(TemplateView):
             users_telegrams = UserTelegram.objects.all()
 
             return render(request, 
-                         "users.html",
+                         "users/users.html",
                          {"users_telegram": users_telegrams})
         else:
-            return HttpResponse("Not auth bro")
+            return render(request, "http_response/error_401.html", status=401)
 
 
 class ViewLogic(TemplateView):
@@ -138,30 +138,32 @@ class ViewLogic(TemplateView):
             
             all_questions = Question.objects.all()
             all_messages = Message.objects.all()
-            follow_form = FollowForm(request.POST)
+            follow_form = FollowForm()
+
+            exists_logic =  Sequence_Logic.objects.all().exists()
 
             return render(request,
-                          "logic.html", 
+                          "logic/create_logic.html", 
                           {"questions": all_questions,
                            "messages": all_messages,
-                           "follow_form": follow_form})
+                           "follow_form": follow_form,
+                           "exists_logic": exists_logic})
         else:
-            return HttpResponse("Not auth bro")
+            return render(request, "http_response/error_401.html", status=401)
     
     def post(self, request):
         if request.user.is_authenticated:
-            
-            msg_question = Message_Question()
+            msg_question =  Sequence_Logic()
             logic_squence = msg_question.set_logic_dict(request.POST.items())
 
             for entities_info in logic_squence: 
-                if entities_info[0] == "message":
-                    message = Message.objects.get(pk=int(entities_info[1]))  
-                    Message_Question.objects.create(message=message)
-                elif entities_info[0] == "question":
-                    question = Question.objects.get(pk=int(entities_info[1]))  
-                    Message_Question.objects.create(question=question)
+                if entities_info["type"] == "message":
+                    message = Message.objects.get(pk=int(entities_info["id"]))  
+                    Sequence_Logic.objects.create(message=message)
+                elif entities_info["type"] == "question":
+                    question = Question.objects.get(pk=int(entities_info["id"]))  
+                    Sequence_Logic.objects.create(question=question)
 
-            return redirect('/bot/logic')
+            return redirect('bot/logic')
         else:
-            return HttpResponse("Not auth bro")
+            return render(request, "http_response/error_401.html", status=401)

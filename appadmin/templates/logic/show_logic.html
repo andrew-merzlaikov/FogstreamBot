@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Админ панель для бота</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    {% include 'header.html' %}
+    <div class="conatiner">
+    
+    {% if exists_logic %}
+        <div class="row justify-content-center">
+            <div class="col-md-10 p-3 mb-2 bg-danger text-white">
+                Начало
+            </div>
+        </div>
+        
+        <img src='{% static "images/arrow.png" %}'>
+
+        {% for msg_que in list_msg_questions %}
+            <div class="row justify-content-center">
+                <div class="col-md-10 p-3 mb-2 bg-primary text-white">
+                    {{ msg_que }}
+                </div>
+            </div>
+                <img src='{% static "images/arrow.png" %}'>
+        {% endfor %}
+        
+        <div class="row justify-content-center">
+            <div class="col-md-10 p-3 mb-2 bg-danger text-white">
+                Конец
+            </div>
+        </div>
+    {% else %}
+
+        <div class="row justify-content-center">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Логика общения не создана</h4>
+                <p>
+                    Чтобы просмотреть логику необходимо сначала
+                    ее создать
+                </p>
+            </div>
+        </div>
+
+    {% endif %}
+
+    </div>
+</body>
+</html>

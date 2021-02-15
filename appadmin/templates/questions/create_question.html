@@ -8,24 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+
     {% include 'header.html' %}
 
     <div class="container mt-5">
         
-        <div class="row">
-            <div class="col-md-12">
-                <div class="alert alert-primary" role="alert">
-                    Создайте ваше сообщение
-                </div>
-            </div>
-        </div>    
-
-        {% if request.GET.status_msg == 'OK' %}
+        {% if request.GET.status_question == 'OK' %}
             <div class="row">
                 <div class="col-md-12">
                     <div class="alert alert-success" role="alert">
-                        Ваше сообщение создано
+                        Ваш вопрос создан
                     </div>
                 </div>
             </div>    
@@ -35,7 +27,7 @@
             {% csrf_token %}
             {% for field in form %}
             <div class="form-group">
-                <label for="exampleInputEmail1">Текст сообщения</label>
+                <label for="exampleInputEmail1">{{ field.label_tag }}</label>
                 <div type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     {{field }}
                 </div>
@@ -46,14 +38,13 @@
                         </div>
                         {% endfor %}
                 {% endif %}
-                <button type="submit" class="btn btn-primary mt-2">Создать сообщение </button>
             </div>
             {% endfor %}
+            <button type="submit" class="btn btn-primary mt-2">Создать вопрос </button>
         </form>
-        
-        {% include 'list_messages.html' %}
+
+        {% include 'questions/list_questions.html' %}
 
     </div>
-
 </body>
 </html>

@@ -4889,3 +4889,1902 @@ NameError: name 'dict_messages_questions' is not defined
 2021-02-13 13:30:57,148 django.request WARNING  Not Found: /favicon.ico
 2021-02-13 13:30:59,880 django.request WARNING  Not Found: /bot/show/show/logic
 2021-02-13 13:30:59,961 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:12:42,814 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:12:55,652 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:20:24,243 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 143, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 180, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 174, in select_template
+    return self.get_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 1372, in url
+    viewname = parser.compile_filter(bits[1])
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '/bot/users' from '/bot/users'
+2021-02-15 00:20:24,767 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:20:47,972 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 143, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2021-02-15 00:20:48,142 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:23:59,846 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 00:23:59,876 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:24:11,371 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:24:27,290 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 143, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
+2021-02-15 00:25:08,111 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 143, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'users' not found. 'users' is not a valid view function or pattern name.
+2021-02-15 00:25:08,425 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:25:09,985 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 143, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'users' not found. 'users' is not a valid view function or pattern name.
+2021-02-15 00:26:19,763 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 143, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'users' not found. 'users' is not a valid view function or pattern name.
+2021-02-15 00:26:19,997 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:27:36,780 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:27:40,420 django.request WARNING  Not Found: /bot/№
+2021-02-15 00:27:57,355 django.request WARNING  Not Found: /bot/edit/question
+2021-02-15 00:28:40,237 django.request WARNING  Not Found: /bot/show/show/logic
+2021-02-15 00:29:03,801 django.request WARNING  Not Found: /bot/edit/message
+2021-02-15 00:32:12,064 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:32:12,065 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:32:13,409 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:40:15,756 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:40:15,870 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:40:19,091 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:40:27,014 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:41:05,797 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:41:39,493 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:41:39,497 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:41:40,260 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:41:48,243 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:41:48,357 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:42:15,045 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:43:17,911 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:43:18,075 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:43:19,415 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:43:51,328 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:43:51,329 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:43:51,956 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:43:53,474 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:43:53,474 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:43:54,166 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:43:59,444 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:44:10,049 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:44:10,049 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:44:10,648 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:45:40,200 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:45:40,200 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:45:41,550 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:45:47,189 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:45:47,190 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:45:47,791 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:45:49,931 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:45:58,679 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:45:58,680 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:45:59,529 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:46:02,448 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:48:15,841 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:48:15,842 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:48:16,382 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:48:24,039 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:48:24,040 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:48:24,540 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:48:28,142 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:48:28,142 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:48:28,684 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:48:53,393 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:48:53,394 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:48:54,046 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:48:56,512 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:48:56,512 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:48:57,018 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:49:12,792 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:49:12,793 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:49:13,483 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:49:25,361 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:49:25,362 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:49:26,072 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:50:22,013 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:53:16,513 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 00:53:16,514 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:53:17,531 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:53:52,021 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:53:52,022 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:53:52,785 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:54:05,649 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 00:54:05,649 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:54:06,193 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:57:20,487 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:57:20,488 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:57:21,192 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:57:24,896 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:57:24,897 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:57:25,553 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:57:30,809 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:58:32,693 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:58:32,697 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:58:33,296 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:58:38,419 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 00:59:31,424 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:59:31,424 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:59:31,984 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:59:34,430 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:59:34,432 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:59:35,001 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:59:37,371 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:59:37,372 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:59:37,914 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:59:39,419 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:59:39,420 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:59:40,027 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 00:59:41,522 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 00:59:41,523 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 00:59:42,300 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:01:37,346 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:01:37,347 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:01:38,053 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:01:55,165 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:01:55,166 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:01:55,927 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:02:01,462 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:02:01,462 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:02:02,337 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:02:07,000 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:02:07,001 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:02:07,484 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:05:28,612 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 01:05:28,612 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:05:29,278 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:05:32,634 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 01:05:32,634 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:05:33,192 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:05:36,585 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 01:05:36,586 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:05:37,135 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:05:39,617 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 01:05:39,618 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:05:40,207 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:05:54,827 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 01:05:54,827 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:05:55,360 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:05:58,904 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 01:05:58,905 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:05:59,534 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:06:21,248 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/forms.py changed, reloading.
+2021-02-15 01:06:21,252 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:06:22,055 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:11,650 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:07:11,651 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:12,200 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:15,577 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:07:15,577 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:16,107 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:18,688 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:07:18,689 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:19,301 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:44,427 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:07:44,428 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:44,957 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:48,250 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:07:48,251 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:48,795 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:51,269 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:07:51,270 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:51,826 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:53,017 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:07:53,018 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:53,660 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:54,820 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:07:54,820 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:55,478 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:07:58,667 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:07:58,669 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:07:59,221 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:04,808 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:04,808 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:05,321 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:06,849 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:06,849 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:07,423 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:10,010 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:10,010 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:10,489 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:14,661 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:14,662 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:15,155 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:18,693 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:18,694 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:19,286 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:23,809 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:23,810 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:24,336 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:27,912 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:27,913 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:28,431 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:40,147 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:40,148 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:40,705 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:43,229 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:43,230 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:43,696 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:08:49,283 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:08:49,283 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:08:49,834 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:09:05,594 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:09:05,595 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:09:06,291 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:09:08,842 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:09:08,843 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:09:09,507 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:09:17,182 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:09:17,183 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:09:17,756 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:09:20,244 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:09:20,245 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:09:20,819 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:09:25,364 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:09:25,364 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:09:25,969 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:09:36,184 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 160, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:09:57,430 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:09:57,431 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:09:58,138 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:04,707 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:04,708 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:05,333 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:17,122 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:17,125 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:17,707 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:20,091 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:20,094 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:20,683 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:23,039 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:23,040 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:23,596 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:26,999 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:27,000 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:27,674 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:34,118 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:34,118 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:34,693 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:44,289 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:44,290 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:44,878 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:49,398 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:49,399 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:50,011 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:51,443 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:51,444 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:52,125 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:10:55,589 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:10:55,590 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:10:56,286 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:11:05,808 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:11:05,809 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:11:06,340 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:11:18,147 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:11:18,147 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:11:18,914 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:11:25,568 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:11:25,568 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:11:26,081 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:12:17,158 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 162, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:12:30,755 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 145, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 965, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 81: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+2021-02-15 01:14:49,580 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:14:49,580 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:14:51,001 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:15:45,444 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:15:45,445 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:15:46,524 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:15:49,239 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:15:49,240 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:15:49,948 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:15:59,555 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:15:59,555 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:16:00,416 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:16:19,195 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:16:19,195 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:16:19,738 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:16:26,384 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:16:26,385 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:16:26,933 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:16:29,656 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:16:29,657 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:16:30,165 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:16:34,674 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:16:34,675 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:16:35,239 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:16:38,676 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:16:38,677 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:16:39,228 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:16:41,630 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:16:41,630 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:16:42,138 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:18:36,096 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:18:44,036 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:20:51,502 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 162, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:22:10,570 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:22:10,571 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:22:11,186 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:22:20,385 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 162, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:22:33,504 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:22:33,505 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:22:34,140 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:22:36,935 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 162, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:22:43,402 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:22:43,403 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:22:44,254 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:22:46,108 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 162, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:22:50,076 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 162, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:23:42,483 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:23:42,484 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:23:43,396 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:23:45,503 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view appadmin.views.ViewLogic didn't return an HttpResponse object. It returned None instead.
+2021-02-15 01:23:56,412 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:23:56,418 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:23:57,390 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:24:19,240 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:24:19,241 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:24:19,817 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:24:21,334 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:24:21,335 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:24:21,996 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:24:33,939 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:24:33,939 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:24:34,478 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:24:36,850 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:24:36,850 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:24:37,392 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:24:38,958 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:24:38,959 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:24:39,628 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:24:48,497 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:24:48,498 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:24:49,175 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:24:54,975 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:24:54,975 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:24:55,906 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:25:06,181 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:25:06,182 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:25:06,733 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:25:10,401 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:25:10,402 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:25:10,945 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:25:17,464 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:25:17,465 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:25:18,207 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:25:41,251 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:25:41,253 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:25:41,850 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:25:46,256 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:25:46,256 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:25:46,805 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:25:57,337 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:25:57,338 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:25:57,828 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:26:01,195 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:26:01,196 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:26:01,752 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:26:03,378 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:26:03,379 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:26:03,942 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:26:06,384 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:26:06,386 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:26:07,298 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:26:16,164 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:26:16,165 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:26:16,748 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:26:21,297 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:26:21,298 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:26:21,902 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:26:24,463 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 163, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:26:35,826 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:26:35,826 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:26:36,337 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:26:48,140 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 163, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:26:55,320 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:26:55,321 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:26:56,336 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:27:34,565 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:27:34,566 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:27:35,298 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:27:37,506 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 163, in post
+    message = Message.objects.get(pk=int(entities_info["id"]))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 429, in get
+    raise self.model.DoesNotExist(
+appadmin.models.Message.DoesNotExist: Message matching query does not exist.
+2021-02-15 01:28:20,060 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:28:20,061 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:28:21,238 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:28:23,866 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:28:23,867 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:28:24,526 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:28:29,038 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:28:29,039 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:28:29,740 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:28:42,304 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:28:42,305 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:28:42,892 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:28:52,441 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:28:52,441 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:28:53,103 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:29:02,711 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:29:02,712 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:29:03,301 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:29:06,805 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:29:06,806 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:29:07,502 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:29:15,976 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:29:15,977 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:29:16,499 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:29:33,253 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:29:33,254 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:29:33,827 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:29:38,205 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:29:38,206 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:29:38,993 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:29:53,809 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:29:53,810 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:29:54,377 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:29:56,752 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:29:56,753 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:29:57,380 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:30:06,917 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:30:06,918 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:30:07,592 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:31:07,458 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view appadmin.views.ViewLogic didn't return an HttpResponse object. It returned None instead.
+2021-02-15 01:31:34,268 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:31:34,270 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:31:34,995 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:35:36,155 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:35:36,156 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:35:36,747 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:36:18,143 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:36:18,144 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:36:18,791 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:36:20,197 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:36:20,198 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:36:20,897 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:43:24,021 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:43:24,043 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:43:25,394 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:43:49,484 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:43:49,484 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:43:50,302 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:43:55,892 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:43:55,893 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:43:56,903 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:44:42,507 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:44:42,508 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:44:43,167 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:44:50,701 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:44:50,702 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:44:51,273 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:46:31,884 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:46:31,884 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:46:32,804 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:46:36,323 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:46:36,324 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:46:37,026 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:46:39,629 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:46:39,630 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:46:40,337 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:47:32,575 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:47:32,689 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:47:34,749 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:48:12,552 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:48:12,716 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:48:14,716 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:49:26,742 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:49:26,743 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:49:27,304 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:49:44,241 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:49:44,242 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:49:44,898 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:49:47,487 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:49:47,488 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:49:48,135 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:49:50,844 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:49:50,848 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:49:51,422 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:50:49,713 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:50:49,714 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:50:50,525 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:50:54,317 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:50:54,318 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:50:54,923 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:51:04,298 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 167, in post
+    return redirect('logic')
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 131, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logic' not found. 'logic' is not a valid view function or pattern name.
+2021-02-15 01:51:35,572 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:51:35,573 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:51:36,195 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:51:40,822 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:51:40,823 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:51:41,737 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:51:47,468 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:51:47,470 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:51:48,712 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:52:04,958 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:52:47,451 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:52:47,615 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:53:14,908 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:53:18,636 django.request ERROR    Internal Server Error: /bot/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "appadmin_sequencemessagequestion_message_id_key"
+DETAIL:  Key (message_id)=(9) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 163, in post
+    Sequence_Logic.objects.create(message=message)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "appadmin_sequencemessagequestion_message_id_key"
+DETAIL:  Key (message_id)=(9) already exists.
+
+2021-02-15 01:53:40,830 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:54:21,276 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:54:21,277 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:54:21,967 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:54:40,838 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:55:05,703 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:55:05,703 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:55:06,416 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:55:13,063 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:55:13,064 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:55:13,678 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:55:19,581 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:55:34,180 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:55:49,201 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-15 01:55:49,202 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:55:50,018 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:55:56,104 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:56:33,907 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 01:56:33,907 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 01:56:34,497 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 01:56:37,072 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:56:43,850 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 01:59:36,045 django.request WARNING  Not Found: /bot/edit/message
+2021-02-15 02:00:53,487 django.request WARNING  Not Found: /bot/edit/message
+2021-02-15 02:09:57,877 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 02:10:05,896 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 1034, in find_library
+    return parser.libraries[name]
+KeyError: 'staticfiles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 28, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 1091, in load
+    lib = find_library(parser, name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 1036, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'staticfiles' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+crispy_forms_field
+crispy_forms_filters
+crispy_forms_tags
+crispy_forms_utils
+i18n
+l10n
+log
+rest_framework
+static
+tz
+2021-02-15 02:12:01,341 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-15 02:12:01,355 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:12:04,455 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:12:26,260 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:15:00,970 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 02:22:29,676 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 02:27:39,620 django.request WARNING  Not Found: /
+2021-02-15 02:27:40,127 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 02:28:08,319 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 02:28:08,320 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:28:18,911 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:37:19,682 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 02:45:32,295 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:45:32,295 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:45:32,861 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:45:36,426 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:45:36,427 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:45:36,990 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:45:43,701 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:45:43,702 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:45:44,295 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:45:50,837 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:45:50,838 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:45:51,456 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:47:51,945 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 30, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 979, in do_if
+    nodelist = parser.parse(('endif',))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 49: 'endfor', expected 'endif'. Did you forget to register or load this tag?
+2021-02-15 02:50:11,231 django.request WARNING  Not Found: /bot/show/show/logic
+2021-02-15 02:50:20,540 django.request WARNING  Not Found: /bot/settings
+2021-02-15 02:50:48,709 django.request WARNING  Not Found: /bot/settings
+2021-02-15 02:50:49,397 django.request WARNING  Not Found: /bot/settings
+2021-02-15 02:50:52,026 django.request WARNING  Not Found: /bot/show/main
+2021-02-15 02:51:01,531 django.request WARNING  Not Found: /bot/show/main
+2021-02-15 02:51:03,477 django.request WARNING  Not Found: /bot/show/bot/main
+2021-02-15 02:51:26,979 django.request WARNING  Not Found: /bot/bot/logic
+2021-02-15 02:52:06,750 django.request WARNING  Not Found: /bot/show/message
+2021-02-15 02:52:27,279 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 02:52:27,279 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:52:28,115 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:52:44,926 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 02:52:44,927 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:52:45,414 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:52:46,935 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 02:52:46,935 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:52:47,537 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:52:51,058 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 02:52:51,059 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:52:51,603 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:53:20,359 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 30, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_message' not found. 'create_message' is not a valid view function or pattern name.
+2021-02-15 02:58:25,573 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:58:25,573 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:58:26,477 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:58:49,313 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:58:49,315 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:58:50,152 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:59:25,592 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:59:25,593 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:59:26,187 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:59:28,855 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:59:28,857 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:59:29,473 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:59:36,066 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:59:36,067 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:59:36,593 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 02:59:41,165 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 02:59:41,165 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 02:59:41,879 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:00:43,659 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 03:00:43,661 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:00:44,335 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:00:56,162 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 03:00:56,163 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:00:56,709 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:01:02,329 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 03:01:02,329 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:01:02,978 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:01:07,808 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 03:01:07,809 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:01:08,350 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:01:13,972 django.request WARNING  Unauthorized: /bot/main
+2021-02-15 03:01:15,751 django.request WARNING  Not Found: /bot/bot/login
+2021-02-15 03:01:28,997 django.request WARNING  Not Found: /bot/bot/login
+2021-02-15 03:01:30,514 django.request WARNING  Unauthorized: /bot/main
+2021-02-15 03:01:49,219 django.request WARNING  Unauthorized: /bot/message
+2021-02-15 03:02:08,601 django.request WARNING  Not Found: /bot/settings
+2021-02-15 03:02:14,869 django.request ERROR    Internal Server Error: /bot/main
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 39, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'create_message' not found. 'create_message' is not a valid view function or pattern name.
+2021-02-15 03:04:11,761 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-15 03:04:11,762 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:04:12,773 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:04:20,346 django.request WARNING  Unauthorized: /bot/main
+2021-02-15 03:16:21,820 django.request WARNING  Not Found: /bot/show/users
+2021-02-15 03:16:31,266 django.request WARNING  Not Found: /bot/show/bot/main
+2021-02-15 03:21:58,443 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:21:58,446 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:21:59,484 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:22:43,996 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 30, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'name' not found. 'name' is not a valid view function or pattern name.
+2021-02-15 03:22:49,089 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:22:51,358 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:23:02,917 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:23:05,833 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 30, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main' not found. 'main' is not a valid view function or pattern name.
+2021-02-15 03:23:58,741 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 30, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main' not found. 'main' is not a valid view function or pattern name.
+2021-02-15 03:23:58,907 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 03:23:59,878 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 30, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main' not found. 'main' is not a valid view function or pattern name.
+2021-02-15 03:24:00,083 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 03:25:04,027 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:25:04,028 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:25:04,926 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:25:07,684 django.request ERROR    Internal Server Error: /bot/show/logic
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 30, in show_logic
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 192, in render
+    return template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 172, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 53, in render
+    result = self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main' not found. 'main' is not a valid view function or pattern name.
+2021-02-15 03:26:11,509 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:11,510 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:12,243 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:16,776 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:16,777 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:17,343 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:22,881 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:22,882 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:23,472 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:28,127 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:28,128 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:28,852 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:30,307 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:30,308 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:31,127 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:32,673 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:32,674 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:33,220 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:35,648 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:35,650 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:36,197 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:40,781 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:40,782 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:41,406 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:26:54,129 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:26:54,129 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:26:54,745 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:27:02,316 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:27:02,316 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:27:02,866 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:27:06,354 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:27:06,357 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:27:07,046 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:27:15,565 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:27:15,566 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:27:16,112 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:27:23,721 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:27:23,722 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:27:24,298 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:27:28,675 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/urls.py changed, reloading.
+2021-02-15 03:27:28,676 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 03:27:29,204 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 03:32:31,412 django.request ERROR    Internal Server Error: /bot/create/message
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 53, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 180, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 174, in select_template
+    return self.get_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 1372, in url
+    viewname = parser.compile_filter(bits[1])
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''appadmin:create_message' from ''appadmin:create_message'
+2021-02-15 03:32:31,696 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 03:33:07,132 django.request ERROR    Internal Server Error: /bot/create/message
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 53, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 180, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 174, in select_template
+    return self.get_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/defaulttags.py", line 1372, in url
+    viewname = parser.compile_filter(bits[1])
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''appadmin:create_logic' from ''appadmin:create_logic'
+2021-02-15 04:35:09,161 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-15 04:35:09,161 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:35:09,952 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:37:18,242 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-15 04:37:18,243 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:37:19,195 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:37:34,034 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/server/settings.py changed, reloading.
+2021-02-15 04:37:34,036 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:37:35,173 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:38:02,123 django.request ERROR    Internal Server Error: /bot/create/question
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 90, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: create_question.html
+2021-02-15 04:38:02,488 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 04:40:13,295 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 04:40:22,617 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 04:40:25,875 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 04:42:43,674 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:42:43,676 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:42:45,322 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:43:16,560 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:43:16,561 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:43:17,072 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:43:31,837 django.request WARNING  Not Found: /favicon.ico
+2021-02-15 04:43:36,998 django.request ERROR    Internal Server Error: /bot/create/question
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader_tags.py", line 180, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/engine.py", line 180, in select_template
+    raise TemplateDoesNotExist(', '.join(not_found))
+django.template.exceptions.TemplateDoesNotExist: list_questions.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appadmin/views.py", line 90, in get
+    return render(request,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: list_questions.html
+2021-02-15 04:45:13,885 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:45:13,886 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:45:14,653 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:46:06,229 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:46:06,230 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:46:06,863 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:46:28,770 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:46:28,773 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:46:29,335 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:46:38,943 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:46:38,944 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:46:39,515 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:48:13,079 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:48:13,081 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:48:13,833 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:48:25,606 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:48:25,607 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:48:26,189 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:49:27,090 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:49:27,090 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:49:27,597 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:51:24,409 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:51:24,409 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:51:25,014 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:51:30,962 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:51:30,963 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:51:31,679 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-15 04:52:43,514 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-15 04:52:43,515 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-15 04:52:44,100 django.utils.autoreload INFO     Watching for file changes with StatReloader

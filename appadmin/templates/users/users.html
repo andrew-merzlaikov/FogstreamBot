@@ -10,12 +10,10 @@
 <body>
 
     {% include 'header.html' %}
-    <div class="conatiner">
-    {% for msg_que in list_msg_questions %}
-        <div class="row">
-            <div class="p-3 mb-2 bg-primary text-white">{{ msg_que }}</div>
-        </div>
-    {% endfor %}
+
+    <div class="container mt-5">
+        {% include 'users/list_users.html' %}
     </div>
+
 </body>
 </html>
