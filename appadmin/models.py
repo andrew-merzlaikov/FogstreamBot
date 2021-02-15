@@ -1,5 +1,6 @@
 from django.db import models
 from appserver.models import UserTelegram
+from django.forms import modelformset_factory
 
 
 class Question(models.Model):
@@ -35,32 +36,26 @@ class Sequence_Logic(models.Model):
     question.null = True
 
     def set_logic_dict(self, array_from_POST):
-        array_from_POST = list(array_from_POST)
-        array_from_POST.sort(key=lambda x: x[1])
-
         
-        entities_info = list()
+        list_from_logic_dict = list()
+        
 
-        for item_post in array_from_POST:
-            if (item_post[0][0:7] == "message" and 
-                item_post[1] != ''):
-                
-                dict_entity = {"type": "message", 
-                               "id": item_post[0][-1], 
-                               "number": item_post[1]}
-
-                entities_info.append(dict_entity)
+        for index, entity in enumerate(array_from_POST):
+            logic_dict = dict()
             
-            if (item_post[0][0:8] == "question" and 
-                item_post[1] != ''):
+            if "message" in entity[0]:
+                logic_dict["type"] = "message"
+                list_from_logic_dict.append(logic_dict)
+            elif "question" in entity[0]:
+                logic_dict["type"] = "question"
+                list_from_logic_dict.append(logic_dict)
 
-                dict_entity = {"type": "question", 
-                               "id": item_post[0][-1], 
-                               "number": item_post[1]}
-
-                entities_info.append(dict_entity)
         
-        return entities_info
+        # new_list = sorted(list_from_logic_dict, key=lambda k: k['order']) 
+
+        print(list_from_logic_dict)
+
+        return list_from_logic_dict
     
     def __str__(self):
         return "{msg} {quest}".format(msg=self.message,

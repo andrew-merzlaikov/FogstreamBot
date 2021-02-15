@@ -35,22 +35,13 @@
                         </div>
                     </div>
                 
-                    <div class="row">           
-                        {% for message in messages %}
-                        <div class="col-md-4">        
-                            <div class="card text-white bg-info mb-3" >
-                            <div class="card-body">
-                                <h5 class="card-title"> {{ message }}</h5>
-                                <div class="form-control">
-                                    <input type="text" class="form-control"
-                                        id="{{ field.name }}"
-                                        placeholder="Номер порядка"
-                                        name="message {{follow_number}}{{message.id}}">
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        {% endfor %}
+                    <div class="row">     
+                            {{  message_set.management_form }}
+                            <table>
+                                {% for form in  message_set %}
+                                <tr><td><ul class="list-inline">{{  message_set.as_ul }}</ul></td></tr>
+                                {% endfor %}
+                            </table>
                     </div>
 
                     <div class="row">
@@ -60,22 +51,10 @@
                     </div>
 
                     <div class="row">
-                        {% for question in questions %}
-                        <div class="col-md-4">
-                            <div class="card text-white bg-primary mb-3">
-                                <div class="card-body">
-                                    <div class="card-title">{{ question }}</div>
-                                    <div class="form-control">
-                                        <input type="text" class="form-control"
-                                            name="question {{follow_number}}{{question.id}}"
-                                            id="{{ field.name }}"
-                                            value="{{ field.name }}" 
-                                            placeholder="Номер порядка">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
+                        <table>
+                            {{ questions_set.as_table }} 
+                        </table>
+
                     </div>
 
                     <button type="submit" class="btn btn-success">Создать логику общения</button>

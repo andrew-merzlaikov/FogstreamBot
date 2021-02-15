@@ -32,6 +32,7 @@
                     </li>
                 </ul>
 
+
                 <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,7 +48,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="logout">
+                        <a class="nav-link" href={% url 'appadmin:logout' %}>
                         Выйти
                         </a>
                     </li>
@@ -55,4 +56,33 @@
             </div>
             </div>
         </nav>
+
+        <div class="container mt-2">
+            <div class="row">
+                    <form action={% url 'appadmin:delete_logic' %} method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="_method" value="delete">
+                        <button class="btn btn-danger col-md-4" type="submit">
+                            Удалить логику общения 
+                        </button>
+                    </form>
+            </div>
+
+            <div class="row mt-2 mb-2">
+
+                <form action={% url 'appadmin:edit_logic' %} method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="_method" value="put">
+                    <button class="btn btn-success col-md-4" type="submit">
+                        Редактировать логику общения 
+                    </button>
+                </form>
+            
+            </div>
+
+        </div>
+
+        
+
+
 {% endblock %}

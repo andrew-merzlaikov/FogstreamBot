@@ -5,6 +5,8 @@
         <th scope="col">Текст вопроса </th>
         <th scope="col">Если утвердительно </th>
         <th scope="col">Если отрицательно </th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -14,6 +16,20 @@
            <td>{{question.question}}</td>
            <td>{{question.question_confirm}}</td>
            <td>{{question.question_not_confirm}}</td>
+           <td>
+            <form action={% url 'appadmin:edit_question' question.id %} method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="_method" value="put">
+             <button class="btn btn-success" type="submit"> Редактировать </button>
+            </form>
+          </td>
+          <td> 
+            <form action={% url 'appadmin:delete_question' question.id %} method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="_method" value="delete">
+              <input  class="btn btn-danger" type="submit" value="Удалить">
+            </form>
+          </td>
         </tr>
       {% endfor %}
     </tbody>

@@ -6,13 +6,7 @@ class MessageForm(forms.Form):
                                    widget=forms.Textarea(attrs={
                                                             'rows': 2, 
                                                             'cols': 60}))
-
-
-class FollowForm(forms.Form):
-    field_follow = forms.IntegerField(required=False, 
-                                      widget=forms.TextInput(attrs={'placeholder': 'Порядок'}),
-                                      label="Введите номер порядка")
-                                      
+    
 
 class QuestionForm(forms.Form):
     question = forms.CharField(max_length=150, 
