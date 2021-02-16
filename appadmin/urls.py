@@ -5,7 +5,9 @@ from .views import (ViewMain,
                     ViewQuestion,
                     ViewUser,
                     ViewLogic, 
-                    show_logic)
+                    show_logic,
+                    show_edit_form_question,
+                    show_edit_form_message)
 
 
 app_name = "appadmin"
@@ -26,7 +28,15 @@ urlpatterns = [
     path('edit/question/<int:id_question>', 
         ViewQuestion.as_view(), 
         name='edit_question'),
+
+    path('form/edit/question/<int:id_question>',
+         show_edit_form_question,
+         name="edit_form_question"), 
     
+    path('form/edit/message/<int:id_message>',
+         show_edit_form_message,
+         name="edit_form_message"), 
+
     path('delete/question/<int:id_question>', 
          ViewQuestion.as_view(), 
          name='delete_question'),

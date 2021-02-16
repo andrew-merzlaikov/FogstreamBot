@@ -35,20 +35,31 @@ class Sequence_Logic(models.Model):
     message.null = True
     question.null = True
 
-    def set_logic_dict(self, array_from_POST):
+    def set_logic_dict(self, 
+                       array_from_POST, 
+                       message_form_set, 
+                       question_form_set):
         
         list_from_logic_dict = list()
         
+        formset_message = message_form_set(array_from_POST)        
+        formset_question = question_form_set(array_from_POST)
 
-        for index, entity in enumerate(array_from_POST):
-            logic_dict = dict()
+        for message in formset_message:
+            print(message.cleaned_data)
+        
+        for question in formset_question:
+            print(question)
+
+        # for index, entity in enumerate(array_from_POST):
+        #     logic_dict = dict()
             
-            if "message" in entity[0]:
-                logic_dict["type"] = "message"
-                list_from_logic_dict.append(logic_dict)
-            elif "question" in entity[0]:
-                logic_dict["type"] = "question"
-                list_from_logic_dict.append(logic_dict)
+        #     if "message" in entity[0]:
+        #         logic_dict["type"] = "message"
+        #         list_from_logic_dict.append(logic_dict)
+        #     elif "question" in entity[0]:
+        #         logic_dict["type"] = "question"
+        #         list_from_logic_dict.append(logic_dict)
 
         
         # new_list = sorted(list_from_logic_dict, key=lambda k: k['order']) 

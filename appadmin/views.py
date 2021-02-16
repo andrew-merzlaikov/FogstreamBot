@@ -33,6 +33,23 @@ def show_logic(request):
                       {'list_msg_questions': list_msg_question,
                       'exists_logic': exists_logic})
 
+def show_edit_form_question(request, id_question):
+    if request.user.is_authenticated:
+        question_form = QuestionForm()
+        return render(request, 
+                      "questions/edit_question.html", 
+                      {'question_form': question_form,
+                       'id_question': id_question})
+
+def show_edit_form_message(request, id_message):
+    if request.user.is_authenticated:
+        message_form = MessageForm()
+        return render(request, 
+                      "messages/edit_message.html", 
+                      {'message_form': message_form,
+                       'id_message': id_message})
+
+
 class ViewMain(TemplateView):
     def get(self, request):
         if request.user.is_authenticated:
@@ -88,7 +105,17 @@ class ViewMessage(TemplateView):
 
     def put(self, request, id_message):
         if request.user.is_authenticated:
-            return HttpResponse(id_message)
+            form = MessageForm(request.POST or None)
+            
+            if form.is_valid():
+                text_message = form.cleaned_data.get("text_message")
+                
+                Message.\
+                        objects.\
+                        filter(id=id_message).\
+                        update(text_message=text_message)
+
+                return redirect('/bot/create/message')
         else:
             return render(request, "http_response/error_401.html", status=401)
 
@@ -158,7 +185,21 @@ class ViewQuestion(TemplateView):
     
     def put(self, request, id_question):
         if request.user.is_authenticated:
-            return HttpResponse(id_question)
+            form = QuestionForm(request.POST or None)
+            
+            if form.is_valid():
+                question_text = form.cleaned_data.get("question")
+                text_confirm = form.cleaned_data.get("question_confirm")
+                text_not_confirm = form.cleaned_data.get("question_not_confirm")
+                
+                Question.\
+                        objects.\
+                        filter(id=id_question).\
+                        update(question=question_text,
+                               question_confirm=text_confirm,
+                               question_not_confirm=text_not_confirm)
+
+                return redirect('/bot/create/question')
         else:
             return render(request, "http_response/error_401.html", status=401)
 
@@ -236,10 +277,33 @@ class ViewLogic(TemplateView):
             msg_question =  Sequence_Logic()
             # data_list_post = list(request.POST)
             # data = data_list_post[5:len(data_list_post)]
-            logic_squence = msg_question.set_logic_dict(request.POST)
+            
+            message_form_set = modelformset_factory(Message,
+                                                    fields=('text_message',),
+                                                    can_order=True,
+                                                    extra=0)
 
-            for entities_info in logic_squence: 
-                print(entities_info)
+            question_form_set = modelformset_factory(Question,
+                                                    fields=('question',),
+                                                    can_order=True,
+                                                    extra=0)
+
+            questionForm = question_form_set(request.POST)
+            messageForm = message_form_set(request.POST)
+
+            for question in questionForm:
+                print(question)
+            
+            for message in messageForm:
+                print(message.cleaned_data)
+
+            # logic_squence = msg_question.set_logic_dict(request.POST,
+            #                                             message_form_set,
+            #                                             question_form_set)
+
+
+            # for entities_info in logic_squence: 
+            #     print(entities_info)
                 # if entities_info["type"] == "message":
                 #     message = Message.objects.get(pk=entities_info["id"])  
                 #     # Sequence_Logic.objects.create(message=message)
@@ -247,7 +311,7 @@ class ViewLogic(TemplateView):
                 #     question = Question.objects.get(pk=entities_info["id"])  
                 #     # Sequence_Logic.objects.create(question=question)
 
-            return HttpResponse(request.POST.items())
+            return HttpResponse(request.POST)
         else:
             return render(request, "http_response/error_401.html", status=401)
         

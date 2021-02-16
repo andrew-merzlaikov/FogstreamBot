@@ -13,9 +13,8 @@
            <th scope="row">{{message.id}}</th>
            <td>{{message}}</td>
            <td>
-              <form action={% url 'appadmin:edit_message' message.id %} method="POST">
+              <form action={% url 'appadmin:edit_form_message' message.id %} method="GET">
                 {% csrf_token %}
-                <input type="hidden" name="_method" value="delete">
                <button class="btn btn-success" type="submit"> Редактировать </button>
               </form>
             </td>
