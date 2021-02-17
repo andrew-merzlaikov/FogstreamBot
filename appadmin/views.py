@@ -19,9 +19,6 @@ import operator
 def set_logic(request):
     if request.user.is_authenticated:
 
-        if Sequence_Logic.objects.exists():
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
         messages = Message.objects.all()
         questions = Question.objects.all()
 
@@ -148,7 +145,11 @@ class ViewMessage(TemplateView):
                 Message.objects.create(text_message=context_data['message'])
 
                 return redirect('/bot/create/message?' + 'status_msg=OK')
-        
+            else:
+                return render(request, 
+                              "http_response/error_422.html", 
+                              status=422)
+
         else:
             return render(request, "http_response/error_401.html", status=401)
 
@@ -165,6 +166,11 @@ class ViewMessage(TemplateView):
                         update(text_message=text_message)
 
                 return redirect('/bot/create/message')
+            else:
+                return render(request, 
+                              "http_response/error_422.html", 
+                              status=422)
+
         else:
             return render(request, "http_response/error_401.html", status=401)
 
@@ -222,24 +228,39 @@ class ViewQuestion(TemplateView):
                                             cleaned_data["question_not_confirm"],
                 }
 
-                Question.objects.create(question=context_data['question'],
-                                        question_confirm=context_data['question_confirm'],
-                                        question_not_confirm=context_data['question_not_confirm'])
+                Question.\
+                objects.\
+                create(question=context_data['question'],
+                       question_confirm=context_data['question_confirm'],
+                       question_not_confirm=context_data['question_not_confirm'])
 
                 return redirect('/bot/create/question?' + 'status_question=OK')
             else:
-                return HttpResponse("Invalid Data")
+                return render(request, 
+                              "http_response/error_422.html", 
+                              status=422)
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
     
     def put(self, request, id_question):
         if request.user.is_authenticated:
+            
             form = QuestionForm(request.POST or None)
             
             if form.is_valid():
-                question_text = form.cleaned_data.get("question")
-                text_confirm = form.cleaned_data.get("question_confirm")
-                text_not_confirm = form.cleaned_data.get("question_not_confirm")
+                question_text = form.\
+                                cleaned_data.\
+                                get("question")
+                
+                text_confirm = form.\
+                               cleaned_data.\
+                               get("question_confirm")
+                
+                text_not_confirm = form.\
+                                   cleaned_data.\
+                                   get("question_not_confirm")
                 
                 Question.\
                         objects.\
@@ -249,6 +270,11 @@ class ViewQuestion(TemplateView):
                                question_not_confirm=text_not_confirm)
 
                 return redirect('/bot/create/question')
+            else:
+                return render(request, 
+                              "http_response/error_422.html", 
+                              status=422)
+
         else:
             return render(request, "http_response/error_401.html", status=401)
 

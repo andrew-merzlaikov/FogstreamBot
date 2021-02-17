@@ -68,7 +68,7 @@ class User_Sequence_Logic(models.Model):
                                         format(user=self.user,
                                                number_record=self.number_record_logic)
     
-    def next(self, user_id):
+    def next_entity(self, user_id):
 
         user_sequence = User_Sequence_Logic.\
                                             objects.\

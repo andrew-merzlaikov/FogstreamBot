@@ -1,4 +1,5 @@
 from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.views import APIView
 from .models import UserTelegram
 from appadmin.models import (Sequence_Logic,
@@ -47,17 +48,23 @@ class LogicApiView(APIView):
                         filter(id=id_user).\
                         exists():
 
+            if not Sequence_Logic.objects.all().exists():
+                return Response({"msg": "Логика общения не создана"},
+                                content_type="json\application",
+                                status=status.HTTP_404_NOT_FOUND)
+
             if User_Sequence_Logic.objects.\
                                   filter(user_id=id_user).\
                                   exists():
                 
-                user_squence_logic = User_Sequence_Logic.objects.\
-                                                                filter(
-                                                                    user_id=id_user
-                                                                ).\
-                                                                first()
+                user_squence_logic = User_Sequence_Logic.\
+                                     objects.\
+                                     filter(
+                                            user_id=id_user
+                                      ).\
+                                     first()
 
-                id_record = user_squence_logic.next(id_user)
+                id_record = user_squence_logic.next_entity(id_user)
 
                 if Sequence_Logic.objects.filter(id=id_record).exists():
                 
@@ -81,35 +88,39 @@ class LogicApiView(APIView):
                                     },
                                     content_type="json\application")  
                 else:
-                    return Response({"msg": "Больше нет сущностей"},
-                                    content_type="json\application")
+                    return Response({"msg": "Конец логики"},
+                                    content_type="json\application",
+                                    status=status.HTTP_404_NOT_FOUND)
 
             else:   
                 squence_logic = Sequence_Logic.objects.first()
 
                 user_telegram = UserTelegram.\
-                                            objects.\
-                                            filter(id=id_user).\
-                                            first()
+                                objects.\
+                                filter(id=id_user).\
+                                first()
 
                 squence_logic_user = User_Sequence_Logic.\
-                                                    objects.\
-                                                    create(
-                                                    user_id=user_telegram.id,
-                                                    number_record_logic_id=squence_logic.id)
+                                     objects.\
+                                     create(
+                                            user_id=user_telegram.id,
+                                            number_record_logic_id=squence_logic.id)
+               
                 squence_logic = Sequence_Logic.\
-                                              objects.\
-                                              filter(id=squence_logic_user.\
-                                                        number_record_logic_id).\
-                                              first()
+                                objects.\
+                                filter(id=squence_logic_user.\
+                                      number_record_logic_id).\
+                                first()
 
-                message = Message.objects.\
-                                          filter(id=squence_logic.message_id).\
-                                          first()
+                message = Message.\
+                          objects.\
+                          filter(id=squence_logic.message_id).\
+                          first()
 
-                question = Question.objects.\
-                                            filter(id=squence_logic.question_id).\
-                                            first()
+                question = Question.\
+                           objects.\
+                           filter(id=squence_logic.question_id).\
+                           first()
 
                 return Response({"message": str(message),
                                  "message_id": squence_logic.message_id, 
@@ -118,6 +129,7 @@ class LogicApiView(APIView):
                                 },
                                 content_type="json\application")
         else:
-            return Response({"msg:": "Нет пользователя с таким id"},
-                            content_type="json\application")
+            return Response({"msg": "Нет пользователя с таким id"},
+                            content_type="json\application",
+                            status=status.HTTP_404_NOT_FOUND)
 

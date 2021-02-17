@@ -2,7 +2,7 @@ from django import forms
 
 
 class MessageForm(forms.Form):
-    text_message = forms.CharField(max_length=150,
+    text_message = forms.CharField(max_length=100,
                                    widget=forms.Textarea(attrs={
                                                             'rows': 2, 
                                                             'cols': 60}))
