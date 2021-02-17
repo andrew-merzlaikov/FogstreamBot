@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from django.template.response import TemplateResponse
@@ -11,7 +12,52 @@ from .forms import (MessageForm,
                     QuestionForm)
 from django.urls import reverse
 from appserver.models import UserTelegram
+import operator
 
+
+def set_logic(request):
+    if request.user.is_authenticated:
+
+        if Sequence_Logic.objects.exists():
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+        messages = Message.objects.all()
+        questions = Question.objects.all()
+
+        logic_list = list()
+
+        for message in messages:
+            logic_dict = dict()
+            logic_dict["type"] = "message"
+            logic_dict["id"] = message.id
+            
+            if message.logic_order is not None:
+                logic_dict["order"] = message.logic_order
+            
+            logic_list.append(logic_dict)
+
+        for question in questions:
+
+            logic_dict = dict()
+            logic_dict["type"] = "question"
+            logic_dict["id"] = question.id
+
+            if question.logic_order is not None:
+                logic_dict["order"] = question.logic_order
+            
+            logic_list.append(logic_dict)
+
+        logic_list.sort(key=operator.itemgetter('order'))        
+
+        for logic_dict in logic_list:
+            if logic_dict["type"] == "message":
+                Sequence_Logic.objects.create(message_id=logic_dict["id"])
+            elif logic_dict["type"] == "question":
+                Sequence_Logic.objects.create(question_id=logic_dict['id'])
+
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        return render(request, "http_response/error_401.html", status=401)
 
 def show_logic(request):
     if request.user.is_authenticated:
@@ -32,6 +78,8 @@ def show_logic(request):
                       "logic/show_logic.html",
                       {'list_msg_questions': list_msg_question,
                       'exists_logic': exists_logic})
+    else:
+        return render(request, "http_response/error_401.html", status=401)
 
 def show_edit_form_question(request, id_question):
     if request.user.is_authenticated:
@@ -48,7 +96,7 @@ def show_edit_form_message(request, id_message):
                       "messages/edit_message.html", 
                       {'message_form': message_form,
                        'id_message': id_message})
-
+                       
 
 class ViewMain(TemplateView):
     def get(self, request):
@@ -249,69 +297,77 @@ class ViewLogic(TemplateView):
             all_messages = Message.objects.all()
 
             exists_logic =  Sequence_Logic.objects.all().exists()
-            message_form_set = modelformset_factory(Message,
-                                                    fields=('text_message',),
-                                                    can_order=True,
-                                                    extra=0)
+            
+            messageFormSet = modelformset_factory(Message, 
+                                                  fields=('text_message',),
+                                                  can_order=True,
+                                                  extra=0)
+            
 
-            question_form_set = modelformset_factory(Question,
+            questionFormSet = modelformset_factory(Question,
                                                     fields=('question',),
                                                     can_order=True,
-                                                    extra=0)
+                                                    extra=0,
+                                                    labels = {
+                                                        "Order": "Порядок в логике",
+                                                    })
             
-            some_formset = question_form_set(initial=[{'id': x.id} 
-                                                                for x in all_messages])
-
             return render(request,
                           "logic/create_logic.html", 
                           {"questions": all_questions,
                            "messages": all_messages,
-                           "message_set": message_form_set,
-                           "questions_set": question_form_set,
+                           "messages_set": messageFormSet,
+                           "questions_set": questionFormSet,
                            "exists_logic": exists_logic})
         else:
             return render(request, "http_response/error_401.html", status=401)
     
     def post(self, request):
         if request.user.is_authenticated:
-            msg_question =  Sequence_Logic()
-            # data_list_post = list(request.POST)
-            # data = data_list_post[5:len(data_list_post)]
-            
-            message_form_set = modelformset_factory(Message,
-                                                    fields=('text_message',),
+
+            messageFormSet = modelformset_factory(Message, 
+                                                  fields=('text_message',),
+                                                  can_order=True,
+                                                extra=0)
+                
+            message_formset = messageFormSet(request.POST)
+           
+            questionFormSet = modelformset_factory(Question, 
+                                                    fields=('question', ),
                                                     can_order=True,
                                                     extra=0)
 
-            question_form_set = modelformset_factory(Question,
-                                                    fields=('question',),
-                                                    can_order=True,
-                                                    extra=0)
+            question_formset = questionFormSet(request.POST)
 
-            questionForm = question_form_set(request.POST)
-            messageForm = message_form_set(request.POST)
+            if message_formset.is_valid():
+        
+                for form in message_formset:                    
+                    msg = form.cleaned_data['id']
+                    order = form.cleaned_data['ORDER']
+                    
+                    msg = Message.objects.\
+                                         filter(id=msg.id).\
+                                         update(logic_order=order)
 
-            for question in questionForm:
-                print(question)
-            
-            for message in messageForm:
-                print(message.cleaned_data)
+                messages.add_message(request, 
+                                     messages.INFO, 
+                                     'В логике порядок для сообщений задан')
+                
 
-            # logic_squence = msg_question.set_logic_dict(request.POST,
-            #                                             message_form_set,
-            #                                             question_form_set)
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+            elif question_formset.is_valid():
 
-            # for entities_info in logic_squence: 
-            #     print(entities_info)
-                # if entities_info["type"] == "message":
-                #     message = Message.objects.get(pk=entities_info["id"])  
-                #     # Sequence_Logic.objects.create(message=message)
-                # elif entities_info["type"] == "question":
-                #     question = Question.objects.get(pk=entities_info["id"])  
-                #     # Sequence_Logic.objects.create(question=question)
+                for form in question_formset:
+                    que = form.cleaned_data['id']
+                    order = form.cleaned_data['ORDER']
 
-            return HttpResponse(request.POST)
+                    que = Question.objects.\
+                                         filter(id=que.id).\
+                                         update(logic_order=order)
+
+                
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         else:
             return render(request, "http_response/error_401.html", status=401)
         

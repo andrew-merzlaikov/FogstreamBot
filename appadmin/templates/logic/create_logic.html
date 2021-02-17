@@ -34,31 +34,56 @@
                             <div class="p-3 mb-2 bg-secondary text-white">Сообщения</div>
                         </div>
                     </div>
-                
-                    <div class="row">     
-                            {{  message_set.management_form }}
-                            <table>
-                                {% for form in  message_set %}
-                                <tr><td><ul class="list-inline">{{  message_set.as_ul }}</ul></td></tr>
-                                {% endfor %}
-                            </table>
-                    </div>
 
-                    <div class="row">
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <div class="p-3 mb-2 bg-info text-white">Вы должны указывать порядок в логике</div>
+                        </div>
+                    </div>
+                
+                    <div class="row mt-2">     
+                        <table class="table">                            
+                            {{ messages_set.as_table }}
+                        </table>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">
+                        Задать порядок сообщений в логике
+                    </button>
+            </form>
+            <form method="POST">
+                {% csrf_token %}
+                    <div class="row mt-2">
                         <div class="col-md-4">
                             <div class="p-3 mb-2 bg-secondary text-white">Вопросы</div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <table>
-                            {{ questions_set.as_table }} 
-                        </table>
-
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <div class="p-3 mb-2 bg-info text-white">Вы должны указывать порядок в логике</div>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success">Создать логику общения</button>
+                    <div class="row mt-2">
+                        <table class="table">                            
+                            {{ questions_set.as_table }}
+                        </table>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">
+                        Задать порядок вопросов в логике
+                    </button>
             </form>
+
+            <form action={% url 'appadmin:set_logic' %} method="POST">
+                {% csrf_token %}
+
+                <button type="submit" class="btn btn-danger mt-2">
+                    Cоздать логику на основе заданных порядков
+                </button>
+            </form>
+
         {% else %}
             
             <div class="alert alert-danger" role="alert">

@@ -25,8 +25,6 @@
                         Просмотреть
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Сообщения</a></li>
-                        <li><a class="dropdown-item" href="#">Вопросы</a></li>
                         <li><a class="dropdown-item" href={% url 'appadmin:show_logic' %}>Логику общения</a></li>
                         </ul>
                     </li>
@@ -66,18 +64,6 @@
                             Удалить логику общения 
                         </button>
                     </form>
-            </div>
-
-            <div class="row mt-2 mb-2">
-
-                <form action={% url 'appadmin:edit_logic' %} method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="_method" value="put">
-                    <button class="btn btn-success col-md-4" type="submit">
-                        Редактировать логику общения 
-                    </button>
-                </form>
-            
             </div>
 
         </div>

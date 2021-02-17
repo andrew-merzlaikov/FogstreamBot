@@ -12,6 +12,9 @@ class Question(models.Model):
     question_not_confirm = models.CharField(max_length=50,
                                             null=True)
 
+    logic_order = models.IntegerField()
+
+    logic_order.null = True
     question_confirm.null = True
     question_not_confirm.null = True
 
@@ -21,10 +24,13 @@ class Question(models.Model):
 
 class Message(models.Model):
     text_message = models.CharField(max_length=100)
+    logic_order = models.IntegerField()
 
-    def __str__(self):
+    logic_order.null = True
+
+    def __str__(self):  
         return "{text_message}".format(text_message=self.text_message)
-
+        
 
 class Sequence_Logic(models.Model):
     message = models.OneToOneField(Message, 
@@ -34,39 +40,6 @@ class Sequence_Logic(models.Model):
     
     message.null = True
     question.null = True
-
-    def set_logic_dict(self, 
-                       array_from_POST, 
-                       message_form_set, 
-                       question_form_set):
-        
-        list_from_logic_dict = list()
-        
-        formset_message = message_form_set(array_from_POST)        
-        formset_question = question_form_set(array_from_POST)
-
-        for message in formset_message:
-            print(message.cleaned_data)
-        
-        for question in formset_question:
-            print(question)
-
-        # for index, entity in enumerate(array_from_POST):
-        #     logic_dict = dict()
-            
-        #     if "message" in entity[0]:
-        #         logic_dict["type"] = "message"
-        #         list_from_logic_dict.append(logic_dict)
-        #     elif "question" in entity[0]:
-        #         logic_dict["type"] = "question"
-        #         list_from_logic_dict.append(logic_dict)
-
-        
-        # new_list = sorted(list_from_logic_dict, key=lambda k: k['order']) 
-
-        print(list_from_logic_dict)
-
-        return list_from_logic_dict
     
     def __str__(self):
         return "{msg} {quest}".format(msg=self.message,
