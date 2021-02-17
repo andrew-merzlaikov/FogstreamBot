@@ -118,6 +118,6 @@ class LogicApiView(APIView):
                                 },
                                 content_type="json\application")
         else:
-            return Response({"msg:": "Not found user"},
+            return Response({"msg:": "Нет пользователя с таким id"},
                             content_type="json\application")
 
