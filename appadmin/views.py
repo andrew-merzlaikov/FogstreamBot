@@ -6,6 +6,7 @@ from django.template.response import TemplateResponse
 from django.forms import modelformset_factory
 from django.shortcuts import redirect
 from .models import (Sequence_Logic, 
+                    User_Sequence_Logic,
                     Message, 
                     Question)
 from .forms import (MessageForm, 
@@ -96,7 +97,7 @@ def show_edit_form_message(request, id_message):
                       "messages/edit_message.html", 
                       {'message_form': message_form,
                        'id_message': id_message})
-                       
+
 
 class ViewMain(TemplateView):
     def get(self, request):
@@ -374,7 +375,8 @@ class ViewLogic(TemplateView):
     def delete(self, request):
         if request.user.is_authenticated:
             Sequence_Logic.objects.all().delete()
-            
+            User_Sequence_Logic.objects.all().delete()
+
             return HttpResponseRedirect(reverse("appadmin:create_logic"))
         else:
             return render(request, "http_response/error_401.html", status=401)
