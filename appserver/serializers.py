@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import UserTelegram
+from appadmin.models import (Question,
+                             AnswerUser)
 
 
 class UserSerializer(serializers.Serializer):
@@ -13,4 +15,13 @@ class UserSerializer(serializers.Serializer):
             return False
         
         return UserTelegram.objects.create(**validated_data)
+
+
+class AnswerSerializer(serializers.Serializer):
+    answer_text = serializers.CharField(max_length=30, allow_null=True)
+    question_id = serializers.IntegerField()
+    user_id = serializers.IntegerField()
+
+    def create(self, validated_data):        
+        return AnswerUser.objects.create(**validated_data)
     

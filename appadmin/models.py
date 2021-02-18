@@ -90,3 +90,13 @@ class User_Sequence_Logic(models.Model):
             return (number_record + 1)
         else:
             return -1
+
+
+class AnswerUser(models.Model):
+    answer_text = models.CharField(max_length=1000)
+    
+    user =  models.ForeignKey('appserver.UserTelegram',
+                               on_delete=models.CASCADE,)  
+    
+    question = models.ForeignKey('Question',
+                                  on_delete=models.CASCADE,)  

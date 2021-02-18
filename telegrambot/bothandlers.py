@@ -13,7 +13,8 @@ def start_message(message):
                                     message.from_user.last_name,
                                     message.from_user.username)
     
-    print(message.chat.id)
+    bot_server.create_answer_with_user("test", 5, 1)
+    
     bot.send_message(message.chat.id, 'Привет, {first_name}, ты написал мне /start'.\
                     format(first_name=message.from_user.first_name))
 

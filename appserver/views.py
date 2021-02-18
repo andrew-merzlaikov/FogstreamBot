@@ -5,8 +5,10 @@ from .models import UserTelegram
 from appadmin.models import (Sequence_Logic,
                             User_Sequence_Logic,
                             Message,
-                            Question)
-from .serializers import UserSerializer
+                            Question, 
+                            AnswerUser)
+from .serializers import (UserSerializer,
+                          AnswerSerializer)
 import json
 import logging
 
@@ -14,16 +16,13 @@ logger = logging.getLogger(__name__)
 
 
 class UserView(APIView):
-    
-    def get(self):
-        return Response("TEST")
 
     def post(self, request):
         
         data_user = json.loads(request.data)['user'] 
         serializer = UserSerializer(data=data_user)
 
-        if serializer.is_valid(raise_exception=True):
+        if serializer.is_valid():
             user_saved = serializer.save()
             
             logger.debug("TelegramUser '{user_saved}' " 
@@ -31,27 +30,55 @@ class UserView(APIView):
                                         format(user_saved=user_saved))
 
             return Response({"success": "TelegramUser '{user_saved}' " 
-                                        "created successfully".\
+                                        "создан успешно".\
                                         format(user_saved=user_saved)},
                                         content_type="json\application")
         else:
-            logger.debug("Not valid data")
-            return Response({"error": "Not valid data"},
+            logger.debug("Не валидные данные")
+            return Response({"error": "Не валидные данные"},
                             content_type="json\application")
+
+
+class AnswerView(APIView):
+
+    def get(self, request):
+        return Response({"count_entities": Sequence_Logic.\
+                                            objects.\
+                                            count()},
+                        content_type="json\application")
+
+    def post(self, request):
+        data_answer = json.loads(request.data)['answer'] 
+        serializer = AnswerSerializer(data=data_answer)
+        
+        if serializer.is_valid():
+            answer_saved = serializer.save()
+
+            logger.debug("AnswerUsed '{answer_saved}' " 
+                                        "created successfully".\
+                                        format(answer_saved=answer_saved))
+
+            return Response({"success": "AnswerUser {answer_saved}".\
+                                        format(answer_saved=answer_saved)},
+                                        content_type="json\application")
+        else:      
+            print("Не валидные данные")      
+            logger.debug("Не валидные данные")
+            return Response({"error": "Не валидные данные"})
 
 
 class LogicApiView(APIView):
 
     def get(self, request, id_user):
 
+        if not Sequence_Logic.objects.all().exists():
+            return Response({"msg": "Логика общения не создана"},
+                            content_type="json\application",
+                            status=status.HTTP_404_NOT_FOUND)
+
         if UserTelegram.objects.\
                         filter(id=id_user).\
                         exists():
-
-            if not Sequence_Logic.objects.all().exists():
-                return Response({"msg": "Логика общения не создана"},
-                                content_type="json\application",
-                                status=status.HTTP_404_NOT_FOUND)
 
             if User_Sequence_Logic.objects.\
                                   filter(user_id=id_user).\
@@ -81,9 +108,7 @@ class LogicApiView(APIView):
                                                 filter(id=squence_logic.question_id).\
                                                 first()
                     
-                    return Response({"message": str(message),
-                                    "message_id": squence_logic.message_id, 
-                                    "question": str(question),
+                    return Response({"message_id": squence_logic.message_id, 
                                     "question_id": squence_logic.question_id
                                     },
                                     content_type="json\application")  
@@ -102,8 +127,7 @@ class LogicApiView(APIView):
 
                 squence_logic_user = User_Sequence_Logic.\
                                      objects.\
-                                     create(
-                                            user_id=user_telegram.id,
+                                     create(user_id=user_telegram.id,
                                             number_record_logic_id=squence_logic.id)
                
                 squence_logic = Sequence_Logic.\
@@ -122,9 +146,7 @@ class LogicApiView(APIView):
                            filter(id=squence_logic.question_id).\
                            first()
 
-                return Response({"message": str(message),
-                                 "message_id": squence_logic.message_id, 
-                                 "question": str(question),
+                return Response({"message_id": squence_logic.message_id, 
                                  "question_id": squence_logic.question_id
                                 },
                                 content_type="json\application")

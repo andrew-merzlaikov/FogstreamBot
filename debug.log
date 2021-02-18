@@ -33480,3 +33480,1789 @@ NameError: name 'status' is not defined
 2021-02-17 12:27:17,067 django.request WARNING  Not Found: /api/get/entity/3
 2021-02-17 12:35:25,077 asyncio      DEBUG    Using selector: EpollSelector
 2021-02-17 12:35:25,242 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 04:43:03,666 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 04:44:27,790 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 04:44:37,078 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:01:27,148 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:01:35,673 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:01:35,674 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:01:36,221 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:02:23,435 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 05:02:23,436 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:02:23,988 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:02:36,590 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 05:02:36,591 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:02:37,122 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:06:45,437 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:06:45,551 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:06:48,338 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:08:13,627 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:09:08,438 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:09:24,867 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:09:33,867 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:10:00,846 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/urls.py changed, reloading.
+2021-02-18 05:10:00,849 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:10:01,616 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:10:03,846 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/urls.py changed, reloading.
+2021-02-18 05:10:03,847 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:10:04,397 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:10:06,627 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/urls.py changed, reloading.
+2021-02-18 05:10:06,627 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:10:07,213 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:10:14,503 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/urls.py changed, reloading.
+2021-02-18 05:10:14,504 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:10:15,017 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:13:05,976 django.request WARNING  Not Found: /set/answer
+2021-02-18 05:13:14,087 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/models.py changed, reloading.
+2021-02-18 05:13:14,087 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:13:19,963 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:14:21,397 django.request WARNING  Not Found: /set/answer
+2021-02-18 05:14:29,147 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: post() missing 2 required positional arguments: 'id_question' and 'answer_text'
+2021-02-18 05:14:56,132 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:14:56,132 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:14:57,247 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:14:58,819 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:14:58,820 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:14:59,404 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:15:02,958 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:15:02,958 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:15:03,628 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:15:05,248 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: post() missing 3 required positional arguments: 'id_question', 'answer_text', and 'user_id'
+2021-02-18 05:15:35,880 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: post() missing 3 required positional arguments: 'id_question', 'answer_text', and 'user_id'
+2021-02-18 05:15:42,280 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: post() missing 3 required positional arguments: 'id_question', 'answer_text', and 'user_id'
+2021-02-18 05:18:49,427 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:18:49,428 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:18:50,284 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:18:54,861 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:18:54,862 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:18:55,588 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:18:58,103 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:18:58,104 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:18:58,682 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:20:01,562 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:20:01,562 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:20:02,322 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:22:07,298 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:09,801 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:34,898 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:35,740 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:36,290 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:36,718 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:37,177 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:37,651 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:38,286 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:38,527 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:22:59,560 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:23:00,253 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:23:10,325 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:23:11,003 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:24:35,628 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:25:15,786 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:25:58,153 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:25:58,237 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:26:11,966 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:26:19,860 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:26:33,800 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:26:33,802 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:26:34,631 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:26:35,976 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:26:45,639 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:26:45,640 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:26:46,208 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:26:52,045 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:26:53,610 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:27:00,722 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:27:19,674 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:27:19,674 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:27:20,558 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:27:22,575 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-02-18 05:28:07,457 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:28:07,458 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:28:08,432 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:28:14,868 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-02-18 05:28:15,812 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-02-18 05:28:25,596 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:28:25,597 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:28:26,188 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:28:28,878 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:28:28,879 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:28:29,600 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:28:30,647 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:29:17,563 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 05:29:36,474 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:29:36,475 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:29:37,073 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:29:40,381 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (1, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (1, test, null, null).
+
+2021-02-18 05:30:10,971 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (2, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (2, test, null, null).
+
+2021-02-18 05:30:36,919 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:30:36,919 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:30:37,680 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:30:45,355 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:30:45,356 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:30:46,111 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:30:53,772 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:30:53,773 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:30:54,572 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:30:59,802 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:35:28,614 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:35:41,662 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:35:42,456 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:35:43,090 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:36:03,258 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:36:03,259 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:36:04,072 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:36:08,004 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:36:08,004 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:36:08,834 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:36:10,673 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:36:10,677 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:36:11,676 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:36:14,500 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 48, in post
+    data_answer = json.loads(request.data)['data_answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 05:36:30,245 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:36:30,245 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:36:30,871 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:36:33,584 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:36:33,586 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:36:34,539 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:36:50,411 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:36:50,414 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:36:51,245 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:36:57,727 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-02-18 05:37:13,455 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:37:13,456 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:37:14,320 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:37:18,359 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:37:18,360 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:37:19,310 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:37:20,579 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 56, in post
+    format(answer_saved=answer_saved))
+NameError: name 'answer_saved' is not defined
+2021-02-18 05:37:35,672 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:37:35,675 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:37:36,842 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:37:38,238 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (3, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (3, test, null, null).
+
+2021-02-18 05:38:54,671 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (4, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (4, test, null, null).
+
+2021-02-18 05:39:07,114 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:39:07,115 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:39:08,498 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:39:09,844 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 56, in post
+    format(answer_saved=answer_saved))
+NameError: name 'answer_saved' is not defined
+2021-02-18 05:39:34,065 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 05:39:34,066 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:39:35,313 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:39:36,490 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (5, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (5, test, null, null).
+
+2021-02-18 05:40:07,332 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (6, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (6, test, null, null).
+
+2021-02-18 05:40:44,785 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (7, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (7, test, null, null).
+
+2021-02-18 05:41:06,868 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 05:41:06,870 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:41:08,142 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:41:11,098 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 05:41:11,100 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:41:11,943 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 05:41:14,738 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 05:41:14,739 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 05:41:15,649 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 09:07:20,601 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 09:07:20,810 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 09:07:27,067 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 09:07:36,135 django.request WARNING  Not Found: /favicon.ico
+2021-02-18 09:17:48,560 django.request WARNING  Not Found: /favicon.ico
+2021-02-18 09:28:31,439 django.request WARNING  Not Found: /favicon.ico
+2021-02-18 11:25:15,582 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:25:15,639 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:25:23,793 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:27:49,908 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:27:49,911 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:27:51,337 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:29:04,777 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/urls.py changed, reloading.
+2021-02-18 11:29:04,779 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:29:05,720 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:42:47,925 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:42:47,969 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:42:51,222 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:43:08,831 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:43:08,831 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:43:09,403 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:43:20,841 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:43:20,842 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:43:21,369 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:43:46,479 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:43:46,480 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:43:47,220 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:43:52,810 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:43:52,811 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:43:53,407 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:43:57,639 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:43:57,639 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:43:58,233 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:44:13,708 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:44:13,709 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:44:14,221 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:44:35,057 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:44:35,058 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:44:35,737 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:44:46,513 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:44:46,514 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:44:47,186 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:44:56,567 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:44:56,568 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:44:57,220 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:45:07,883 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:45:07,884 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:45:08,395 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:45:19,085 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:45:19,086 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:45:19,598 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:46:57,604 django.request WARNING  Not Found: /api/get_entities
+2021-02-18 11:47:14,722 django.request ERROR    Internal Server Error: /api/get/count_entities
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 51, in post
+    data_answer = request.data['data_answer']
+KeyError: 'data_answer'
+2021-02-18 11:47:29,003 django.request ERROR    Internal Server Error: /api/get/count_entities
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: get() takes 1 positional argument but 2 were given
+2021-02-18 11:47:45,358 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:47:45,358 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:47:45,887 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:48:18,038 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:48:18,038 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:48:18,576 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:48:46,128 django.request WARNING  Not Found: /favicon.ico
+2021-02-18 11:49:14,667 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:49:14,668 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:49:15,326 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:49:51,570 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:49:51,571 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:49:52,120 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:49:56,737 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:49:56,738 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:49:57,260 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:50:27,324 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:50:27,324 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:50:28,158 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:50:36,947 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:50:36,948 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:50:37,511 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:50:50,254 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:50:50,254 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:50:50,932 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:51:34,177 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:51:34,178 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:51:34,740 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:51:56,703 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:51:56,704 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:51:57,313 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:52:34,519 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:52:34,519 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:52:35,099 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:52:49,948 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:52:49,950 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:52:50,680 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:53:05,408 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:53:05,408 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:53:05,972 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:53:18,672 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:53:18,673 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:53:19,211 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:53:27,804 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:53:27,804 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:53:28,366 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:53:39,998 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:53:39,999 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:53:40,660 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:53:59,522 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:53:59,523 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:54:00,156 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:54:02,437 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:54:02,437 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:54:03,018 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:54:06,558 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:54:06,559 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:54:07,117 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:54:22,847 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:54:22,848 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:54:23,429 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:54:25,946 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:54:25,947 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:54:26,515 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:56:18,062 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:56:18,063 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:56:18,595 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:56:21,155 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:56:21,155 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:56:21,794 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:58:38,869 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:58:38,870 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:58:39,441 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:58:46,045 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:58:46,046 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:58:46,754 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 11:59:23,113 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 11:59:23,114 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 11:59:23,646 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:01:23,965 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 51, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:01:49,335 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:01:49,335 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:01:50,093 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:04:09,385 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:04:10,734 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:04:11,733 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:04:12,557 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:04:13,399 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:04:14,910 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:04:20,182 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:05:01,206 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:05:01,206 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:05:01,984 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:05:12,329 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:05:12,329 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:05:12,828 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:05:19,434 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:05:19,434 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:05:20,031 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:05:26,328 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:05:26,329 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:05:27,030 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:05:32,721 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:05:32,722 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:05:33,627 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:05:49,674 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:05:49,675 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:05:50,281 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:05:53,735 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 52, in post
+    data_answer = json.loads(request.data)['answer']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:06:05,254 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:06:05,254 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:06:05,784 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:07:15,012 django.request ERROR    Internal Server Error: /api/users
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 22, in post
+    data_user = json.loads(request.data)['user']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:07:16,496 django.request ERROR    Internal Server Error: /api/users
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 22, in post
+    data_user = json.loads(request.data)['user']
+  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not dict
+2021-02-18 12:08:19,109 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:08:19,110 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:08:19,640 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:16:08,722 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:17:32,870 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:17:54,782 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:18:26,861 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:18:26,874 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:18:35,845 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:19:19,191 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:19:19,192 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:19:19,770 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:19:23,400 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:19:23,400 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:19:23,931 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:19:59,341 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:19:59,341 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:19:59,962 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:20:02,602 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:20:02,603 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:20:03,199 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:20:09,552 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:20:28,347 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:20:28,348 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:20:29,011 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:20:35,935 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+2021-02-18 12:20:54,683 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:20:54,683 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:20:55,349 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:20:57,142 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:20:57,143 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:20:57,892 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:21:22,958 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:21:22,959 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:21:23,608 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:21:27,435 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:21:27,436 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:21:28,052 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:21:29,580 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:21:29,580 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:21:30,248 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:21:36,298 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:22:00,503 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:22:00,504 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:22:01,035 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:22:06,360 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:22:06,361 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:22:07,161 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:22:14,063 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:22:34,461 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:22:34,461 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:22:35,038 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:22:38,769 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:22:38,770 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:22:39,470 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:23:09,638 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:23:09,639 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:23:10,391 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:23:17,060 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:23:17,061 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:23:17,741 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:23:26,261 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:24:01,390 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:24:01,391 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:24:02,121 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:24:08,760 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:24:34,065 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:24:56,770 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:24:56,771 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:24:57,501 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:24:59,758 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:24:59,759 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:25:00,559 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:25:06,837 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:25:12,550 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:25:12,551 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:25:13,250 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:25:38,369 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:25:38,369 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:25:38,959 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:25:48,806 django.request WARNING  Bad Request: /api/set/answer
+2021-02-18 12:26:12,207 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:26:12,209 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:26:12,926 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:26:18,599 appserver.views DEBUG    Не валидные данные
+2021-02-18 12:27:18,961 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:27:18,962 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:27:19,731 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:27:22,311 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:27:22,313 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:27:23,065 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:27:27,651 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:27:27,652 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:27:28,426 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:27:54,484 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 12:27:54,485 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:27:55,251 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:28:22,297 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:28:22,298 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:28:22,901 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:28:24,710 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:28:24,711 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:28:25,469 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:28:32,231 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:28:32,235 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:28:32,875 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:28:45,010 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (8, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 55, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (8, test, null, null).
+
+2021-02-18 12:29:08,046 django.request ERROR    Internal Server Error: /api/set/answer
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (9, test, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/jatx/fogstreambot/server/appserver/views.py", line 55, in post
+    answer_saved = serializer.save()
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/home/jatx/fogstreambot/server/appserver/serializers.py", line 26, in create
+    return AnswerUser.objects.create(**validated_data)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1397, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/jatx/fogstreambot/envbot/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: null value in column "question_id" violates not-null constraint
+DETAIL:  Failing row contains (9, test, null, null).
+
+2021-02-18 12:31:47,363 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 12:31:47,364 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:31:47,935 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:32:01,224 appserver.views DEBUG    Не валидные данные
+2021-02-18 12:35:14,035 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/serializers.py changed, reloading.
+2021-02-18 12:35:14,257 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:35:21,458 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:35:45,276 appserver.views DEBUG    AnswerUsed 'AnswerUser object (10)' created successfully
+2021-02-18 12:36:34,291 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:36:34,293 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:36:35,242 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:36:38,897 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:36:38,897 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:36:39,551 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:38:31,939 appserver.views DEBUG    AnswerUsed 'AnswerUser object (11)' created successfully
+2021-02-18 12:41:05,445 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appserver/views.py changed, reloading.
+2021-02-18 12:41:05,446 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:41:06,184 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-18 12:41:10,578 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-18 12:41:10,742 asyncio      DEBUG    Using selector: EpollSelector
