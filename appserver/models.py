@@ -5,9 +5,9 @@ class UserTelegram(models.Model):
     """
     Stores a single user entry, related to :model:`use.User`
     """
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    username = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30, default=None)
+    last_name = models.CharField(max_length=30, default=None)
+    username = models.CharField(max_length=30, default=None)
 
     first_name.null = True
     last_name.null = True

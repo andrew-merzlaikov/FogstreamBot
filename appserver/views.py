@@ -9,16 +9,57 @@ from appadmin.models import (Sequence_Logic,
                             AnswerUser)
 from .serializers import (UserSerializer,
                           AnswerSerializer)
+from django.db.models import Q
 import json
 import logging
+from rest_framework.decorators import api_view, renderer_classes
+from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+
 
 logger = logging.getLogger(__name__)
+
+@api_view(['GET',])
+def get_logic_entity(request):
+    if request.method == "GET":
+        return Response({"count": Sequence_Logic.\
+                                            objects.\
+                                            count()},
+                        content_type="json\application")
 
 
 class UserView(APIView):
 
-    def post(self, request):
+    def get(self, request):
         
+        name = self.request.GET.get('name', None)
+        lastname = self.request.GET.get('lastname', None)
+        username = self.request.GET.get('username', None)
+        
+        user_exists = UserTelegram.\
+                                    objects.\
+                                    filter(Q(username=username) |
+                                           Q(first_name=name) |
+                                           Q(last_name=lastname)).\
+                                    exists()
+
+        print(user_exists)
+
+        if user_exists:
+            
+            user = UserTelegram.\
+                            objects.\
+                            filter(Q(username=username) |
+                                   Q(first_name=name) |
+                                   Q(last_name=lastname)).\
+                            first()
+
+            return  Response({"id_user": user.id},
+                             content_type="json\application")
+        else:
+            return  Response({"error": "Не найден пользователь"},
+                             content_type="json\application")
+
+    def post(self, request):        
         data_user = json.loads(request.data)['user'] 
         serializer = UserSerializer(data=data_user)
 
@@ -41,12 +82,6 @@ class UserView(APIView):
 
 class AnswerView(APIView):
 
-    def get(self, request):
-        return Response({"count_entities": Sequence_Logic.\
-                                            objects.\
-                                            count()},
-                        content_type="json\application")
-
     def post(self, request):
         data_answer = json.loads(request.data)['answer'] 
         serializer = AnswerSerializer(data=data_answer)
@@ -62,7 +97,6 @@ class AnswerView(APIView):
                                         format(answer_saved=answer_saved)},
                                         content_type="json\application")
         else:      
-            print("Не валидные данные")      
             logger.debug("Не валидные данные")
             return Response({"error": "Не валидные данные"})
 
@@ -77,7 +111,7 @@ class LogicApiView(APIView):
                             status=status.HTTP_404_NOT_FOUND)
 
         if UserTelegram.objects.\
-                        filter(id=id_user).\
+                        filter(id=int(id_user)).\
                         exists():
 
             if User_Sequence_Logic.objects.\
@@ -100,18 +134,33 @@ class LogicApiView(APIView):
                                                 filter(id=id_record).\
                                                 first()
                     
-                    message = Message.objects.\
+                    message_exists = Message.objects.\
                                             filter(id=squence_logic.message_id).\
-                                            first()
+                                            exists()
 
-                    question = Question.objects.\
+                    question_exists = Question.objects.\
                                                 filter(id=squence_logic.question_id).\
-                                                first()
+                                                exists()
+                    if message_exists:
+                        message = Message.objects.\
+                                      filter(id=squence_logic.message_id).\
+                                      get()
+                        
+                        return Response({"type": "message",
+                                        "message_text": str(message)},
+                                        content_type="json\application")
+                    elif question_exists:
+                        que = Question.objects.\
+                                   filter(id=squence_logic.question_id).\
+                                    get()
+
+                        return Response({"type": "question",
+                                        "question_text": que.question,
+                                        "confirm_text": que.question_confirm,
+                                        "not_confirm_text": que.question_not_confirm
+                                        },
+                                        content_type="json\application")
                     
-                    return Response({"message_id": squence_logic.message_id, 
-                                    "question_id": squence_logic.question_id
-                                    },
-                                    content_type="json\application")  
                 else:
                     return Response({"msg": "Конец логики"},
                                     content_type="json\application",
@@ -136,20 +185,36 @@ class LogicApiView(APIView):
                                       number_record_logic_id).\
                                 first()
 
-                message = Message.\
-                          objects.\
-                          filter(id=squence_logic.message_id).\
-                          first()
+                message_exists = Message.\
+                                objects.\
+                                filter(id=squence_logic.message_id).\
+                                exists()
 
-                question = Question.\
-                           objects.\
-                           filter(id=squence_logic.question_id).\
-                           first()
+                question_exists = Question.\
+                                objects.\
+                                filter(id=squence_logic.question_id).\
+                                exists()
 
-                return Response({"message_id": squence_logic.message_id, 
-                                 "question_id": squence_logic.question_id
-                                },
-                                content_type="json\application")
+                if message_exists:
+                    message = Message.objects.\
+                                      filter(id=squence_logic.message_id).\
+                                      get()
+                    
+                    return Response({"type": "message",
+                                     "message_text": str(message)},
+                                    content_type="json\application")
+                
+                elif question_exists:
+                    question = Question.objects.\
+                                      filter(id=squence_logic.question_id).\
+                                      get()
+
+                    return Response({"type": "question",
+                                    "question_text": question.question,
+                                    "confirm_text": question.question_confirm,
+                                    "not_confirm_text": question.question_not_confirm
+                                    },
+                                    content_type="json\application")
         else:
             return Response({"msg": "Нет пользователя с таким id"},
                             content_type="json\application",

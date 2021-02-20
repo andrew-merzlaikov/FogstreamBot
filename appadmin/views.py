@@ -178,12 +178,16 @@ class ViewMessage(TemplateView):
         if request.user.is_authenticated:
             
             Message.objects.\
-                            filter(id=id_message).delete()
+                            filter(id=id_message).\
+                            delete()
             
             Sequence_Logic.objects.\
-                          filter(message_id=id_message).delete()
+                          filter(message_id=id_message).\
+                          delete()
 
-            return  redirect('/bot/create/message')
+            User_Sequence_Logic.objects.all().delete()
+
+            return redirect('/bot/create/message')
         else:
             return render(request, "http_response/error_401.html", status=401)
 
