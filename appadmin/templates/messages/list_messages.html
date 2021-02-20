@@ -1,3 +1,23 @@
+{% if request.GET.msg_delete == 'OK' %}
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        Ваше сообщение удалено
+                    </div>
+                </div>
+            </div>    
+{% endif %}
+
+{% if request.GET.msg_edit == 'OK' %}
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        Ваше сообщение отредактировано
+                    </div>
+                </div>
+            </div>    
+{% endif %}
+
 <table class="table mt-2">
     <thead>
       <tr>

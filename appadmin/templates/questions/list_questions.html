@@ -1,3 +1,24 @@
+{% if request.GET.que_delete == 'OK' %}
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        Ваш вопрос удален
+                    </div>
+                </div>
+            </div>    
+{% endif %}
+
+{% if request.GET.que_edit == 'OK' %}
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        Ваш вопрос отредактирован
+                    </div>
+                </div>
+            </div>    
+{% endif %}
+
+
 <table class="table mt-2">
     <thead>
       <tr>

@@ -165,7 +165,7 @@ class ViewMessage(TemplateView):
                         filter(id=id_message).\
                         update(text_message=text_message)
 
-                return redirect('/bot/create/message')
+                return redirect('/bot/create/message?msg_edit=OK')
             else:
                 return render(request, 
                               "http_response/error_422.html", 
@@ -177,17 +177,22 @@ class ViewMessage(TemplateView):
     def delete(self, request, id_message):
         if request.user.is_authenticated:
             
-            Message.objects.\
-                            filter(id=id_message).\
-                            delete()
+            Message.\
+                    objects.\
+                    filter(id=id_message).\
+                    delete()
             
-            Sequence_Logic.objects.\
+            Sequence_Logic.\
+                          objects.\
                           filter(message_id=id_message).\
                           delete()
 
-            User_Sequence_Logic.objects.all().delete()
+            User_Sequence_Logic.\
+                                objects.\
+                                all().\
+                                delete()
 
-            return redirect('/bot/create/message')
+            return redirect('/bot/create/message?msg_delete=OK')
         else:
             return render(request, "http_response/error_401.html", status=401)
 
@@ -273,7 +278,7 @@ class ViewQuestion(TemplateView):
                                question_confirm=text_confirm,
                                question_not_confirm=text_not_confirm)
 
-                return redirect('/bot/create/question')
+                return redirect('/bot/create/question?que_edit=OK')
             else:
                 return render(request, 
                               "http_response/error_422.html", 
@@ -291,7 +296,7 @@ class ViewQuestion(TemplateView):
             Sequence_Logic.objects.\
                           filter(question_id=id_question).delete()
 
-            return  redirect('/bot/create/question')
+            return  redirect('/bot/create/question?que_delete=OK')
         else:
             return render(request, "http_response/error_401.html", status=401)
 

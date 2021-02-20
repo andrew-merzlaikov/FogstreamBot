@@ -21,16 +21,6 @@
             </div>
         </div>    
 
-        {% if request.GET.status_msg == 'OK' %}
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-success" role="alert">
-                        Ваше сообщение создано
-                    </div>
-                </div>
-            </div>    
-        {% endif %}
-
         <form method="POST">
             {% csrf_token %}
             {% for field in form %}
@@ -50,6 +40,16 @@
             </div>
             {% endfor %}
         </form>
+        
+        {% if request.GET.status_msg == 'OK' %}
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        Ваше сообщение создано
+                    </div>
+                </div>
+            </div>    
+        {% endif %}
         
         {% include 'messages/list_messages.html' %}
 

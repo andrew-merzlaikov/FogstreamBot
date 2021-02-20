@@ -39368,3 +39368,58 @@ ValueError: Cannot use None as a query value
 2021-02-20 01:25:13,660 django.request WARNING  Not Found: /api/get/entity/11
 2021-02-20 01:25:13,972 django.request WARNING  Not Found: /api/get/entity/11
 2021-02-20 01:25:47,658 appserver.views DEBUG    TelegramUser 'Danil Voluzhev tgvoluzhev ' created successfully
+2021-02-20 01:28:33,068 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:28:44,616 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:28:47,045 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:32:22,036 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:35:13,267 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:37:26,257 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:37:26,258 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:37:31,433 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:37:41,692 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:37:41,693 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:37:42,270 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:37:53,977 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:37:53,978 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:37:54,633 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:38:00,144 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:38:00,144 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:38:00,640 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:38:29,704 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:38:29,704 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:38:30,259 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:38:36,555 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:38:44,705 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:38:49,564 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:40:48,223 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:40:51,935 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:41:13,133 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:41:52,734 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:42:42,865 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:42:53,284 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:43:41,292 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:43:41,294 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:43:42,255 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:44:27,439 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:44:35,294 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:44:40,881 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:44:52,440 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:45:00,576 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:46:14,207 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:46:14,207 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:46:15,257 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:46:33,157 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:46:33,157 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:46:33,695 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:47:24,251 django.utils.autoreload INFO     /home/jatx/fogstreambot/server/appadmin/views.py changed, reloading.
+2021-02-20 01:47:24,252 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:47:24,844 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-02-20 01:48:04,519 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:48:07,212 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:48:37,459 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:48:51,444 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:51:26,949 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:52:25,846 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:52:27,930 django.request WARNING  Not Found: /favicon.ico
+2021-02-20 01:53:02,105 asyncio      DEBUG    Using selector: EpollSelector
+2021-02-20 01:53:02,269 asyncio      DEBUG    Using selector: EpollSelector

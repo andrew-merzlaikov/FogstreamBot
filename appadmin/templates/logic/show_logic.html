@@ -11,6 +11,19 @@
 <body>
 
     {% include 'header.html' %}
+
+    <div class="container mt-2">
+        <div class="row">
+                <form action={% url 'appadmin:delete_logic' %} method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="_method" value="delete">
+                    <button class="btn btn-danger col-md-4" type="submit">
+                        Удалить логику общения 
+                    </button>
+                </form>
+        </div>
+    </div>
+
     <div class="conatiner mt-2">
     
     {% if exists_logic %}

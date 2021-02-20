@@ -22,10 +22,10 @@
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Просмотреть
+                        Логика общения
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href={% url 'appadmin:show_logic' %}>Логику общения</a></li>
+                        <li><a class="dropdown-item" href={% url 'appadmin:show_logic' %}>Просмотреть</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -54,21 +54,5 @@
             </div>
             </div>
         </nav>
-
-        <div class="container mt-2">
-            <div class="row">
-                    <form action={% url 'appadmin:delete_logic' %} method="POST">
-                        {% csrf_token %}
-                        <input type="hidden" name="_method" value="delete">
-                        <button class="btn btn-danger col-md-4" type="submit">
-                            Удалить логику общения 
-                        </button>
-                    </form>
-            </div>
-
-        </div>
-
-        
-
 
 {% endblock %}
