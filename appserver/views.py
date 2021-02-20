@@ -32,14 +32,18 @@ class UserView(APIView):
     def get(self, request):
         
         name = self.request.GET.get('name', None)
-        lastname = self.request.GET.get('lastname', None)
-        username = self.request.GET.get('username', None)
+        lastname = self.request.GET.get('lastname', "")
+        username = self.request.GET.get('username', "")
         
+        criter_username = Q(username__contains=username)
+        criter_first_name = Q(first_name__contains=name)
+        criter_last_name = Q(last_name__contains=lastname)
+
         user_exists = UserTelegram.\
                                     objects.\
-                                    filter(Q(username=username) |
-                                           Q(first_name=name) |
-                                           Q(last_name=lastname)).\
+                                    filter(criter_username &
+                                           criter_first_name &
+                                           criter_last_name).\
                                     exists()
 
         print(user_exists)
@@ -48,9 +52,9 @@ class UserView(APIView):
             
             user = UserTelegram.\
                             objects.\
-                            filter(Q(username=username) |
-                                   Q(first_name=name) |
-                                   Q(last_name=lastname)).\
+                            filter(criter_username &
+                                   criter_first_name &
+                                   criter_last_name).\
                             first()
 
             return  Response({"id_user": user.id},
