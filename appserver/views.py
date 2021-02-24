@@ -38,6 +38,7 @@ def get_current_entity(request, id_user):
                             status=status.HTTP_404_NOT_FOUND)
         
         
+        
         logic = User_Sequence_Logic.objects.\
                                       get(user=id_user).\
                                       number_record_logic
@@ -53,7 +54,6 @@ def get_current_entity(request, id_user):
         
         if logic.question_id is not None:
             question = Question.objects.filter(id=logic.question_id).get()
-            
 
             text = question.question
             
@@ -100,7 +100,7 @@ class UserView(APIView):
                             filter(criter_username &
                                    criter_first_name &
                                    criter_last_name).\
-                            first()
+                            get()
 
             return  Response({"id_user": user.id},
                              content_type="json\application")
@@ -170,7 +170,7 @@ class LogicApiView(APIView):
                 user_squence_logic = User_Sequence_Logic.\
                                      objects.\
                                      filter(
-                                            user_id=id_user
+                                        user_id=id_user
                                       ).\
                                      first()
 
@@ -179,34 +179,44 @@ class LogicApiView(APIView):
                 if Sequence_Logic.objects.filter(id=id_record).exists():
                 
                     squence_logic = Sequence_Logic.\
-                                                objects.\
-                                                filter(id=id_record).\
-                                                first()
+                                    objects.\
+                                    filter(id=id_record).\
+                                    first()
                     
-                    message_exists = Message.objects.\
-                                            filter(id=squence_logic.message_id).\
-                                            exists()
+                    message_exists = Message.\
+                                     objects.\
+                                     filter(id=squence_logic.message_id).\
+                                     exists()
 
-                    question_exists = Question.objects.\
-                                                filter(id=squence_logic.question_id).\
-                                                exists()
+                    question_exists = Question.\
+                                      objects.\
+                                      filter(id=squence_logic.question_id).\
+                                      exists()
+                    
                     if message_exists:
-                        message = Message.objects.\
-                                      filter(id=squence_logic.message_id).\
-                                      get()
+                        message = Message.\
+                                  objects.\
+                                  filter(id=squence_logic.message_id).\
+                                  get()
                         
                         return Response({"type": "message",
                                         "message_text": str(message)},
                                         content_type="json\application")
+                    
                     elif question_exists:
-                        que = Question.objects.\
-                                   filter(id=squence_logic.question_id).\
-                                    get()
+                        que = Question.\
+                              objects.\
+                              filter(id=squence_logic.question_id).\
+                              get()
+
+                        text = que.question
+                        confirm = que.question_confirm
+                        not_confirm = que.question_not_confirm
 
                         return Response({"type": "question",
-                                        "question_text": que.question,
-                                        "confirm_text": que.question_confirm,
-                                        "not_confirm_text": que.question_not_confirm
+                                        "question_text": text,
+                                        "confirm_text": confirm,
+                                        "not_confirm_text": not_confirm
                                         },
                                         content_type="json\application")
                     
@@ -257,11 +267,15 @@ class LogicApiView(APIView):
                     question = Question.objects.\
                                       filter(id=squence_logic.question_id).\
                                       get()
+                    
+                    text = question.question
+                    confirm = question.question_confirm
+                    not_confirm = question.question_not_confirm
 
                     return Response({"type": "question",
-                                    "question_text": question.question,
-                                    "confirm_text": question.question_confirm,
-                                    "not_confirm_text": question.question_not_confirm
+                                    "question_text": text,
+                                    "confirm_text": confirm,
+                                    "not_confirm_text": not_confirm
                                     },
                                     content_type="json\application")
         else:

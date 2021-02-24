@@ -385,11 +385,6 @@ class ViewLogic(TemplateView):
                                          filter(id=msg.id).\
                                          update(logic_order=order)
 
-                messages.add_message(request, 
-                                     messages.INFO, 
-                                     'В логике порядок для сообщений задан')
-                
-
                 return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
             elif question_formset.is_valid():

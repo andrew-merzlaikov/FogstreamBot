@@ -65,18 +65,17 @@ class User_Sequence_Logic(models.Model):
 
     def __str__(self):
         return "{user} {number_record}".\
-                                        format(user=self.user,
-                                               number_record=self.number_record_logic)
+                format(user=self.user,
+                       number_record=self.number_record_logic)
     
     def next_entity(self, user_id):
 
-        user_sequence = User_Sequence_Logic.\
+        number_record = User_Sequence_Logic.\
                                             objects.\
                                             filter(user_id=user_id).\
-                                            first()
-        
-        number_record = user_sequence.number_record_logic_id
-        
+                                            first().\
+                                            number_record_logic_id
+                
         if  Sequence_Logic.\
                             objects.\
                             filter(id=number_record + 1).\
@@ -89,7 +88,7 @@ class User_Sequence_Logic(models.Model):
             
             return (number_record + 1)
         else:
-            return -1
+            return None
 
 
 class AnswerUser(models.Model):
