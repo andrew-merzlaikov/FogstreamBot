@@ -9,6 +9,7 @@ class BotServer:
     def __init__(self):
         self.url_host = os.environ.get('HOST')
         self.url_port = os.environ.get('PORT_SERVER')
+        
         self.url_for_users = ("http://" + self.url_host + 
                               ':' + self.url_port + '/api/users')
         self.url_for_answer_with_user = ("http://" + self.url_host + ':' + 
@@ -18,7 +19,9 @@ class BotServer:
         self.url_for_get_count = ("http://" + self.url_host + ':' + 
                                          self.url_port + '/api/get/count_entities')
         self.url_for_get_entity = ("http://" + self.url_host + ':' + 
-                                         self.url_port + '/api/get/entity/')
+                                         self.url_port + '/api/get/next/entity/')
+        self.url_for_current_entity = ("http://" + self.url_host + ':' + 
+                                                   self.url_port + '/api/get/current/entity/')
 
     def telegram_user_id_from_database(self, 
                                            username, 
@@ -48,11 +51,9 @@ class BotServer:
     def get_count_logic_entities(self):
 
         r = requests.get(self.url_for_get_count)
-        print(r.json())
 
         return r.json()["count"]
     
-        
     def create_user_in_server(self, name, lastname, username):
 
         if name == None:
@@ -74,6 +75,12 @@ class BotServer:
         }
 
         requests.post(self.url_for_users, json=json.dumps(data_for_create_user))
+
+    def get_current_entity(self, id_user):
+        url_for_current_entity = self.url_for_current_entity + str(id_user)
+        r = requests.get(url_for_current_entity)
+
+        return r.json()
 
     def create_answer_with_user(self, answer_text, question_id, user_id):
 

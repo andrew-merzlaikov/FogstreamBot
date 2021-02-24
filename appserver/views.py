@@ -26,18 +26,65 @@ def get_logic_entity(request):
                                             count()},
                         content_type="json\application")
 
+@api_view(['GET',])
+def get_current_entity(request, id_user):
+    if request.method == "GET":
+        
+        if not User_Sequence_Logic.objects.\
+                                   filter(user=id_user).\
+                                   exists():
+            return Response({'error': 'Нет сущности!'},
+                            content_type="json\application",
+                            status=status.HTTP_404_NOT_FOUND)
+        
+        
+        logic = User_Sequence_Logic.objects.\
+                                      get(user=id_user).\
+                                      number_record_logic
+
+
+        if logic.message_id is not None:
+            message = Message.objects.filter(id=logic.message_id).get()
+            
+            return Response({"type": "message",
+                             'message': message.text_message,
+                            }, content_type="json\application")
+
+        
+        if logic.question_id is not None:
+            question = Question.objects.filter(id=logic.question_id).get()
+            
+
+            text = question.question
+            
+            confirm_text = question.question_confirm 
+
+            confirm_not_text = question.question_not_confirm 
+
+            return Response({"type": "question",
+                             'question_text': text,
+                             'confirm': confirm_text,
+                             'not_confirm': confirm_not_text
+                            }, content_type="json\application")
 
 class UserView(APIView):
 
     def get(self, request):
         
-        name = self.request.GET.get('name', None)
-        lastname = self.request.GET.get('lastname', "")
-        username = self.request.GET.get('username', "")
-        
-        criter_username = Q(username__contains=username)
-        criter_first_name = Q(first_name__contains=name)
-        criter_last_name = Q(last_name__contains=lastname)
+        name = self.request.GET.get('name')
+        lastname = self.request.GET.get('lastname')
+        username = self.request.GET.get('username')
+
+        if name is None:
+            name = ""
+        if lastname is None:
+            lastname = ""
+        if username is None:
+            username = ""
+
+        criter_username = Q(username__icontains=username)
+        criter_first_name = Q(first_name__icontains=name)
+        criter_last_name = Q(last_name__icontains=lastname)
 
         user_exists = UserTelegram.\
                                     objects.\
@@ -45,8 +92,6 @@ class UserView(APIView):
                                            criter_first_name &
                                            criter_last_name).\
                                     exists()
-
-        print(user_exists)
 
         if user_exists:
             
