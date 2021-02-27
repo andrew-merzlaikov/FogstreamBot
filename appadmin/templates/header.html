@@ -27,13 +27,13 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><a class="dropdown-item" href="#">Просмотреть</a></li>
                             <li>
-                                <!-- <form action=# method="POST">
+                                <form action={% url 'appadmin:delete_logic' %} method="POST">
                                     {% csrf_token %}
                                     <input type="hidden" name="_method" value="delete">
                                     <button class="dropdown-item" type="submit">
                                         Удалить
                                     </button>
-                                </form>     -->
+                                </form>    
                             </li>
                         </ul>
                     </li>

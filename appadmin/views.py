@@ -126,10 +126,23 @@ class ViewUser(TemplateView):
 
 
 class ViewLogic(TemplateView):
+
+    http_method_names = ['get', 'post', 'put', 'delete']
+
+    def dispatch(self, *args, **kwargs):
+        method = self.request.POST.get('_method', '').lower()
+        
+        if method == 'put':
+            return self.put(*args, **kwargs)
+        if method == 'delete':
+            return self.delete(*args, **kwargs)
+        return super(ViewLogic, self).dispatch(*args, **kwargs)
+
     def get(self, request):
         if request.user.is_authenticated:
             
             all_messages = Message.objects.all()
+            
             MessageFormSet = modelformset_factory(Message, 
                                                   fields=('text_message', 
                                                           'id_parent', 
@@ -139,7 +152,6 @@ class ViewLogic(TemplateView):
             
             formset_messages = MessageFormSet()
 
-
             return render(request, 
                          "logic/create_logic.html",
                          {"messages": all_messages,
@@ -147,18 +159,98 @@ class ViewLogic(TemplateView):
 
     def post(self, request):
         if request.user.is_authenticated:
-            MessageFormSet = modelformset_factory(Message, fields=('text_message', 
-                                                                   'id_parent', 
-                                                                    'display_condition',
-                                                                    'write_answer'))
+            MessageFormSet = modelformset_factory(Message, 
+                                                  fields=('text_message', 
+                                                          'id_parent', 
+                                                          'display_condition',
+                                                          'write_answer'),
+                                                    )
             
             formset_messages = MessageFormSet(request.POST)
 
             if formset_messages.is_valid():
-                for form in formset_messages:
-                    print(form.cleaned_data)
-            else:
-                print("Не валидные данные")
                 
-            return HttpResponse("ТЕСТ")
+                for form in formset_messages:
+                    id_msg = form.cleaned_data['id'].id                        
+                    message = Message.objects.get(pk=id_msg)
 
+                    if not Message.check_message_id_parent(form.\
+                                                           cleaned_data['id_parent']):
+                            
+                        url_for_redirect = reverse("appadmin:create_logic")
+                        params = ("?conflict_has_parent=True&id=" +
+                                      str(form.cleaned_data['id_parent']))
+                            
+                        url_for_redirect = url_for_redirect + params
+
+                        return HttpResponseRedirect(url_for_redirect)
+
+                    check_parent_myself = Message.check_parent_myself(form.cleaned_data)
+                        
+                    if check_parent_myself is not True:
+                        url_for_redirect = reverse("appadmin:create_logic")
+                        params = ("?error_parent_myself=" + check_parent_myself["message"])
+                        url_for_redirect = url_for_redirect + params
+
+                        return HttpResponseRedirect(url_for_redirect)
+
+                    check_bidirectionality = Message.\
+                                             check_id_parent_bidirectionality(form.\
+                                                                              cleaned_data['id_parent'],
+                                                                              form.cleaned_data['id'].id)
+
+                    if not check_bidirectionality:
+
+                        url_for_redirect = reverse("appadmin:create_logic")
+                        params = "?conflict_bidirectionality=True"
+                        url_for_redirect = url_for_redirect + params
+
+                        return HttpResponseRedirect(url_for_redirect)
+
+
+                    message.id_parent = form.\
+                                        cleaned_data['id_parent']
+
+                    message.\
+                    display_condition = form.\
+                                        cleaned_data['display_condition']
+                        
+                    message.\
+                    write_answer = form.cleaned_data['write_answer']
+
+                    message.save()
+
+                url_for_redirect = reverse("appadmin:create_logic")
+                params = "?create_logic=True"
+                url_for_redirect += params
+
+                return HttpResponseRedirect(url_for_redirect)
+
+            else:    
+                url_for_redirect = reverse("appadmin:create_logic")   
+                str_errors = ''
+
+                for error in formset_messages.errors:
+                    str_errors += str(error)
+
+                params = "?form_error=True&formset_errors=" + str_errors
+                url_for_redirect = url_for_redirect + params
+
+                return HttpResponseRedirect(url_for_redirect)
+
+    def delete(self, request):
+
+        all_messages = Message.objects.all()
+
+        for message in all_messages:
+            message.id_parent = None
+            message.display_condition = None
+            message.write_answer = None
+            message.save()
+
+        url_for_redirect = reverse("appadmin:create_logic")
+        params_delete = "?delete_logic=True"
+
+        url_for_redirect = url_for_redirect + params_delete
+
+        return HttpResponseRedirect(url_for_redirect)

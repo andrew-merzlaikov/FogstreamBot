@@ -6,8 +6,6 @@ class MessageForm(forms.Form):
                                    widget=forms.Textarea(attrs={
                                                             'rows': 2, 
                                                             'cols': 60}))
-    class Meta:
-        model = Message
-        fields = '__all__'
+    
 
 

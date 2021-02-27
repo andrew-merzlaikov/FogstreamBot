@@ -27,6 +27,7 @@ urlpatterns = [
 
     path('create/form/logic', ViewLogic.as_view(), name="create_form_logic"),
     path('create/logic', ViewLogic.as_view(), name='create_logic'),
+	path('delete/logic', ViewLogic.as_view(), name='delete_logic'),
 
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
