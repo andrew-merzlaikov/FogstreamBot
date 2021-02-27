@@ -8,10 +8,12 @@ class UserTelegram(models.Model):
     first_name = models.CharField(max_length=30, default=None)
     last_name = models.CharField(max_length=30, default=None)
     username = models.CharField(max_length=30, default=None)
+    id_user_telegram = models.IntegerField()
 
     first_name.null = True
     last_name.null = True
     username.null = True
+    id_user_telegram.null = True
 
     def __str__(self):
         """ Representation the User """

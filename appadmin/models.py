@@ -6,6 +6,7 @@ class Message(models.Model):
     text_message = models.CharField(max_length=100)
     id_parent = models.IntegerField()
     display_condition = models.CharField(max_length=50)
+    write_answer = models.BooleanField()
 
     id_parent.null = True
     display_condition.null = True

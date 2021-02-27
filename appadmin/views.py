@@ -4,7 +4,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from django.template.response import TemplateResponse
 from django.forms import modelformset_factory
-from django.forms.formsets import formset_factory
 from django.shortcuts import redirect
 from .models import Message
 from .forms import MessageForm
@@ -50,6 +49,7 @@ class ViewMessage(TemplateView):
 
             all_messages = Message.objects.all()
 
+            print(all_messages)
             return render(request, 
                          "messages/create_message.html",
                          {"form": message_form,
@@ -111,7 +111,7 @@ class ViewMessage(TemplateView):
             return redirect('/bot/create/message?msg_delete=OK')
         else:
             return render(request, "http_response/error_401.html", status=401)
-            
+
 
 class ViewUser(TemplateView):
     def get(self, request):
@@ -123,4 +123,42 @@ class ViewUser(TemplateView):
                          {"users_telegram": users_telegrams})
         else:
             return render(request, "http_response/error_401.html", status=401)
+
+
+class ViewLogic(TemplateView):
+    def get(self, request):
+        if request.user.is_authenticated:
+            
+            all_messages = Message.objects.all()
+            MessageFormSet = modelformset_factory(Message, 
+                                                  fields=('text_message', 
+                                                          'id_parent', 
+                                                          'display_condition',
+                                                          'write_answer'),
+                                                   extra=0)
+            
+            formset_messages = MessageFormSet()
+
+
+            return render(request, 
+                         "logic/create_logic.html",
+                         {"messages": all_messages,
+                          "formset_messages": formset_messages})
+
+    def post(self, request):
+        if request.user.is_authenticated:
+            MessageFormSet = modelformset_factory(Message, fields=('text_message', 
+                                                                   'id_parent', 
+                                                                    'display_condition',
+                                                                    'write_answer'))
+            
+            formset_messages = MessageFormSet(request.POST)
+
+            if formset_messages.is_valid():
+                for form in formset_messages:
+                    print(form.cleaned_data)
+            else:
+                print("Не валидные данные")
+                
+            return HttpResponse("ТЕСТ")
 

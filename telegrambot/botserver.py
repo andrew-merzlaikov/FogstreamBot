@@ -54,27 +54,19 @@ class BotServer:
 
         return r.json()["count"]
     
-    def create_user_in_server(self, name, lastname, username):
-
-        if name == None:
-            name = "NULL"
-        
-        if lastname == None:
-            lastname = "NULL"
-        
-        if username == None:
-            username = "NULL"
+    def create_user_in_server(self, user_id, name, lastname, username):
 
 
         data_for_create_user = {
             "user": {
                 "first_name": name,
                 "last_name": lastname,
-                "username": username
+                "username": username,
+                "id_user_telegram": user_id
             }
         }
 
-        requests.post(self.url_for_users, json=json.dumps(data_for_create_user))
+        requests.post(self.url_for_users, json=data_for_create_user)
 
     def get_current_entity(self, id_user):
         url_for_current_entity = self.url_for_current_entity + str(id_user)

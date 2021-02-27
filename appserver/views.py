@@ -2,6 +2,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from .models import UserTelegram
+import json
+from .serializers import UserSerializer
+
 # from appadmin.models import (Sequence_Logic,
 #                             User_Sequence_Logic,
 #                             Message,
@@ -109,22 +112,18 @@ class UserView(APIView):
                              content_type="json\application")
 
     def post(self, request):        
-        data_user = json.loads(request.data)['user'] 
+        data_user = request.data['user'] 
         serializer = UserSerializer(data=data_user)
 
         if serializer.is_valid():
             user_saved = serializer.save()
             
-            logger.debug("TelegramUser '{user_saved}' " 
-                                        "created successfully".\
-                                        format(user_saved=user_saved))
-
             return Response({"success": "TelegramUser '{user_saved}' " 
                                         "создан успешно".\
                                         format(user_saved=user_saved)},
                                         content_type="json\application")
         else:
-            logger.debug("Не валидные данные")
+                        
             return Response({"error": "Не валидные данные"},
                             content_type="json\application")
 

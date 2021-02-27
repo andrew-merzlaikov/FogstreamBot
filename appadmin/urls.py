@@ -3,6 +3,7 @@ from django.contrib.auth import views
 from .views import (ViewMain, 
 				    ViewMessage,
                     ViewUser,
+                    ViewLogic,
                     show_edit_form_message)
 
 
@@ -23,6 +24,9 @@ urlpatterns = [
     path('form/edit/message/<int:id_message>',
          show_edit_form_message,
          name="edit_form_message"), 
+
+    path('create/form/logic', ViewLogic.as_view(), name="create_form_logic"),
+    path('create/logic', ViewLogic.as_view(), name='create_logic'),
 
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),

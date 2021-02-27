@@ -5,90 +5,16 @@
 
     {% include 'header.html' %}
 
-    <div class="container mt-3">
-        
-        {% if not exists_logic %}
-
-        <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Задайте логику общения</h4>
-            <p>Чтобы создать логику общения вам необходимо указать порядок в котором будут следовать вопросы или
-                сообщения. Ниже вам представлены вопросы и сообщения, и форма в которой вы можете
-                указать число порядка
-            </p>
-            <hr>
-            <p class="mb-0">
-                Например, если вопрос будет первым, то в форме должно стоять число 1
-            </p>
-        </div>
-
-            <form method="POST">
-                {% csrf_token %}
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="p-3 mb-2 bg-secondary text-white">Сообщения</div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <div class="p-3 mb-2 bg-info text-white">Вы должны указывать порядок в логике</div>
-                        </div>
-                    </div>
-                
-                    <div class="row mt-2">     
-                        <table class="table">                            
-                            {{ messages_set.as_table }}
-                        </table>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-success">
-                        Задать порядок сообщений в логике
-                    </button>
-            </form>
+    <div class="container">
+        {% include 'messages/list_messages.html' %}
+        <form action={% url 'appadmin:create_logic' %} method="POST">
+            {% csrf_token %}
             
-            <form method="POST">
-                {% csrf_token %}
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <div class="p-3 mb-2 bg-secondary text-white">Вопросы</div>
-                        </div>
-                    </div>
+            <table class="table">
+                {{ formset_messages.as_table }}
+            </table>
 
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <div class="p-3 mb-2 bg-info text-white">Вы должны указывать порядок в логике</div>
-                        </div>
-                    </div>
-
-                    <div class="row mt-2">
-                        <table class="table">                            
-                            {{ questions_set.as_table }}
-                        </table>
-                    </div>
-
-                    <button type="submit" class="btn btn-success">
-                        Задать порядок вопросов в логике
-                    </button>
-            </form>
-
-            <form action={% url 'appadmin:set_logic' %} method="POST">
-                {% csrf_token %}
-
-                <button type="submit" class="btn btn-danger mt-2">
-                    Cоздать логику на основе заданных порядков
-                </button>
-            </form>
-
-        {% else %}
-            
-            <div class="alert alert-danger" role="alert">
-                <h4 class="alert-heading">Логика общения уже создана</h4>
-                <p>
-                    Чтобы создать логику вам необходимо удалить старую
-                </p>
-            </div>
-
-        {% endif %}
+            <button type="submit" class="btn btn-primary"> Создать логику общения </button> 
     </div>
 
 {% endblock %}
