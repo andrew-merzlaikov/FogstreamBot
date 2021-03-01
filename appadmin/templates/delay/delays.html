@@ -19,7 +19,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      {% for message in messages %}
+                      {% for message in messages_all %}
                         <tr>
                            <th scope="row">{{message.id}}</th>
                            <td>{{message}}</td>
@@ -29,6 +29,32 @@
                                <button class="btn btn-success" type="submit"> Установить задержку </button>
                               </form>
                             </td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+
+                <table class="table mt-2">
+                    <thead>
+                      <tr>
+                        <th scope="col">Текст сообщения </th>
+                        <th scope="col">Задержка</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for message in messages_delay%}
+                        <tr>
+                           <td>{{message.message}}</td>
+                           <td>
+                            {{message.delay}}
+                           </td>
                         </tr>
                       {% endfor %}
                     </tbody>

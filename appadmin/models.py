@@ -9,13 +9,6 @@ class TokenBot(models.Model):
         return "{token_bot}".format(token_bot=self.token_bot)
 
 
-class MessageDelay(models.Model):
-    message = models.OneToOneField(TokenBot, 
-                                      on_delete = models.CASCADE, 
-                                      primary_key = True)
-    delay = models.IntegerField()
-
-
 class Message(models.Model):
     text_message = models.CharField(max_length=200)
 
@@ -111,3 +104,10 @@ class Message(models.Model):
                 return True
         
         return  False
+
+
+class MessageDelay(models.Model):
+    message = models.OneToOneField(Message, 
+                                   on_delete = models.CASCADE, 
+                                   primary_key = True)
+    delay = models.IntegerField()

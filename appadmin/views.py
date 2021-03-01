@@ -5,7 +5,9 @@ from django.views.generic.base import TemplateView
 from django.template.response import TemplateResponse
 from django.forms import modelformset_factory
 from django.shortcuts import redirect
-from .models import Message, TokenBot
+from .models import (Message, 
+                     TokenBot,
+                     MessageDelay)
 from .forms import (MessageForm,
                     TokenBotForm,
                     MessageDelayForm)
@@ -43,12 +45,27 @@ def show_edit_form_message(request, id_message):
 class ViewMessageDelay(TemplateView):
     def get(self, request):
 
-        messages = Message.objects.all()
+        messages_all = Message.objects.all()
+        messages_with_delay = MessageDelay.\
+                                  objects.\
+                                  all()
+
 
         return render(request, 
                       "delay/delays.html", 
-                      {"messages": messages})
+                      {"messages_all": messages_all,
+                       "messages_delay": messages_with_delay})
+    
+    def post(self, request, id_message):
+        
+        delay = request.POST['delay']
 
+        person, created = MessageDelay.objects.update_or_create(
+                message_id=id_message, defaults={"delay": delay}
+        )
+
+        return HttpResponseRedirect(reverse('appadmin:delay_get'))
+    
 
 class ViewToken(TemplateView):
     def get(self, request):
@@ -104,8 +121,6 @@ class ViewMessage(TemplateView):
     def get(self, request):
         if request.user.is_authenticated:
             message_form = MessageForm()
-
-            all_messages = Message.objects.all()
 
             return render(request, 
                          "messages/create_message.html",
