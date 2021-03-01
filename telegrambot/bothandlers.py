@@ -29,12 +29,16 @@ def handler_current_message(message, current_message):
     и варианты ответа
     """
 
+    # Если текущее сообщение не установлено
     if current_message is not None:
         
+        # Если write_answer это True то значит это вопрос
         if current_message['message']['write_answer'] is True:
             options = bot_server.\
                     get_options_answers(current_message['message']['id'])  
-
+            
+            # Если первый элемент списке не None значит есть варианты
+            # ответа
             if options["options_answer"][0] is not None:
                 Flag.STATE_MESSAGE = "1"
                 
@@ -46,6 +50,8 @@ def handler_current_message(message, current_message):
                                 "Варианты ответов {data}".\
                                 format(data=options['options_answer']))
             
+            # Если вариантов нет, то значит ответ на этот вопрос 
+            # произвольный и он обрабатывается соответствующим хэндлером
             else:
                 Flag.STATE_MESSAGE = "2"
                 
@@ -55,6 +61,7 @@ def handler_current_message(message, current_message):
 
                 bot.send_message(message.chat.id, 
                                 "Введите ответ на вопрос")
+        # значит текущее сообщение это обычный вопрос
         else:
             Flag.STATE_MESSAGE = "3"   
 
@@ -72,6 +79,8 @@ def handler_current_message(message, current_message):
                 # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
 
                 handler_current_message(message, CurrentMessage.data_message)
+            # Если сообщение конечное, то мы выводим это сообщение
+            # а после просим нажать /start
             else:
                 bot.send_message(message.chat.id, 
                                 "{data}".\
@@ -105,6 +114,7 @@ def question_first_type_handler(message):
     answer_text = message.text
     root_message = None
 
+    # Проверяется установлено ли текущее сообщение
     if CurrentMessage.data_message is not None:
         root_message = CurrentMessage.data_message['message']
 
@@ -112,6 +122,7 @@ def question_first_type_handler(message):
         options = bot_server.\
                   get_options_answers(root_message['id'])  
 
+        # Если нет такого ответа среди вариантов выводим сообщение пользователю
         if message.text not in options['options_answer']:
             bot.send_message(message.chat.id, "Нет такого варианта ответа")      
 
@@ -134,6 +145,8 @@ def question_first_type_handler(message):
                 handler_current_message(message, CurrentMessage.\
                                                  data_message)
             
+            # Если это последнее сообщение выводим /start
+
             else:
                 bot.send_message(message.chat.id, 
                              "{text}".\
@@ -141,13 +154,15 @@ def question_first_type_handler(message):
 
                 bot.send_message(message.chat.id, "Введите команду /start")
 
+    # Иначе просим ввести /start
     else:
         bot.send_message(message.chat.id, "Введите команду /start")
 
 @bot.message_handler(func=lambda message: Flag.STATE_MESSAGE == "2")
 def question_second_type_handler(message):
     answer_text = message.text
-
+    
+    # Проверяем установлено ли текущее сообщение
     if CurrentMessage.data_message is not None:
         id_current_message = CurrentMessage.data_message['message']['id']
         
@@ -164,7 +179,8 @@ def question_second_type_handler(message):
             handler_current_message(message, 
                                     CurrentMessage.\
                                     data_message)
-            
+
+        # Если вопрос конечный, то выводим его и просим ввести /start 
         else:
             bot.send_message(message.chat.id, 
                              "{text}".\

@@ -13,4 +13,8 @@ class TokenBotForm(forms.Form):
                                 widget=forms.Textarea(attrs={
                                                             'rows': 2, 
                                                             'cols': 120}))
+
+
+class MessageDelayForm(forms.Form):
+    delay = forms.IntegerField()
     

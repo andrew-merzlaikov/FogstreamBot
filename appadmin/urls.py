@@ -5,7 +5,9 @@ from .views import (ViewMain,
                     ViewUser,
                     ViewLogic,
                     show_edit_form_message,
-					ViewToken)
+					ViewToken,
+					ViewMessageDelay,
+					show_edit_delay)
 
 
 app_name = "appadmin"
@@ -13,7 +15,9 @@ app_name = "appadmin"
 urlpatterns = [
     path('main', ViewMain.as_view(), name='main'),
     path('create/message', ViewMessage.as_view(), name='create_message'),
-    
+	path('delay/get', ViewMessageDelay.as_view(), name="delay_get"),
+	path('delat/get/edit/<int:id_message>', show_edit_delay, name="delay_edit_get"),
+
     path('edit/message/<int:id_message>', 
          ViewMessage.as_view(), 
          name='edit_message'),

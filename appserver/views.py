@@ -89,7 +89,6 @@ class MessageView(APIView):
     def get(self, request, id_current_message):
         answer = None
 
-        print("ID_CURRENT_MESSAGE: ", id_current_message)
 
         if 'answer' in request.GET.keys():
             answer = request.GET['answer']

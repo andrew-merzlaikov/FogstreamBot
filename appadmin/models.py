@@ -8,6 +8,14 @@ class TokenBot(models.Model):
     def __str__(self):
         return "{token_bot}".format(token_bot=self.token_bot)
 
+
+class MessageDelay(models.Model):
+    message = models.OneToOneField(TokenBot, 
+                                      on_delete = models.CASCADE, 
+                                      primary_key = True)
+    delay = models.IntegerField()
+
+
 class Message(models.Model):
     text_message = models.CharField(max_length=200)
 

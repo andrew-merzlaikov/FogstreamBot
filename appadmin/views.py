@@ -7,11 +7,27 @@ from django.forms import modelformset_factory
 from django.shortcuts import redirect
 from .models import Message, TokenBot
 from .forms import (MessageForm,
-                    TokenBotForm)
+                    TokenBotForm,
+                    MessageDelayForm)
 from django.urls import reverse
 from appserver.models import UserTelegram
 import operator
 
+
+def show_edit_delay(request, id_message):
+    if request.user.is_authenticated:
+        message = Message.\
+                  objects.\
+                  filter(id=id_message).get()
+        
+        message_delay_form = MessageDelayForm()
+
+        return render(request, 
+                      "delay/show_edit_delay.html",
+                      {"message": message,
+                       "message_delay_form": message_delay_form})
+    else:
+        return render(request, "http_response/error_401.html", status=401)
 
 def show_edit_form_message(request, id_message):
     if request.user.is_authenticated:
@@ -22,6 +38,16 @@ def show_edit_form_message(request, id_message):
                        'id_message': id_message})
     else:
         return render(request, "http_response/error_401.html", status=401)
+
+
+class ViewMessageDelay(TemplateView):
+    def get(self, request):
+
+        messages = Message.objects.all()
+
+        return render(request, 
+                      "delay/delays.html", 
+                      {"messages": messages})
 
 
 class ViewToken(TemplateView):
