@@ -5,7 +5,8 @@ import enum
 
 bot = telebot.TeleBot(config.token_auth)
 bot_server = BotServer()
-
+token = bot_server.get_token()
+print("TOKEN = ", token)
 
 """
 1 - Состояние если вопрос и есть варианты ответа

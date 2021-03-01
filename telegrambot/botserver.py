@@ -29,6 +29,9 @@ class BotServer:
         self.url_for_check_end_tree = ("http://" + self.url_host + ':' +
                                         self.url_port + '/api/get/check/end_tree/')
 
+        self.url_for_get_token = ("http://" + self.url_host + ':' +
+                                  self.url_port + '/api/get/token')
+
     def get_options_answers(self, id_current_message):
         """
         Функция которая возвращает
@@ -40,6 +43,14 @@ class BotServer:
         print("URL: " + url_for_option)
 
         r = requests.get(url_for_option)
+
+        return r.json()
+
+    def get_token(self):
+        """
+        Функция которая возвращает токен бота
+        """
+        r = requests.get(self.url_for_get_token)
 
         return r.json()
 

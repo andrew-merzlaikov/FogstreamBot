@@ -5,8 +5,9 @@ from django.views.generic.base import TemplateView
 from django.template.response import TemplateResponse
 from django.forms import modelformset_factory
 from django.shortcuts import redirect
-from .models import Message
-from .forms import MessageForm
+from .models import Message, TokenBot
+from .forms import (MessageForm,
+                    TokenBotForm)
 from django.urls import reverse
 from appserver.models import UserTelegram
 import operator
@@ -19,7 +20,38 @@ def show_edit_form_message(request, id_message):
                       "messages/edit_message.html", 
                       {'message_form': message_form,
                        'id_message': id_message})
+    else:
+        return render(request, "http_response/error_401.html", status=401)
 
+
+class ViewToken(TemplateView):
+    def get(self, request):
+        if request.user.is_authenticated:
+            token_bot_form = TokenBotForm()
+            token = TokenBot.objects.first()
+
+            return render(request,
+                        "token/token.html",
+                        {"token_form": token_bot_form,
+                         "token": token})
+        else:
+            return render(request, "http_response/error_401.html", status=401)
+
+    def post(self, request):
+        if request.user.is_authenticated:
+            exists_token = TokenBot.\
+                           objects.\
+                           first()
+            
+            if exists_token:
+                TokenBot.objects.first().delete()
+                TokenBot.objects.create(token_bot=request.POST['token_bot'])
+            else:
+                TokenBot.objects.create(token_bot=request.POST['token_bot'])
+
+            url_for_redirect = reverse('appadmin:token_get')
+
+            return HttpResponseRedirect(url_for_redirect)
 
 class ViewMain(TemplateView):
     def get(self, request):
@@ -49,7 +81,6 @@ class ViewMessage(TemplateView):
 
             all_messages = Message.objects.all()
 
-            print(all_messages)
             return render(request, 
                          "messages/create_message.html",
                          {"form": message_form,

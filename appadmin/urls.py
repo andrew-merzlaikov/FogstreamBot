@@ -4,7 +4,8 @@ from .views import (ViewMain,
 				    ViewMessage,
                     ViewUser,
                     ViewLogic,
-                    show_edit_form_message)
+                    show_edit_form_message,
+					ViewToken)
 
 
 app_name = "appadmin"
@@ -27,7 +28,10 @@ urlpatterns = [
 
     path('create/form/logic', ViewLogic.as_view(), name="create_form_logic"),
     path('create/logic', ViewLogic.as_view(), name='create_logic'),
-	path('delete/logic', ViewLogic.as_view(), name='delete_logic'),
+    path('delete/logic', ViewLogic.as_view(), name='delete_logic'),
+
+	path('token', ViewToken.as_view(), name='token_get'),
+	path('token/set', ViewToken.as_view(), name="token_set"),
 
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),

@@ -2,6 +2,12 @@ from django.db import models
 from appserver.models import UserTelegram
 
 
+class TokenBot(models.Model):
+    token_bot = models.CharField(max_length=500)
+
+    def __str__(self):
+        return "{token_bot}".format(token_bot=self.token_bot)
+
 class Message(models.Model):
     text_message = models.CharField(max_length=200)
 

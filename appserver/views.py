@@ -4,7 +4,8 @@ from rest_framework.views import APIView
 from .models import UserTelegram
 import json
 from .serializers import UserSerializer
-from appadmin.models import Message
+from appadmin.models import (Message,
+                             TokenBot)
 from .serializers import UserSerializer
 from django.db.models import Q
 import json
@@ -48,8 +49,6 @@ def get_options_answers(request, id_current_message):
                       objects.\
                       filter(id_parent=id_current_message).\
                       all()
-
-    print(messages)
     
     options_answer = list()
 
@@ -59,6 +58,12 @@ def get_options_answers(request, id_current_message):
     return Response({"options_answer": options_answer},
                     content_type="json\application")
 
+@api_view(('GET', ))
+def get_token_bot(request):
+    token = TokenBot.objects.first()
+
+    return Response({"token": str(token)}, 
+                    content_type="json\application")
 
 class UserView(APIView):
 

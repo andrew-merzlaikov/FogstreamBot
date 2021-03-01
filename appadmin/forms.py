@@ -8,4 +8,9 @@ class MessageForm(forms.Form):
                                                             'cols': 60}))
     
 
-
+class TokenBotForm(forms.Form):
+    token_bot = forms.CharField(max_length=500,
+                                widget=forms.Textarea(attrs={
+                                                            'rows': 2, 
+                                                            'cols': 120}))
+    
