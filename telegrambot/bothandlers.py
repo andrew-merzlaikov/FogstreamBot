@@ -7,18 +7,26 @@ bot = telebot.TeleBot(config.token_auth)
 bot_server = BotServer()
 
 
+"""
+1 - Состояние если вопрос и есть варианты ответа
+2 - Состояние если вопрос и произвольный ответ
+3 - Состояние если сообщение
+"""
+
 class CurrentMessage:
     data_message = None
 
-# Поставь флаги для удобства
-# 1 - Если на вопрос надо ответить вариантами ответа
-# 2 - Если на вопрос надо ответить произвольно
-# 3 - Если надо вывести сообщение
 
 class Flag:
     STATE_MESSAGE = None
 
+
 def handler_current_message(message, current_message):
+    """
+    Функция, которая определяет какой флаг надо ставить
+    Также в этой функции распечатывается текст сообщений
+    и варианты ответа
+    """
 
     if current_message is not None:
         
@@ -50,7 +58,8 @@ def handler_current_message(message, current_message):
             Flag.STATE_MESSAGE = "3"   
 
             id_current_message = CurrentMessage.data_message["message"]['id']
-
+            
+            # Проверяется является ли сообщение конечным
             if bot_server.get_check_end_tree(id_current_message):
                 bot.send_message(message.chat.id, 
                         "{data}".format(data=CurrentMessage.\
@@ -58,6 +67,9 @@ def handler_current_message(message, current_message):
 
                 data_next_message = bot_server.get_next_message(id_current_message)
                 CurrentMessage.data_message = data_next_message
+
+                # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
+
                 handler_current_message(message, CurrentMessage.data_message)
             else:
                 bot.send_message(message.chat.id, 
@@ -70,7 +82,9 @@ def handler_current_message(message, current_message):
 
 @bot.message_handler(commands=["start"])
 def cmd_start(message): 
-    
+    """
+    Обработчик для команды /start
+    """
     response = bot_server.\
                create_user_in_server(message.from_user.id,
                                     message.from_user.username,
@@ -84,7 +98,6 @@ def cmd_start(message):
     handler_current_message(message, CurrentMessage.data_message)
     
 
-# Здесь обрабатывается вопрос если у него есть варианты ответы
 @bot.message_handler(func=lambda message: Flag.STATE_MESSAGE == "1")
 def question_first_type_handler(message):
 
@@ -109,10 +122,14 @@ def question_first_type_handler(message):
                                 get_next_message(id_current_message,
                                                 answer_text)
 
+            # Проверяется является ли вопрос конечным
+
             if bot_server.get_check_end_tree(data_next_message["message"]["id"]):
                 
                 CurrentMessage.data_message = data_next_message
                 
+                # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
+
                 handler_current_message(message, CurrentMessage.\
                                                  data_message)
             
@@ -137,13 +154,12 @@ def question_second_type_handler(message):
                             get_next_message(id_current_message,
                                             answer_text)
         
-        print("QUESTION SECOND TYPE: ", data_next_message)
-
+        # Проверяется является ли вопрос конечным
         if bot_server.get_check_end_tree(data_next_message["message"]["id"]):
                 
             CurrentMessage.data_message = data_next_message
 
-            
+            # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
             handler_current_message(message, 
                                     CurrentMessage.\
                                     data_message)

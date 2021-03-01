@@ -5,6 +5,11 @@ from django.db.models import Q
 
 
 class BotServer:
+    """
+    В этом классе описаны функции, которые делают
+    запросы к API сервера на Django
+    """
+
 
     def __init__(self):
         self.url_host = os.environ.get('HOST')
@@ -25,6 +30,10 @@ class BotServer:
                                         self.url_port + '/api/get/check/end_tree/')
 
     def get_options_answers(self, id_current_message):
+        """
+        Функция которая возвращает
+        варианты ответа для сообщения с id=id_current_message
+        """
 
         url_for_option = self.url_for_options_answers + str(id_current_message)
 
@@ -35,6 +44,10 @@ class BotServer:
         return r.json()
 
     def get_check_end_tree(self, id_current_message):
+        """
+        Функция которая проверяет является ли сообщение 
+        с id=id_current_message последним в дереве
+        """
         url_for_check = self.url_for_check_end_tree + str(id_current_message)
 
         r = requests.get(url_for_check)
@@ -42,11 +55,17 @@ class BotServer:
         return r.json()["exists"]
 
     def get_root_message(self): 
+        """
+        Функция которая возвращает корневое сообщение
+        """
         r = requests.get(self.url_for_root_message)
         
         return r.json()
 
     def get_next_message(self, id_current_message, answer = None):
+        """
+        Функция которая получает следующее сообщение
+        """
         url_for_next_message = None
 
         if answer is not None:
@@ -61,7 +80,9 @@ class BotServer:
         return r.json()
 
     def create_user_in_server(self, user_id, name, lastname, username):
-
+        """
+        Функция которая создает пользователя на сервере
+        """
 
         data_for_create_user = {
             "user": {
