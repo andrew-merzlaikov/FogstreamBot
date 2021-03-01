@@ -1,18 +1,16 @@
 from django.urls import path
-from .views import UserView
-                    # LogicApiView,
-                    # AnswerView, 
-                    # get_logic_entity,
-                    # get_current_entity)
+from .views import (UserView, 
+                    MessageView,
+                    get_root_message,
+                    get_options_answers,
+                    check_end_tree)
 
 app_name = "appserver"
-# app_name will help us do a reverse look-up latter.
 
 urlpatterns = [
-    path('users', UserView.as_view())
-    # path('get/next/entity/<int:id_user>', LogicApiView.as_view()),
-    # path('get/current/entity/<int:id_user>', get_current_entity),
-    # path('get/user_id/', UserView.as_view()),
-    # path('get/count_entities', get_logic_entity),
-    # path('set/answer', AnswerView.as_view())
+    path('users', UserView.as_view()),
+    path('get/next/message/<int:id_current_message>', MessageView.as_view()),
+    path('get/options_answers/<int:id_current_message>', get_options_answers),
+    path('get/check/end_tree/<int:id_current_message>', check_end_tree),
+    path('get/root/message', get_root_message)
 ]

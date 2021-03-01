@@ -170,6 +170,15 @@ class ViewLogic(TemplateView):
 
             if formset_messages.is_valid():
                 
+
+                if not Message.check_parent_in_messages(formset_messages):
+                    url_for_redirect = reverse("appadmin:create_logic")
+                    params = "?root_errors=True"
+                    url_for_redirect = url_for_redirect + params
+
+                    return HttpResponseRedirect(url_for_redirect)
+
+
                 for form in formset_messages:
                     id_msg = form.cleaned_data['id'].id                        
                     message = Message.objects.get(pk=id_msg)
@@ -190,19 +199,6 @@ class ViewLogic(TemplateView):
                     if check_parent_myself is not True:
                         url_for_redirect = reverse("appadmin:create_logic")
                         params = ("?error_parent_myself=" + check_parent_myself["message"])
-                        url_for_redirect = url_for_redirect + params
-
-                        return HttpResponseRedirect(url_for_redirect)
-
-                    check_bidirectionality = Message.\
-                                             check_id_parent_bidirectionality(form.\
-                                                                              cleaned_data['id_parent'],
-                                                                              form.cleaned_data['id'].id)
-
-                    if not check_bidirectionality:
-
-                        url_for_redirect = reverse("appadmin:create_logic")
-                        params = "?conflict_bidirectionality=True"
                         url_for_redirect = url_for_redirect + params
 
                         return HttpResponseRedirect(url_for_redirect)

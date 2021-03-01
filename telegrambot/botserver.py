@@ -12,48 +12,54 @@ class BotServer:
         
         self.url_for_users = ("http://" + self.url_host + 
                               ':' + self.url_port + '/api/users')
-        self.url_for_answer_with_user = ("http://" + self.url_host + ':' + 
-                                         self.url_port + '/api/set/answer')
-        self.url_for_get_id_user = ("http://" + self.url_host + ':' + 
-                                         self.url_port + '/api/get/user_id/')
-        self.url_for_get_count = ("http://" + self.url_host + ':' + 
-                                         self.url_port + '/api/get/count_entities')
-        self.url_for_get_entity = ("http://" + self.url_host + ':' + 
-                                         self.url_port + '/api/get/next/entity/')
-        self.url_for_current_entity = ("http://" + self.url_host + ':' + 
-                                                   self.url_port + '/api/get/current/entity/')
+        self.url_for_root_message = ("http://" + self.url_host + 
+                                    ':' + self.url_port + '/api/get/root/message')
 
-    def telegram_user_id_from_database(self, 
-                                           username, 
-                                           first_name, 
-                                           last_name):
+        self.url_for_next_message = ("http://" + self.url_host + 
+                                    ':' + self.url_port + '/api/get/next/message/')
         
-        params_user = {
-            "username": username,
-            "name": first_name,
-            "lastname": last_name
-        }
-        
-        r = requests.get(self.url_for_get_id_user, 
-                        params=params_user)
-        
-        if "id_user" in r.json().keys():
-            return int(r.json()["id_user"])
-        else:
-            return r.json()["error"]
+        self.url_for_options_answers = ("http://" + self.url_host + ':' +
+                                        self.url_port + '/api/get/options_answers/')
 
-    def get_logic_entity(self, id_user):        
-        url_for_get_entity_with_id = self.url_for_get_entity + str(id_user)
-        r = requests.get(url_for_get_entity_with_id)
+        self.url_for_check_end_tree = ("http://" + self.url_host + ':' +
+                                        self.url_port + '/api/get/check/end_tree/')
+
+    def get_options_answers(self, id_current_message):
+
+        url_for_option = self.url_for_options_answers + str(id_current_message)
+
+        print("URL: " + url_for_option)
+
+        r = requests.get(url_for_option)
+
+        return r.json()
+
+    def get_check_end_tree(self, id_current_message):
+        url_for_check = self.url_for_check_end_tree + str(id_current_message)
+
+        r = requests.get(url_for_check)
+
+        return r.json()["exists"]
+
+    def get_root_message(self): 
+        r = requests.get(self.url_for_root_message)
         
         return r.json()
 
-    def get_count_logic_entities(self):
+    def get_next_message(self, id_current_message, answer = None):
+        url_for_next_message = None
 
-        r = requests.get(self.url_for_get_count)
+        if answer is not None:
+            url_for_next_message = (self.url_for_next_message + str(id_current_message) + 
+                                   '?answer=' + answer)
+        else:
+            url_for_next_message = self.url_for_next_message + str(id_current_message)
 
-        return r.json()["count"]
-    
+
+        r = requests.get(url_for_next_message)
+        
+        return r.json()
+
     def create_user_in_server(self, user_id, name, lastname, username):
 
 
@@ -66,23 +72,9 @@ class BotServer:
             }
         }
 
-        requests.post(self.url_for_users, json=data_for_create_user)
-
-    def get_current_entity(self, id_user):
-        url_for_current_entity = self.url_for_current_entity + str(id_user)
-        r = requests.get(url_for_current_entity)
+        r = requests.post(self.url_for_users, json=data_for_create_user)
+        
 
         return r.json()
 
-    def create_answer_with_user(self, answer_text, question_id, user_id):
-
-        data_for_create_answer = {
-            "answer": {
-                "answer_text": answer_text,
-                "question_id": question_id,
-                "user_id": user_id
-            }
-        }
-
-        requests.post(self.url_for_answer_with_user, 
-                     json=json.dumps(data_for_create_answer))
+  

@@ -18,6 +18,16 @@
             </div>    
         {% endif %}
 
+        {% if request.GET.root_errors == 'True' %}
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        В дереве обязательно должен быть родитель! (ID для родителя: 0)
+                    </div>
+                </div>
+            </div>    
+        {% endif %}
+
         {% if request.GET.conflict_has_parent == 'True' %}
             <div class="row mt-2">
                 <div class="col-md-12">
