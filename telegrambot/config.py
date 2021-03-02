@@ -1,3 +1,3 @@
 from enum import Enum
 
-token_auth = '1621831204:AAEea-ZoixH30Ktjsh0ap3K50u_j0nIqb7Y'
+token_auth = '1639370701:AAE-wsM4pNioUGoCdVcmqmXpQo2bAp8HWqo'

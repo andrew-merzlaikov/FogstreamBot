@@ -31,8 +31,31 @@ class BotServer:
 
         self.url_for_get_token = ("http://" + self.url_host + ':' +
                                   self.url_port + '/api/get/token') 
+        
         self.url_for_get_delay = ("http://" + self.url_host + ':' +
                                   self.url_port + '/api/get/delay/message/') 
+
+        self.url_for_set_answer = ("http://" + self.url_host + ':' +
+                                   self.url_port + '/api/set/answer/')
+
+    def set_answer_user(self, user_id_telegram, message_id, answer):
+        """
+        Функция которая устанавливает ответ пользователя в Базе данных
+        :param user_id_telegram: Уникальный id для пользователя telegram
+        :param message_id: Id сообщения на который устанавливается ответ
+        :param answer: Текст ответа
+        """
+        
+        url_for_request = self.url_for_set_answer + str(user_id_telegram)
+
+        data_for_set = {
+            "id_message": message_id,
+            "answer": answer
+        }
+
+        print("Функция для сохранения ответа")
+
+        requests.post(url_for_request, data=data_for_set)
 
     def get_delay_message(self, id_message):
         """

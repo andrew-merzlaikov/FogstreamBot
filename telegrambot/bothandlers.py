@@ -37,9 +37,12 @@ def handler_current_message(message, current_message):
         
         # Если write_answer это True то значит это вопрос
         if current_message['message']['write_answer'] is True:
-            options = bot_server.\
-                    get_options_answers(current_message['message']['id'])  
             
+            options = bot_server.\
+                      get_options_answers(current_message['message']['id'])  
+            
+
+
             # Если первый элемент списке не None значит есть варианты
             # ответа
 
@@ -108,7 +111,7 @@ def cmd_start(message):
                                     message.from_user.last_name)
     
     data = bot_server.get_root_message()
-    
+        
     CurrentMessage.data_message = data
     
     handler_current_message(message, CurrentMessage.data_message)
@@ -142,8 +145,13 @@ def question_first_type_handler(message):
                 
                 data_next_message = bot_server.\
                                     get_next_message(id_current_message,
-                                                    answer_text)
+                                                     answer_text)
 
+                # Установка ответа
+                bot_server.set_answer_user(message.from_user.id,
+                                           id_current_message,
+                                           answer_text)
+                
                 CurrentMessage.data_message = data_next_message
                 
                 # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
@@ -180,7 +188,11 @@ def question_second_type_handler(message):
         
             data_next_message = bot_server.\
                                 get_next_message(id_current_message,
-                                                answer_text)
+                                                 answer_text)
+            # Установка ответа
+            bot_server.set_answer_user(message.from_user.id,
+                                       id_current_message,
+                                       answer_text)
 
             CurrentMessage.data_message = data_next_message
 
