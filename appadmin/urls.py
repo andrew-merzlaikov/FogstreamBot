@@ -7,7 +7,8 @@ from .views import (ViewMain,
                     show_edit_form_message,
 					ViewToken,
 					ViewMessageDelay,
-					show_edit_delay)
+					show_edit_delay,
+                    info_users_list)
 
 
 app_name = "appadmin"
@@ -30,6 +31,8 @@ urlpatterns = [
     path('form/edit/message/<int:id_message>',
          show_edit_form_message,
          name="edit_form_message"), 
+
+    path('show/info/users', info_users_list, name="info_users_list"),
 
     path('create/form/logic', ViewLogic.as_view(), name="create_form_logic"),
     path('create/logic', ViewLogic.as_view(), name='create_logic'),

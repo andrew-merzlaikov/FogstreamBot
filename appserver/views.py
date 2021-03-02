@@ -75,10 +75,17 @@ def get_options_answers(request, id_current_message):
     options_answer = list()
 
     for message in messages:
-        options_answer.append(message.display_condition)
+        if message is not None:
+            if message.display_condition is not None:
+                options_answer.append(message.display_condition)
 
-    return Response({"options_answer": options_answer},
-                    content_type="json\application")
+
+    if options_answer:
+        return Response({"options_answer": options_answer},
+                        content_type="json\application")
+    else:
+        return Response({"options_answer": None},
+                        content_type="json\application")
 
 @api_view(('GET', ))
 def get_token_bot(request):
@@ -86,6 +93,7 @@ def get_token_bot(request):
 
     return Response({"token": str(token)}, 
                     content_type="json\application")
+
 
 class UserView(APIView):
 
@@ -118,7 +126,7 @@ class MessageView(APIView):
         message = None
 
         if answer is not None:
-
+        
 
             message = Message.\
                     objects.\

@@ -23,7 +23,6 @@ class Message(models.Model):
 
     def __str__(self):  
         return "{text_message}".format(text_message=self.text_message)
-    
 
     @staticmethod
     def check_parent_myself(form_message):
@@ -33,41 +32,6 @@ class Message(models.Model):
                                 ") не может быть само себе родителем")}
         else:
             return True
-
-    # @staticmethod
-    # def check_id_parent_bidirectionality(modelformset_message):
-    #     """
-    #     Функция проверяет не ссылается ли потомок на
-    #     родителя
-    #     """
-        
-    #     list_from_new_messages = list()
-
-    #     for form in modelformset_message:
-    #         message = form.cleaned_data['id']
-    #         list_from_new_messages.append(message)
-        
-    #     for i in range(0, len(list_from_new_messages)):
-    #         id_message = list_from_new_messages[i].id
-    #         id_parent_message = list_from_new_messages[i].\
-    #                             id_parent
-
-    #         print("ID_MESSAGE", id_message)
-    #         print("ID_PARENT_MESSAGE", id_parent_message)
-
-    #         for j in range(i + 1, len(list_from_new_messages)):
-    #             id_second_message = list_from_new_messages[j].id
-    #             id_parent_second_message = list_from_new_messages[j].\
-    #                                        id_parent
-
-    #             print("ID_SECOND_MESSAGE", id_second_message)
-    #             print("ID_PARENT_SECOND_MESSAGE", id_parent_second_message)
-
-    #             if (id_message == id_parent_second_message and
-    #                 id_parent_message == id_second_message):
-    #                 return False
-
-    #     return True
 
     @staticmethod
     def check_message_id_parent(id_parent):
@@ -111,3 +75,7 @@ class MessageDelay(models.Model):
                                    on_delete = models.CASCADE, 
                                    primary_key = True)
     delay = models.IntegerField()
+
+
+# class AnswersUser(models.Model):
+#     user = 

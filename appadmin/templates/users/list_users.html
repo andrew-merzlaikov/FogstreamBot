@@ -1,16 +1,17 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">#</th>
+        <th scope="col">ID TELEGRAM</th>
         <th scope="col">Имя </th>
         <th scope="col">Фамилия </th>
         <th scope="col">Никнейм </th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
-    {% for user in users_telegram %}
+    {% for user in users %}
         <tr>
-        <th scope="row">{{user.id}}</th>
+        <th scope="row">{{user.id_user_telegram}}</th>
         
         {% if user.first_name == None %}
             <td>Не установлено </td>
@@ -29,7 +30,7 @@
         {% else %}
             <td>{{ user.username }}</td>
         {% endif %}
-
+            <td> <button class="btn btn-primary"> Получить информацию о ответах </button></td>
         </tr>
     {% endfor %}
     </tbody>

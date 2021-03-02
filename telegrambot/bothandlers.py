@@ -42,7 +42,10 @@ def handler_current_message(message, current_message):
             
             # Если первый элемент списке не None значит есть варианты
             # ответа
-            if options["options_answer"][0] is not None:
+
+            print(options)
+
+            if options["options_answer"] is not None:
                 Flag.STATE_MESSAGE = "1"
                 
                 bot.send_message(message.chat.id, 
@@ -133,14 +136,14 @@ def question_first_type_handler(message):
             
             id_current_message = root_message['id']
 
-            data_next_message = bot_server.\
-                                get_next_message(id_current_message,
-                                                answer_text)
 
             # Проверяется является ли вопрос конечным
-
-            if bot_server.get_check_end_tree(data_next_message["message"]["id"]):
+            if bot_server.get_check_end_tree(id_current_message):
                 
+                data_next_message = bot_server.\
+                                    get_next_message(id_current_message,
+                                                    answer_text)
+
                 CurrentMessage.data_message = data_next_message
                 
                 # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
@@ -153,7 +156,8 @@ def question_first_type_handler(message):
             else:
                 bot.send_message(message.chat.id, 
                              "{text}".\
-                             format(text=data_next_message["message"]["text_message"]))   
+                             format(text=CurrentMessage.\
+                                         data_message["message"]["text_message"]))   
 
                 bot.send_message(message.chat.id, "Введите команду /start")
 
@@ -164,18 +168,20 @@ def question_first_type_handler(message):
 @bot.message_handler(func=lambda message: Flag.STATE_MESSAGE == "2")
 def question_second_type_handler(message):
     answer_text = message.text
-    
+    print("Flag.STATE_MESSAGE=", Flag.STATE_MESSAGE)
+
     # Проверяем установлено ли текущее сообщение
     if CurrentMessage.data_message is not None:
         id_current_message = CurrentMessage.data_message['message']['id']
         
-        data_next_message = bot_server.\
-                            get_next_message(id_current_message,
-                                            answer_text)
-        
+    
         # Проверяется является ли вопрос конечным
-        if bot_server.get_check_end_tree(data_next_message["message"]["id"]):
-                
+        if bot_server.get_check_end_tree(id_current_message):
+        
+            data_next_message = bot_server.\
+                                get_next_message(id_current_message,
+                                                answer_text)
+
             CurrentMessage.data_message = data_next_message
 
             # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
@@ -184,10 +190,7 @@ def question_second_type_handler(message):
                                     data_message)
 
         # Если вопрос конечный, то выводим его и просим ввести /start 
-        else:
-            bot.send_message(message.chat.id, 
-                             "{text}".\
-                             format(text=data_next_message["message"]["text_message"]))   
+        else:   
 
             bot.send_message(message.chat.id, "Введите команду /start")
             

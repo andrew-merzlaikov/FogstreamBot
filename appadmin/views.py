@@ -15,6 +15,17 @@ from django.urls import reverse
 from appserver.models import UserTelegram
 import operator
 
+def info_users_list(request):
+    if request.user.is_authenticated:
+        users_telegram = UserTelegram.\
+                         objects.\
+                         all()
+
+        return render(request, 
+                      "users/info_users.html", 
+                      {"users": users_telegram})
+    else:
+        return render(request, "http_response/error_401.html", status=401)
 
 def show_edit_delay(request, id_message):
     if request.user.is_authenticated:
