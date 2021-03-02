@@ -24,7 +24,9 @@ PASS=<пароль_базы_данных>
 HOST=<хост_сервера>  
 
 9) Перейти в папку FogstreamBot  
-10) python manage.py runserver  
+10) Создать миграции python manage.py makemigrations  
+11) Применить миграции python manage.py migrate  
+12) python manage.py runserver  
 
 11) Перейти в браузере по ссылке 127.0.0.1:8000/bot/main
 12) Создать суперпользователя в консоле django со своими параметрами
