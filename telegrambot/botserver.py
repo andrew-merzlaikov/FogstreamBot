@@ -30,7 +30,22 @@ class BotServer:
                                         self.url_port + '/api/get/check/end_tree/')
 
         self.url_for_get_token = ("http://" + self.url_host + ':' +
-                                  self.url_port + '/api/get/token')
+                                  self.url_port + '/api/get/token') 
+        self.url_for_get_delay = ("http://" + self.url_host + ':' +
+                                  self.url_port + '/api/get/delay/message/') 
+
+    def get_delay_message(self, id_message):
+        """
+        Функция которая возвращает задержку для сообщения
+        с id=id_message
+        Если для сообщения не установлена задержка, то вернет -1
+        """
+
+        url_for_get_delay = self.url_for_get_delay + str(id_message)
+
+        r = requests.get(url_for_get_delay)
+
+        return r.json()['delay']
 
     def get_options_answers(self, id_current_message):
         """
@@ -39,8 +54,6 @@ class BotServer:
         """
 
         url_for_option = self.url_for_options_answers + str(id_current_message)
-
-        print("URL: " + url_for_option)
 
         r = requests.get(url_for_option)
 
