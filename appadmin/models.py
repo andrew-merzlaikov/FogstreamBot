@@ -72,10 +72,16 @@ class Message(models.Model):
 
 class MessageDelay(models.Model):
     message = models.OneToOneField(Message, 
-                                   on_delete = models.CASCADE, 
-                                   primary_key = True)
+                                   on_delete=models.CASCADE, 
+                                   primary_key=True)
     delay = models.IntegerField()
 
 
-# class AnswersUser(models.Model):
-#     user = 
+class AnswerUser(models.Model):
+    telegram_user = models.ForeignKey(UserTelegram, 
+                                      on_delete=models.CASCADE)
+    
+    message = models.ForeignKey(Message,
+                                on_delete=models.CASCADE)
+    
+    answer = models.CharField(max_length=100)

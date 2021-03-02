@@ -7,13 +7,25 @@ from django.forms import modelformset_factory
 from django.shortcuts import redirect
 from .models import (Message, 
                      TokenBot,
-                     MessageDelay)
+                     MessageDelay,
+                     AnswerUser)
 from .forms import (MessageForm,
                     TokenBotForm,
                     MessageDelayForm)
 from django.urls import reverse
 from appserver.models import UserTelegram
 import operator
+
+def get_info_user(request, telegram_user_id):
+    if request.user.is_authenticated:
+        answers = AnswerUser.\
+                    objects.\
+                    filter(telegram_user_id=telegram_user_id).\
+                    all()
+
+        return render(request, "answers/answer.html", {"answers": answers})
+    else:
+        return render(request, "http_response/error_401.html", status=401)
 
 def info_users_list(request):
     if request.user.is_authenticated:

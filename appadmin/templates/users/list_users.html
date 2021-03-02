@@ -30,7 +30,13 @@
         {% else %}
             <td>{{ user.username }}</td>
         {% endif %}
-            <td> <button class="btn btn-primary"> Получить информацию о ответах </button></td>
+
+            <td> 
+                <form action={% url 'appadmin:get_info_user' user.id_user_telegram %} method="GET">
+                    <button type="submit" class="btn btn-primary"> Получить информацию о ответах </button>
+                </form>
+
+            </td>
         </tr>
     {% endfor %}
     </tbody>

@@ -6,7 +6,8 @@ import json
 from .serializers import UserSerializer
 from appadmin.models import (Message,
                              TokenBot,
-                             MessageDelay)
+                             MessageDelay,
+                             AnswerUser)
 from .serializers import UserSerializer
 from django.db.models import Q
 import json
@@ -34,7 +35,7 @@ def get_delay_for_message(request, id_message):
         return Response({"delay": message.delay},
                         content_type="json\application")
     else:
-        return Response({"delay": -1}, 
+        return Response({"delay": 0}, 
                         content_type="json\application")
 
 @api_view(('GET', ))
@@ -63,6 +64,21 @@ def check_end_tree(request, id_current_message):
                      exists()
     
     return Response({"exists": check_end_tree})
+
+@api_view(('POST', ))
+def set_answer_user(request, id_user_telegram):
+    answer = request.POST['answer']
+    id_message = request.POST['id_message']
+    
+    answer = AnswerUser.\
+             objects.\
+             update_or_create(telegram_user_id=id_user_telegram,
+                              message_id=id_message, 
+                              defaults={
+                                "answer": answer
+                              })
+                              
+    return Response({"status": True})
 
 @api_view(('GET', ))
 def get_options_answers(request, id_current_message):

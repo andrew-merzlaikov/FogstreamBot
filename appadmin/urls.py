@@ -8,7 +8,8 @@ from .views import (ViewMain,
 					ViewToken,
 					ViewMessageDelay,
 					show_edit_delay,
-                    info_users_list)
+                    info_users_list,
+                    get_info_user)
 
 
 app_name = "appadmin"
@@ -43,5 +44,5 @@ urlpatterns = [
 
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
-    path('show/users', ViewUser.as_view(), name='show_users')
+    path('get/info/<int:telegram_user_id>', get_info_user, name="get_info_user")
 ]
