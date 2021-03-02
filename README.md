@@ -10,7 +10,8 @@
 4) В конечном счете структура папок должна быть следующей  
 5) Перейти в нее source <имя_виртуальной_среды>/bin/activate
 6) Установить django командой pip install django  
-7) Установить все зависимости pip install -r requirements.txt  
+7) сd FogstreamBot
+8) Установить все зависимости pip install -r requirements.txt  
 
 Запуск сервера
 
