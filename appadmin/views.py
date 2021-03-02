@@ -121,6 +121,10 @@ class ViewMessage(TemplateView):
     def get(self, request):
         if request.user.is_authenticated:
             message_form = MessageForm()
+            
+            all_messages = Message.\
+                           objects.\
+                           all()
 
             return render(request, 
                          "messages/create_message.html",

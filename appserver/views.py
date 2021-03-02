@@ -5,7 +5,8 @@ from .models import UserTelegram
 import json
 from .serializers import UserSerializer
 from appadmin.models import (Message,
-                             TokenBot)
+                             TokenBot,
+                             MessageDelay)
 from .serializers import UserSerializer
 from django.db.models import Q
 import json
@@ -14,6 +15,27 @@ from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 
 logger = logging.getLogger(__name__)
+
+
+@api_view(('GET', ))
+def get_delay_for_message(request, id_message):
+
+    exists_delay = MessageDelay.\
+                   objects.\
+                   filter(message_id=id_message).\
+                   exists()
+
+    if exists_delay:
+        message = MessageDelay.\
+                  objects.\
+                  filter(message_id=id_message).\
+                  get()
+
+        return Response({"delay": message.delay},
+                        content_type="json\application")
+    else:
+        return Response({"delay": -1}, 
+                        content_type="json\application")
 
 @api_view(('GET', ))
 def get_root_message(request):

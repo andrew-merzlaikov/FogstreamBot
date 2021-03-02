@@ -4,7 +4,8 @@ from .views import (UserView,
                     get_root_message,
                     get_options_answers,
                     check_end_tree,
-                    get_token_bot)
+                    get_token_bot,
+                    get_delay_for_message)
 
 app_name = "appserver"
 
@@ -14,5 +15,6 @@ urlpatterns = [
     path('get/options_answers/<int:id_current_message>', get_options_answers),
     path('get/check/end_tree/<int:id_current_message>', check_end_tree),
     path('get/token', get_token_bot),
-    path('get/root/message', get_root_message)
+    path('get/root/message', get_root_message),
+    path('get/delay/message/<int:id_message>', get_delay_for_message)
 ]
