@@ -145,4 +145,6 @@ class BotServer:
 
         return r.json()
 
+    def get_next_fullmessage(self, id_current_message, answer = None):
+        pass
   
