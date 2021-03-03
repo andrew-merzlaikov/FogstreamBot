@@ -109,13 +109,18 @@ class BotServer:
         
         return r.json()
 
-    def get_next_message(self, id_current_message, answer = None):
+    def get_next_message(self, id_current_message = None, answer = None):
         """
         Функция которая получает следующее сообщение
+        Если id_current_message = None, то будем получать корневое
+        сообщение
         """
         url_for_next_message = None
-
-        if answer is not None:
+    
+        if id_current_message is None:
+            url_for_next_message = (self.url_for_next_message + '0')
+            print("URL: ", url_for_next_message)
+        elif answer is not None:
             url_for_next_message = (self.url_for_next_message + str(id_current_message) + 
                                    '?answer=' + answer)
         else:

@@ -39,23 +39,6 @@ def get_delay_for_message(request, id_message):
                         content_type="json\application")
 
 @api_view(('GET', ))
-def get_root_message(request):
-    root_message = Message.\
-                           objects.\
-                           filter(id_parent=0).\
-                           get()
-    
-
-    return Response({"message": { 
-                        "id": root_message.id,
-                        "text_message": root_message.text_message,
-                        "id_parent": root_message.id_parent,
-                        "display_condition": root_message.display_condition,
-                        "write_answer": root_message.write_answer
-                    }}, 
-                    content_type="json\application")
-
-@api_view(('GET', ))
 def check_end_tree(request, id_current_message):
 
     check_end_tree = Message.\
@@ -77,6 +60,7 @@ def set_answer_user(request, id_user_telegram):
                               defaults={
                                 "answer": answer
                               })
+    
                               
     return Response({"status": True})
 
@@ -132,14 +116,28 @@ class UserView(APIView):
 
 class MessageView(APIView):
 
-    def get(self, request, id_current_message):
+    def get(self, request, id_current_message = 0):
         answer = None
+        message = None
 
+
+        if id_current_message == 0:
+            message = Message.\
+                      objects.\
+                      filter(id_parent=0).\
+                      get()
+
+            return Response({"message": {
+                                "id": message.id,
+                                "text_message": message.text_message,
+                                "id_parent": message.id_parent,
+                                "display_condition": message.display_condition,
+                                "write_answer": message.write_answer
+                            }}, content_type="json\application") 
 
         if 'answer' in request.GET.keys():
             answer = request.GET['answer']
 
-        message = None
 
         if answer is not None:
         
@@ -173,5 +171,5 @@ class MessageView(APIView):
                             "id_parent": message.id_parent,
                             "display_condition": message.display_condition,
                             "write_answer": message.write_answer
-                        }}, content_type="json\application")        
+                        }}, content_type="json\application") 
 
