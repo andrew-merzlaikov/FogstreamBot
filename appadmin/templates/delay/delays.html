@@ -5,7 +5,20 @@
     
     {% include 'header.html' %}
 
+
     <div class="container mt-5">
+
+      {% if request.GET.set_delay == 'True' %}
+            <div class="row mt-2">
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        Установлена задержка
+                    </div>
+                </div>
+            </div>    
+      {% endif %}
+
+
         <div class="row">
             <div class="col-md-10">
 

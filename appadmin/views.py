@@ -87,8 +87,11 @@ class ViewMessageDelay(TemplateView):
         person, created = MessageDelay.objects.update_or_create(
                 message_id=id_message, defaults={"delay": delay}
         )
+        
+        params = "?set_delay=True"
+        url_for_redirect = reverse('appadmin:delay_get') + params
 
-        return HttpResponseRedirect(reverse('appadmin:delay_get'))
+        return HttpResponseRedirect(url_for_redirect)
     
 
 class ViewToken(TemplateView):
@@ -278,12 +281,6 @@ class ViewLogic(TemplateView):
             
             formset_messages = MessageFormSet(request.POST)
 
-            
-            for form in formset_messages:
-                if form.is_valid():
-                    print("FORM: ", form)
-                else:
-                    print("NOT VALID")
 
             if formset_messages.is_valid():
                 
