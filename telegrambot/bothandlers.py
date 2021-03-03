@@ -111,6 +111,7 @@ def cmd_start(message):
     
     data = bot_server.get_next_message()
     bot_server.get_next_fullmessage()
+    
 
     CurrentMessage.data_message = data
     
@@ -149,6 +150,11 @@ def question_first_type_handler(message):
                 bot_server.\
                 get_next_fullmessage(id_current_message,
                                      answer_text)
+
+                count = bot_server.\
+                    get_count_child(id_current_message)
+                    
+                print("COUNT", count)
 
                 # Установка ответа
                 bot_server.set_answer_user(message.from_user.id,
@@ -200,6 +206,10 @@ def question_second_type_handler(message):
             get_next_fullmessage(id_current_message,
                                  answer_text)
 
+            count = bot_server.\
+                    get_count_child(id_current_message)
+
+            print("COUNT", count)
 
             CurrentMessage.data_message = data_next_message
 

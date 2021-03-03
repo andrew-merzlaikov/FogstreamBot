@@ -36,6 +36,9 @@ class BotServer:
         self.url_for_set_answer = ("http://" + self.url_host + ':' +
                                    self.url_port + '/api/set/answer/')
 
+        self.url_for_get_count = ("http://" + self.url_host + ':' +
+                                   self.url_port + '/api/get/count/child/')
+
     def set_answer_user(self, user_id_telegram, message_id, answer):
         """
         Функция которая устанавливает ответ пользователя в Базе данных
@@ -160,7 +163,7 @@ class BotServer:
         display_condition - Условие отображения
 
         """
-        
+
         r_delay = None
         r_message = self.get_next_message(id_current_message, answer)
 
@@ -175,8 +178,15 @@ class BotServer:
         result_dict["delay"] = r_delay
         result_dict["options_answer"] = r_options["options_answer"]
 
-        print(result_dict)
-
         return result_dict
 
-        
+    def get_count_child(self, id_current_message):
+        """
+        Получения потомков сообщения
+        с id=id_current_message
+        """
+
+        url_for_get_count = self.url_for_get_count + str(id_current_message)
+        r = requests.get(url_for_get_count)
+
+        return r.json()["count"]
