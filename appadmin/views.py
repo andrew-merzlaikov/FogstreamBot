@@ -11,11 +11,20 @@ from .models import (Message,
                      AnswerUser)
 from .forms import (MessageForm,
                     TokenBotForm,
-                    MessageDelayForm)
+                    MessageDelayForm,
+                    MessageLogicForm)
 from django.urls import reverse
 from appserver.models import UserTelegram
 import operator
 from django import forms
+
+def get_create_logic(request):
+
+    message_logic = MessageLogicForm()
+
+    return render(request, 
+                  "logic/create_logic.html",
+                  {"message_logic": message_logic})
 
 def get_info_user(request, telegram_user_id):
     if request.user.is_authenticated:
@@ -245,7 +254,7 @@ class ViewLogic(TemplateView):
         if request.user.is_authenticated:
             
             all_messages = Message.objects.all()
-            
+
             MessageFormSet = modelformset_factory(Message, 
                                                   fields=('text_message', 
                                                           'id_parent', 
@@ -261,7 +270,7 @@ class ViewLogic(TemplateView):
             formset_messages = MessageFormSet()
 
             return render(request, 
-                         "logic/create_logic.html",
+                         "logic/edit_logic.html",
                          {"messages": all_messages,
                           "formset_messages": formset_messages})
 
@@ -286,7 +295,7 @@ class ViewLogic(TemplateView):
                 
 
                 if not Message.check_parent_in_messages(formset_messages):
-                    url_for_redirect = reverse("appadmin:create_logic")
+                    url_for_redirect = reverse("appadmin:edit_logic")
                     params = "?root_errors=True"
                     url_for_redirect = url_for_redirect + params
 
@@ -300,7 +309,7 @@ class ViewLogic(TemplateView):
                     if not Message.check_message_id_parent(form.\
                                                            cleaned_data['id_parent']):
                             
-                        url_for_redirect = reverse("appadmin:create_logic")
+                        url_for_redirect = reverse("appadmin:edit_logic")
                         
                         params = ("?conflict_has_parent=True&id=" +
                                   str(form.cleaned_data['id_parent']))
@@ -312,7 +321,7 @@ class ViewLogic(TemplateView):
                     check_parent_myself = Message.check_parent_myself(form.cleaned_data)
                         
                     if check_parent_myself is not True:
-                        url_for_redirect = reverse("appadmin:create_logic")
+                        url_for_redirect = reverse("appadmin:edit_logic")
                         params = ("?error_parent_myself=" + check_parent_myself["message"])
                         url_for_redirect = url_for_redirect + params
 
@@ -331,14 +340,14 @@ class ViewLogic(TemplateView):
 
                     message.save()
 
-                url_for_redirect = reverse("appadmin:create_logic")
+                url_for_redirect = reverse("appadmin:edit_logic")
                 params = "?create_logic=True"
                 url_for_redirect += params
 
                 return HttpResponseRedirect(url_for_redirect)
 
             else:    
-                url_for_redirect = reverse("appadmin:create_logic")   
+                url_for_redirect = reverse("appadmin:edit_logic")   
                 str_errors = ''
 
                 for error in formset_messages.errors:

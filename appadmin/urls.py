@@ -9,7 +9,8 @@ from .views import (ViewMain,
 					ViewMessageDelay,
 					show_edit_delay,
                     info_users_list,
-                    get_info_user)
+                    get_info_user, 
+                    get_create_logic)
 
 
 app_name = "appadmin"
@@ -20,6 +21,8 @@ urlpatterns = [
 	path('delay/get', ViewMessageDelay.as_view(), name="delay_get"),
 	path('delay/get/edit/<int:id_message>', show_edit_delay, name="delay_edit_get"),
 	path('delay/set/<int:id_message>', ViewMessageDelay.as_view(), name="delay_set"),
+
+    path('create/logic/', get_create_logic, name="get_create_logic"),
 
     path('edit/message/<int:id_message>', 
          ViewMessage.as_view(), 
@@ -35,8 +38,8 @@ urlpatterns = [
 
     path('show/info/users', info_users_list, name="info_users_list"),
 
-    path('create/form/logic', ViewLogic.as_view(), name="create_form_logic"),
-    path('create/logic', ViewLogic.as_view(), name='create_logic'),
+    path('edit/form/logic', ViewLogic.as_view(), name="edit_form_logic"),
+    path('edit/logic', ViewLogic.as_view(), name='edit_logic'),
     path('delete/logic', ViewLogic.as_view(), name='delete_logic'),
 
 	path('token', ViewToken.as_view(), name='token_get'),

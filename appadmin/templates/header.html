@@ -49,7 +49,17 @@
                         </ul>
                     </li>
                 </ul>
-
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Редактировать
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href={% url 'appadmin:edit_form_logic' %}>Логику общения</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
                 <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -58,7 +68,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                     <li><a class="dropdown-item" href={% url 'appadmin:create_message' %}>Сообщение</a></li>
-                    <li><a class="dropdown-item" href={% url 'appadmin:create_form_logic' %}>Логику общения</a></li>
+                    <li><a class="dropdown-item" href={% url 'appadmin:get_create_logic' %}>Логику общения</a></li>
                     </ul>
                 </li>
                 </ul>
