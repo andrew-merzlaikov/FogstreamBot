@@ -39,6 +39,16 @@ def get_delay_for_message(request, id_message):
                         content_type="json\application")
 
 @api_view(('GET', ))
+def count_childs(request, id_current_message):
+    count = Message.\
+            objects.\
+            filter(id_parent=id_current_message).\
+            count()
+    
+    return Response({"count": count}, 
+                    content_type="json\application")
+
+@api_view(('GET', ))
 def check_end_tree(request, id_current_message):
 
     check_end_tree = Message.\

@@ -15,6 +15,7 @@ from .forms import (MessageForm,
 from django.urls import reverse
 from appserver.models import UserTelegram
 import operator
+from django import forms
 
 def get_info_user(request, telegram_user_id):
     if request.user.is_authenticated:
@@ -247,7 +248,12 @@ class ViewLogic(TemplateView):
                                                           'id_parent', 
                                                           'display_condition',
                                                           'write_answer'),
-                                                   extra=0)
+                                                  extra=0,
+                                                  widgets={
+                                                    'text_message': forms.Textarea(attrs={'cols': 80, 
+                                                                                          'rows': 2}),
+                                                    "write_answer": forms.CheckboxInput
+                                                  })
             
             formset_messages = MessageFormSet()
 
@@ -263,9 +269,21 @@ class ViewLogic(TemplateView):
                                                           'id_parent', 
                                                           'display_condition',
                                                           'write_answer'),
-                                                    )
+                                                  widgets={
+                                                    'text_message': forms.Textarea(attrs={'cols': 80, 
+                                                                                          'rows': 2}),
+                                                    "write_answer": forms.CheckboxInput
+                                                  }
+                                                  )
             
             formset_messages = MessageFormSet(request.POST)
+
+            
+            for form in formset_messages:
+                if form.is_valid():
+                    print("FORM: ", form)
+                else:
+                    print("NOT VALID")
 
             if formset_messages.is_valid():
                 
@@ -286,8 +304,9 @@ class ViewLogic(TemplateView):
                                                            cleaned_data['id_parent']):
                             
                         url_for_redirect = reverse("appadmin:create_logic")
+                        
                         params = ("?conflict_has_parent=True&id=" +
-                                      str(form.cleaned_data['id_parent']))
+                                  str(form.cleaned_data['id_parent']))
                             
                         url_for_redirect = url_for_redirect + params
 
