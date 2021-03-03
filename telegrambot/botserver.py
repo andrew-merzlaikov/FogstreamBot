@@ -17,8 +17,6 @@ class BotServer:
         
         self.url_for_users = ("http://" + self.url_host + 
                               ':' + self.url_port + '/api/users')
-        self.url_for_root_message = ("http://" + self.url_host + 
-                                    ':' + self.url_port + '/api/get/root/message')
 
         self.url_for_next_message = ("http://" + self.url_host + 
                                     ':' + self.url_port + '/api/get/next/message/')
@@ -57,7 +55,7 @@ class BotServer:
 
         requests.post(url_for_request, data=data_for_set)
 
-    def get_delay_message(self, id_message):
+    def get_delay_message(self, id_message = 0):
         """
         Функция которая возвращает задержку для сообщения
         с id=id_message
@@ -101,14 +99,6 @@ class BotServer:
 
         return r.json()["exists"]
 
-    def get_root_message(self): 
-        """
-        Функция которая возвращает корневое сообщение
-        """
-        r = requests.get(self.url_for_root_message)
-        
-        return r.json()
-
     def get_next_message(self, id_current_message = None, answer = None):
         """
         Функция которая получает следующее сообщение
@@ -150,6 +140,43 @@ class BotServer:
 
         return r.json()
 
-    def get_next_fullmessage(self, id_current_message, answer = None):
-        pass
-  
+    def get_next_fullmessage(self, id_current_message = None, answer = None):
+        """ 
+        Возврашает словарик в следующем виде:
+        {'id': 61, 
+        'text_message': 'Вы можете получить информацию из следующих источников\r\n1 - instagram.com\r\n2 - vk.com\r\n3 - telegram', 
+        'id_parent': 58, 
+        'display_condition': 'Да', 
+        'write_answer': True, 
+        'delay': 900, 
+        'options_answer': ['2', '1', '3']}
+
+        delay - задержка этого сообщения
+        options_answer - варианты ответа на сообщение
+        (если вариантов нет, то None)
+        id - id_сообщения,
+        text_message - текст сообщения
+        write_answer - Вопрос ли это (надо ли отвечать на этот вопрос)
+        display_condition - Условие отображения
+
+        """
+        
+        r_delay = None
+        r_message = self.get_next_message(id_current_message, answer)
+
+        if id_current_message is None:
+            r_delay = self.get_delay_message(r_message["message"]["id"])
+        else:
+            r_delay = self.get_delay_message(id_current_message)
+        
+        r_options = self.get_options_answers(r_message["message"]["id"])
+
+        result_dict = r_message["message"]
+        result_dict["delay"] = r_delay
+        result_dict["options_answer"] = r_options["options_answer"]
+
+        print(result_dict)
+
+        return result_dict
+
+        

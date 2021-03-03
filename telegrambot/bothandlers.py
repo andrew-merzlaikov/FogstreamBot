@@ -46,8 +46,6 @@ def handler_current_message(message, current_message):
             # Если первый элемент списке не None значит есть варианты
             # ответа
 
-            print(options)
-
             if options["options_answer"] is not None:
                 Flag.STATE_MESSAGE = "1"
                 
@@ -83,6 +81,7 @@ def handler_current_message(message, current_message):
                                              data_message["message"]["text_message"]))
 
                 data_next_message = bot_server.get_next_message(id_current_message)
+                bot_server.get_next_fullmessage(id_current_message)
                 CurrentMessage.data_message = data_next_message
 
                 # Вызывается чтобы понять какой флаг надо ставить для следующего сообщения
@@ -111,7 +110,8 @@ def cmd_start(message):
                                     message.from_user.last_name)
     
     data = bot_server.get_next_message()
-        
+    bot_server.get_next_fullmessage()
+
     CurrentMessage.data_message = data
     
     handler_current_message(message, CurrentMessage.data_message)
@@ -146,6 +146,9 @@ def question_first_type_handler(message):
                 data_next_message = bot_server.\
                                     get_next_message(id_current_message,
                                                      answer_text)
+                bot_server.\
+                get_next_fullmessage(id_current_message,
+                                     answer_text)
 
                 # Установка ответа
                 bot_server.set_answer_user(message.from_user.id,
@@ -193,6 +196,10 @@ def question_second_type_handler(message):
             bot_server.set_answer_user(message.from_user.id,
                                        id_current_message,
                                        answer_text)
+            bot_server.\
+            get_next_fullmessage(id_current_message,
+                                 answer_text)
+
 
             CurrentMessage.data_message = data_next_message
 
