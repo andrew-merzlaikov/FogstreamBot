@@ -6,7 +6,7 @@ import enum
 bot = telebot.TeleBot(config.token_auth)
 bot_server = BotServer()
 token = bot_server.get_token()
-delay = bot_server.get_delay_message(58)
+delay = bot_server.get_delay_message(141)
 
 print("TOKEN = ", token)
 print("DELAY = ", delay)

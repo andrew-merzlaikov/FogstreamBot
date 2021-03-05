@@ -166,12 +166,8 @@ class BotServer:
 
         r_delay = None
         r_message = self.get_next_message(id_current_message, answer)
+        r_delay = self.get_delay_message(r_message["message"]["id"])
 
-        if id_current_message is None:
-            r_delay = self.get_delay_message(r_message["message"]["id"])
-        else:
-            r_delay = self.get_delay_message(id_current_message)
-        
         r_options = self.get_options_answers(r_message["message"]["id"])
 
         result_dict = r_message["message"]
