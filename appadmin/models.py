@@ -10,7 +10,7 @@ class TokenBot(models.Model):
 
 
 class Message(models.Model):
-    text_message = models.CharField(max_length=200)
+    text_message = models.CharField(max_length=500)
 
     id_parent = models.IntegerField(null=True)
 

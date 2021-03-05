@@ -19,9 +19,9 @@
             <input type="hidden" name="_method" value="put">
             {% for field in message_form %}
             <div class="form-group">
-                <label for="exampleInputEmail1">Текст сообщения</label>
+                <label for="exampleInputEmail1">{{ field.label }}</label>
                 <div type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    {{field }}
+                    {{ field }}
                 </div>
                 {% if field.errors%}
                         {% for error in field.errors %}
@@ -30,9 +30,9 @@
                         </div>
                         {% endfor %}
                 {% endif %}
-                <button type="submit" class="btn btn-primary mt-2">Редактировать сообщение </button>
             </div>
             {% endfor %}
+            <button type="submit" class="btn btn-primary mt-2">Редактировать сообщение </button>
         </form>
         
 

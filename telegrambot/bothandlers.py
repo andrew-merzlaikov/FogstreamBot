@@ -45,6 +45,7 @@ def handler_current_message(message, current_message):
 
             # Если первый элемент списке не None значит есть варианты
             # ответа
+            print(options["options_answer"])
 
             if options["options_answer"] is not None:
                 Flag.STATE_MESSAGE = "1"
@@ -131,6 +132,8 @@ def question_first_type_handler(message):
 
         options = bot_server.\
                   get_options_answers(root_message['id'])  
+
+        print(options["options_answer"])
 
         # Если нет такого ответа среди вариантов выводим сообщение пользователю
         if message.text not in options['options_answer']:

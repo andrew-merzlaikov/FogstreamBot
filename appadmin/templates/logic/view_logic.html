@@ -1,0 +1,35 @@
+{% extends  'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    {% include 'header.html' %}
+
+    <div class="container">
+
+        <table class="table mt-2">
+            <thead>
+            <tr>
+                <th scope="col">ID (в Базе)</th>
+                <th scope="col">Текст сообщения </th>
+                <th scope="col"> </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for message in messages %}
+                <tr>
+                <th scope="row">{{message.id}}</th>
+                <td>{{message}}</td>
+                <td>
+                    <form action={% url 'appadmin:get_childs' message.id %} method="GET">
+                        {% csrf_token %}
+                        <button class="btn btn-success" type="submit"> Просмотреть потомков </button>
+                    </form>
+                </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

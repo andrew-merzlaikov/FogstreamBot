@@ -15,11 +15,13 @@ import logging
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 
-logger = logging.getLogger(__name__)
-
 
 @api_view(('GET', ))
 def get_delay_for_message(request, id_message):
+    """
+    Эндпоинт возвращает задержку для сообщения
+    с id=id_message
+    """
 
     exists_delay = MessageDelay.\
                    objects.\
@@ -40,6 +42,10 @@ def get_delay_for_message(request, id_message):
 
 @api_view(('GET', ))
 def count_childs(request, id_current_message):
+    """
+    Эндпоинт возвращает количество 
+    потомков для сообщения с id=id_message
+    """
     count = Message.\
             objects.\
             filter(id_parent=id_current_message).\
@@ -50,6 +56,10 @@ def count_childs(request, id_current_message):
 
 @api_view(('GET', ))
 def check_end_tree(request, id_current_message):
+    """
+    Эндпоинт проверяет является ли сообщение с 
+    id=id_current_message конечным в дереве диалога
+    """
 
     check_end_tree = Message.\
                      objects.\
@@ -60,6 +70,9 @@ def check_end_tree(request, id_current_message):
 
 @api_view(('POST', ))
 def set_answer_user(request, id_user_telegram):
+    """
+    Эндпоинт устанавливает ответ на вопрос
+    """   
     answer = request.POST['answer']
     id_message = request.POST['id_message']
     
@@ -76,7 +89,10 @@ def set_answer_user(request, id_user_telegram):
 
 @api_view(('GET', ))
 def get_options_answers(request, id_current_message):
-    
+    """
+    Эндпоинт возвращает ответы на сообщение
+    с id=id_current_message
+    """
     messages = Message.\
                       objects.\
                       filter(id_parent=id_current_message).\
@@ -99,6 +115,9 @@ def get_options_answers(request, id_current_message):
 
 @api_view(('GET', ))
 def get_token_bot(request):
+    """
+    Возвращает токен бота
+    """
     token = TokenBot.objects.first()
 
     return Response({"token": str(token)}, 
@@ -107,7 +126,10 @@ def get_token_bot(request):
 
 class UserView(APIView):
 
-    def post(self, request):        
+    def post(self, request):   
+        """
+        Создает пользователя telegram в БД
+        """     
         data_user = request.data['user'] 
         serializer = UserSerializer(data=data_user)
 
@@ -127,6 +149,9 @@ class UserView(APIView):
 class MessageView(APIView):
 
     def get(self, request, id_current_message = 0):
+        """
+        Возвращает сообщение с базы данных
+        """
         answer = None
         message = None
 

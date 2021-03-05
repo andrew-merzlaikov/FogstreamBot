@@ -24,7 +24,7 @@
                         Логика общения
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Просмотреть</a></li>
+                        <li><a class="dropdown-item" href={% url 'appadmin:table_for_logic' %}>Просмотреть</a></li>
                             <li>
                                 <form action={% url 'appadmin:delete_logic' %} method="POST">
                                     {% csrf_token %}
@@ -57,6 +57,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><a class="dropdown-item" href={% url 'appadmin:edit_form_logic' %}>Логику общения</a></li>
+                        <li><a class="dropdown-item" href={% url 'appadmin:show_messages' %}>Сообщения</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -67,7 +68,6 @@
                     Создать
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href={% url 'appadmin:create_message' %}>Сообщение</a></li>
                     <li><a class="dropdown-item" href={% url 'appadmin:get_create_logic' %}>Логику общения</a></li>
                     </ul>
                 </li>

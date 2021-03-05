@@ -1,46 +1,63 @@
 from django.urls import path
 from django.contrib.auth import views
-from .views import (ViewMain, 
-				    ViewMessage,
-                    ViewUser,
-                    ViewLogic,
-                    show_edit_form_message,
-					ViewToken,
-					ViewMessageDelay,
-					show_edit_delay,
-                    info_users_list,
-                    get_info_user, 
-                    get_create_logic)
+from .views.message_view import (ViewMessage,
+                                 set_root_message,
+                                 show_edit_form_message)
 
+from .views.token_view import ViewToken
+from .views.logic_edit_view import (ViewLogicEdit,
+                                    get_form_create_logic,
+                                    get_table_for_logic)
+
+from .views.main_view import ViewMain
+from .views.childs_views import (ViewChilds,
+                                 get_childs_message)
+from .views.message_delay_view import (ViewMessageDelay,
+                                       show_edit_delay)
+from .views.user_view import (get_info_user,
+                              info_users_list)
 
 app_name = "appadmin"
 
 urlpatterns = [
     path('main', ViewMain.as_view(), name='main'),
-    path('create/message', ViewMessage.as_view(), name='create_message'),
-	path('delay/get', ViewMessageDelay.as_view(), name="delay_get"),
+	
+    path('delay/get', ViewMessageDelay.as_view(), name="delay_get"),
 	path('delay/get/edit/<int:id_message>', show_edit_delay, name="delay_edit_get"),
 	path('delay/set/<int:id_message>', ViewMessageDelay.as_view(), name="delay_set"),
-
-    path('create/logic/', get_create_logic, name="get_create_logic"),
-
+    
+    path('show/logic', get_table_for_logic, name="table_for_logic"),
+    path('create/logic/', get_form_create_logic, name="get_create_logic"),
+    path('set/root/message', set_root_message, name="set_root_message"),
+    path('show/childs/<int:id_message>', get_childs_message, name="get_childs"),
+    
+    path('create/childs/<int:id_parent>', 
+         ViewChilds.as_view(), 
+         name="get_form_create_childs"),
+    
+    path('set/childs/<int:id_parent>/<int:count_childs>', 
+         ViewChilds.as_view(), 
+         name="set_form_create_childs"),
+    
+    path('show/messages', ViewMessage.as_view(), name="show_messages"),
+    path('set/message', ViewMessage.as_view(), name="set_message"),
     path('edit/message/<int:id_message>', 
          ViewMessage.as_view(), 
          name='edit_message'),
-    
     path('delete/message/<int:id_message>', 
          ViewMessage.as_view(), 
          name='delete_message'),
     
+
     path('form/edit/message/<int:id_message>',
          show_edit_form_message,
          name="edit_form_message"), 
 
     path('show/info/users', info_users_list, name="info_users_list"),
 
-    path('edit/form/logic', ViewLogic.as_view(), name="edit_form_logic"),
-    path('edit/logic', ViewLogic.as_view(), name='edit_logic'),
-    path('delete/logic', ViewLogic.as_view(), name='delete_logic'),
+    path('edit/form/logic', ViewLogicEdit.as_view(), name="edit_form_logic"),
+    path('edit/logic', ViewLogicEdit.as_view(), name='edit_logic'),
+    path('delete/logic', ViewLogicEdit.as_view(), name='delete_logic'),
 
 	path('token', ViewToken.as_view(), name='token_get'),
 	path('token/set', ViewToken.as_view(), name="token_set"),

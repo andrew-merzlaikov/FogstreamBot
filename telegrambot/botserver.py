@@ -80,7 +80,7 @@ class BotServer:
         url_for_option = self.url_for_options_answers + str(id_current_message)
 
         r = requests.get(url_for_option)
-
+        
         return r.json()
 
     def get_token(self):
