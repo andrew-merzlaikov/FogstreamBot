@@ -31,6 +31,18 @@ def show_edit_delay(request, id_message):
 
 
 class ViewMessageDelay(TemplateView):
+
+    http_method_names = ['get', 'post', 'put', 'delete']
+
+    def dispatch(self, *args, **kwargs):
+        method = self.request.POST.get('_method', '').lower()
+        
+        if method == 'put':
+            return self.put(*args, **kwargs)
+        if method == 'delete':
+            return self.delete(*args, **kwargs)
+        return super(ViewMessageDelay, self).dispatch(*args, **kwargs)
+
     def get(self, request):
         """
         Возвращает таблицу с которой можно выбрать 
@@ -62,6 +74,31 @@ class ViewMessageDelay(TemplateView):
             )
             
             params = "?set_delay=True"
+            url_for_redirect = reverse('appadmin:delay_get') + params
+
+            return HttpResponseRedirect(url_for_redirect)
+        else:
+            return render(request, "http_response/error_401.html", status=401)
+    
+    def delete(self, request, id_message):
+        """
+        Позволяет удалить задержку
+        """
+        if request.user.is_authenticated:
+
+
+            message_exists = MessageDelay.\
+                             objects.\
+                             filter(message_id=id_message).\
+                             exists()
+
+            if message_exists:
+                MessageDelay.\
+                objects.\
+                filter(message_id=id_message).\
+                delete()
+            
+            params = "?delete_delay=True"
             url_for_redirect = reverse('appadmin:delay_get') + params
 
             return HttpResponseRedirect(url_for_redirect)

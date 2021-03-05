@@ -10,6 +10,25 @@ from django.forms import modelformset_factory
 from django.forms import formset_factory
 
 
+def get_form_edit_childs(request, id_parent):
+    """
+    Функция которая возвращает таблицу для редактирования
+    потомков
+    """
+    print("TESSST")
+    if request.user.is_authenticated:
+        messages = Message.\
+                   objects.\
+                   filter(id_parent=id_parent).\
+                   all()
+        
+        return render(request, 
+                    "logic/edit_childs.html",
+                    {"messages": messages})
+    else:
+        return render(request, "http_response/error_401.html", status=401)
+
+
 def get_childs_message(request, id_message):
     """
     View который возвращает детей сообщения

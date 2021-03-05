@@ -53,5 +53,5 @@ class MessageDelayForm(forms.Form):
     """
     Форма для задания задержки
     """
-    delay = forms.IntegerField(min_value=0)
+    delay = forms.IntegerField(min_value=1)
     

@@ -24,6 +24,7 @@
         <th scope="col">ID (в Базе)</th>
         <th scope="col">Текст сообщения </th>
         <th scope="col"> </th>
+        <th scope="col"> </th>
       </tr>
     </thead>
     <tbody>
@@ -38,6 +39,12 @@
               </form>
             </td>
 
+            <td>
+              <form action={% url 'appadmin:get_form_edit_childs' message.id %} method="GET">
+                {% csrf_token %}
+               <button class="btn btn-success" type="submit"> Редактировать потомков </button>
+              </form>
+            </td>
         </tr>
       {% endfor %}
     </tbody>

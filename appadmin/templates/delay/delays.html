@@ -42,6 +42,13 @@
                                <button class="btn btn-success" type="submit"> Установить задержку </button>
                               </form>
                             </td>
+                            <td>
+                              <form action={% url 'appadmin:delay_delete' message.id %} method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="_method" value="delete">
+                                <button class="btn btn-danger" type="submit"> Удалить задержку </button>
+                              </form> 
+                            </td>
                         </tr>
                       {% endfor %}
                     </tbody>
