@@ -6,6 +6,8 @@ class ViewMain(TemplateView):
     def get(self, request):
         """
         Возвращает главную страницу в панели администратора
+        если пользователь авторизован, иначе возвращает
+        ошибку
         """
         if request.user.is_authenticated:
             return render(request, 

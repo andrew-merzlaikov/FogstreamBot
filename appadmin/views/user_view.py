@@ -6,7 +6,10 @@ from appadmin.models import AnswerUser
 
 def get_info_user(request, telegram_user_id):
     """
-    Возвращает ответы пользователей на вопросы
+    Возвращает ответы пользователей на вопросы если
+    пользователь авторизован, иначе вернет ошибку
+    :param telegram_user_id: id из message.from_user.id
+    :type telegram_user_id: int
     """
 
     if request.user.is_authenticated:
@@ -22,6 +25,7 @@ def get_info_user(request, telegram_user_id):
 def info_users_list(request):
     """
     Возвращает список пользовтелей для администратора
+    если пользователь авторизован, иначе вернет ошибку
     """
     if request.user.is_authenticated:
         users_telegram = UserTelegram.\

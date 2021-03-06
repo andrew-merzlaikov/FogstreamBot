@@ -13,7 +13,8 @@ from django import forms
 def get_table_for_logic(request):
     """
     Возвращает таблицу в которой можно 
-    просмотреть логику
+    просмотреть логику если пользователь
+    авторизован, иначе вернет ошибку
     """
     if request.user.is_authenticated:
 
@@ -29,6 +30,8 @@ def get_form_create_logic(request):
     """
     Возвращает таблицу через которую
     можно создать потомков для сообщения
+    если пользователь авторизован иначе
+    возвращает ошибку
     """
     if request.user.is_authenticated:
         messages = Message.objects.all()
@@ -48,7 +51,8 @@ def get_form_create_logic(request):
 
 def delete_logic(request):
     """
-    Удаляет логику общения бота
+    Удаляет логику общения бота если пользователь
+    авторизован иначе вернет ошибку
     """
     if request.user.is_authenticated:
         all_messages = Message.objects.all()

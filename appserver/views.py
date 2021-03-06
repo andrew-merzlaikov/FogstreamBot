@@ -19,8 +19,13 @@ from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 @api_view(('GET', ))
 def get_delay_for_message(request, id_message):
     """
-    Эндпоинт возвращает задержку для сообщения
+    Функция возвращает задержку для сообщения
     с id=id_message
+    :param id_message: id сообщения
+    :return: Возвращает объект Response JSON 
+    с задержкой сообщения если задержка на сообщение задана,
+    иначе возвращает 0
+    :rtype: Response
     """
 
     exists_delay = MessageDelay.\
@@ -44,7 +49,11 @@ def get_delay_for_message(request, id_message):
 def count_childs(request, id_current_message):
     """
     Эндпоинт возвращает количество 
-    потомков для сообщения с id=id_message
+    потомков для сообщения с id=id_current_message
+    :param id_current_message: id текущего сообщения
+    :return: Возвращает Response JSON объект, где
+    count - задержка сообщения
+    :rtype: Response
     """
     count = Message.\
             objects.\
@@ -71,7 +80,12 @@ def check_end_tree(request, id_current_message):
 @api_view(('POST', ))
 def set_answer_user(request, id_user_telegram):
     """
-    Эндпоинт устанавливает ответ на вопрос
+    Эндпоинт устанавливает ответ на вопрос 
+    пользователя с message.from_user.id=id_user_telegram
+    :param id_user_telegram: id пользователя в telegram
+    :type id_user_telegram: string
+    :return: Возвращает {"status": True} true
+    :rtype: Response
     """   
     answer = request.POST['answer']
     id_message = request.POST['id_message']
@@ -85,13 +99,21 @@ def set_answer_user(request, id_user_telegram):
                               })
     
                               
-    return Response({"status": True})
+    return Response({"status": True}, 
+                    content_type="json\application")
 
 @api_view(('GET', ))
 def get_options_answers(request, id_current_message):
     """
     Эндпоинт возвращает ответы на сообщение
     с id=id_current_message
+    :param id_current_message: id текущего сообщения
+    :type id_current_message: int
+    :return: Если варианты ответа на сообщение
+    есть, то возвращается список с вариантами ответа в 
+    виде Response JSON {"options_answer": options_answer},
+    иначе пользователю вернется None
+    :rtype: Response JSON
     """
     messages = Message.\
                       objects.\
@@ -117,7 +139,11 @@ def get_options_answers(request, id_current_message):
 @api_view(('GET', ))
 def get_token_bot(request):
     """
-    Возвращает токен бота
+    Возвращает токен бота, который установил пользователь
+    через админку
+    :return: Возвращает токен бота в следующем виде
+    {"token": str(token)}
+    :rtype: Response JSON
     """
     token = TokenBot.objects.first()
 
@@ -126,7 +152,9 @@ def get_token_bot(request):
 
 
 class UserView(APIView):
-
+    """
+    CBV который описывает пользователя Telegram
+    """
     def post(self, request):   
         """
         Создает пользователя telegram в БД
@@ -148,10 +176,32 @@ class UserView(APIView):
 
 
 class MessageView(APIView):
+    """
+    CBV который описывает сообщения
+    """
 
     def get(self, request, id_current_message = 0):
         """
         Возвращает сообщение с базы данных
+        В эндпоинт также GET параметром может передаваться
+        answer - это ответ на текущее собщение
+        :param id_current_message: id текущего сообщения
+        :type id_current_message: int
+        :return: Возвращает Response JSON объект
+        со следующими полями
+        {"message": {
+            "id": message.id,
+            "text_message": message.text_message,
+            "id_parent": message.id_parent,
+            "display_condition": message.display_condition,
+            "write_answer": message.write_answer
+        }},
+        id - id сообщения
+        text_message - текст сообщения
+        id_parent - id родителя
+        display_condition - условие отображения
+        write_answer - Bool значение, которое отвечает надо ли
+        писать ответ на вопрос
         """
         answer = None
         message = None

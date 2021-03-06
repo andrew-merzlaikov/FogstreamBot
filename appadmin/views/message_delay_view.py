@@ -12,7 +12,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 def show_edit_delay(request, id_message):
     """
     Возвращает форму для редактирования задержки
-    сообщения
+    сообщения если пользователь авторизован иначе
+    вернет ошибку
+    :param id_message: id сообщения
+    :type id_message: int
     """
 
     if request.user.is_authenticated:
@@ -46,7 +49,9 @@ class ViewMessageDelay(TemplateView):
     def get(self, request):
         """
         Возвращает таблицу с которой можно выбрать 
-        нужное сообщения для задания задержки
+        нужное сообщения для задания задержки если
+        пользователь авторизован иначе вернет
+        ошибку
         """
         if request.user.is_authenticated:
             messages_all = Message.objects.all()
@@ -64,7 +69,10 @@ class ViewMessageDelay(TemplateView):
     
     def post(self, request, id_message):
         """
-        Устанавливает задержку для сообщения
+        Устанавливает задержку для сообщения если пользователь
+        авторизован иначе выведет ошибку
+        :param id_message: id сообщения
+        :type id_message: int
         """
         if request.user.is_authenticated:
             delay = request.POST['delay']
@@ -82,7 +90,10 @@ class ViewMessageDelay(TemplateView):
     
     def delete(self, request, id_message):
         """
-        Позволяет удалить задержку
+        Позволяет удалить задержку если пользователь авторизован
+        иначе вернет ошибку
+        :param id_message: id сообщения
+        :type id_message: int
         """
         if request.user.is_authenticated:
 

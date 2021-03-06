@@ -10,6 +10,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 def show_edit_form_message(request, id_message):
     """
     Возвращает форму для редактирования сообщения
+    если пользователь авторизован, иначе вернет ошибку
+    :param id_message: id сообщения
+    :type id_message: int
     """
 
     if request.user.is_authenticated:
@@ -36,7 +39,8 @@ def show_edit_form_message(request, id_message):
 
 def set_root_message(request):
     """
-    Устанавливает корневое сообщение
+    Устанавливает корневое сообщение если 
+    пользователь авторизован, иначе вернет ошибку
     """
     if request.user.is_authenticated:
         message_form = MessageForm(request.POST)
@@ -75,7 +79,8 @@ class ViewMessage(TemplateView):
     def get(self, request):
         """
         Возвращает таблицу через которую можно 
-        редактировать и удалять сообщения
+        редактировать и удалять сообщения если пользователь
+        авторизован, иначе вернет ошибку
         """
         if request.user.is_authenticated:
             message_form = MessageForm()
@@ -95,8 +100,8 @@ class ViewMessage(TemplateView):
 
     def post(self, request):
         """
-        Сохраняет созданное общение
-        при создании логики
+        Сохраняет созданное общение при создании логики
+        если пользователь авторизован, иначе вернет ошибку
         """
         if request.user.is_authenticated:
             message_form = MessageForm(request.POST)
@@ -123,7 +128,11 @@ class ViewMessage(TemplateView):
 
     def put(self, request, id_message):
         """
-        Обновляет сообщение при редактировании
+        Обновляет сообщение при редактировании 
+        если пользователь авторизован
+        иначе вернет ошибку
+        :param id_message: id сообщения
+        :type id_message: int
         """
         if request.user.is_authenticated:
             form = MessageForm(request.POST or None)
@@ -137,7 +146,7 @@ class ViewMessage(TemplateView):
                     display_condition = form.\
                                         cleaned_data.\
                                         get('display_condition')
-                                        
+
                     display_condition = display_condition.lower()
 
                 Message.\
@@ -159,7 +168,10 @@ class ViewMessage(TemplateView):
 
     def delete(self, request, id_message):
         """
-        Удаляет сообщение из Базы данных
+        Удаляет сообщение из Базы данных если пользователь
+        авторизован, иначе вернет ошибку
+        :param id_message: id сообщения которого необходимо удалить
+        :type id_message: int
         """
         if request.user.is_authenticated:
             

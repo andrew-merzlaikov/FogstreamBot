@@ -11,7 +11,8 @@ class ViewToken(TemplateView):
     def get(self, request):
         """
         Возвращает страницу через которую можно поставить
-        токен
+        токен если пользователь авторизован иначе вернет
+        ошибку
         """
         if request.user.is_authenticated:
             token_bot_form = TokenBotForm()
@@ -26,7 +27,8 @@ class ViewToken(TemplateView):
 
     def post(self, request):
         """
-        Позволяет установить значения токена
+        Позволяет установить значения токена если пользователь
+        авторизован, иначе вернет ошибку
         """
         if request.user.is_authenticated:
             exists_token = TokenBot.\

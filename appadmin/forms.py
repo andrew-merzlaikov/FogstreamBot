@@ -32,6 +32,7 @@ class CountChildsMessageForm(forms.Form):
     """
     Форма которая позволяет задать количество детей
     у данного сообщения
+    count_childs - количество потомков
     """
 
     count_childs = forms.IntegerField(min_value=1,
@@ -52,6 +53,7 @@ class TokenBotForm(forms.Form):
 class MessageDelayForm(forms.Form):
     """
     Форма для задания задержки
+    delay - задержка появления сообщения
     """
     delay = forms.IntegerField(min_value=1)
     

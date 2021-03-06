@@ -25,6 +25,10 @@
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="form-group">
+                    <!-- 
+                        У родительского сообщения не может быть display_condition 
+                        поэтому нам не нужно это поле в форме
+                    -->
                     {% if field.name != 'display_condition' %}
                         <label for="exampleInputEmail1">{{ field.label }}</label>
                         <div type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

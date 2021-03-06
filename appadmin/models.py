@@ -3,6 +3,10 @@ from appserver.models import UserTelegram
 
 
 class TokenBot(models.Model):
+    """
+    Модель для представления токена в БД
+    token_bot - токен бота
+    """
     token_bot = models.CharField(max_length=500)
 
     def __str__(self):
@@ -10,6 +14,14 @@ class TokenBot(models.Model):
 
 
 class Message(models.Model):
+    """
+    Модель для представления сообщения в БД
+    text_message - текст сообщения
+    id_parent - id родителя
+    display_condition - условие отображение (как надо ответить на родительское
+    сообщение чтобы это сообщение появилось)
+    write_answer - Bool значение которое определяет вопрос ли это
+    """
     text_message = models.CharField(max_length=500)
 
     id_parent = models.IntegerField(null=True)
@@ -26,6 +38,11 @@ class Message(models.Model):
 
 
 class MessageDelay(models.Model):
+    """
+    Модель для представления задержек сообщения
+    message - связанное поле с моделью Message
+    delay - задержка сообщения
+    """
     message = models.OneToOneField(Message, 
                                    on_delete=models.CASCADE, 
                                    primary_key=True)
@@ -33,6 +50,14 @@ class MessageDelay(models.Model):
 
 
 class AnswerUser(models.Model):
+    """
+    Модель для представления ответов пользователя 
+    на сообщения
+    telegram_user - поле связанное с моделью TelegramUser из
+    appserver
+    message - поле связанное с моделью Message
+    answer - ответ пользователя на вопрос
+    """
     telegram_user = models.ForeignKey(UserTelegram, 
                                       on_delete=models.CASCADE)
     

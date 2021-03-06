@@ -14,6 +14,10 @@ def get_form_edit_childs(request, id_parent):
     """
     Функция которая возвращает таблицу для редактирования
     потомков
+    :param id_parent: id родителя
+    :type id_parent: int
+    :return: возвращает таблицу для редактирования потомков 
+    если пользователь авторизован, ошибку иначе
     """
     if request.user.is_authenticated:
         messages = Message.\
@@ -32,6 +36,10 @@ def get_childs_message(request, id_message):
     """
     View который возвращает детей сообщения
     с id=id_messages
+    :param id_message: айди сообщения
+    :type id_message: int
+    :return: возвращает список с детьми сообщения, 
+    иначе ошибку авторизации
     """
     if request.user.is_authenticated:
         messages_childs = Message.\
@@ -62,6 +70,10 @@ class ViewChilds(TemplateView):
     def get(self, request, id_parent):
         """
         Возвращает формы для создания потомков
+        :param id_parent: id родителя
+        :type id_parent: int
+        :return: возвращает формы для создания потомков
+        если пользователь авторизован, иначе ошибка
         """
         if request.user.is_authenticated:
             count_childs_form = CountChildsMessageForm()
@@ -100,6 +112,12 @@ class ViewChilds(TemplateView):
         """
         Устанавливает потомков для родительского сообщения
         с id=id_parent
+        :param id_parent: id родителя
+        :type id_parent: int
+        :param count_childs: количество потомков
+        :type count_childs: int
+        :return: возвращается на форму создания потомков если
+        пользователь авторизован, иначе выводит ошибку
         """
 
         if request.user.is_authenticated:
