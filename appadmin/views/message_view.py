@@ -114,7 +114,6 @@ class ViewMessage(TemplateView):
 
                 return redirect('/bot/create/message?' + 'status_msg=OK')
             else:
-                print(message_form.errors)
                 return render(request, 
                               "http_response/error_422.html", 
                               status=422)
@@ -134,13 +133,12 @@ class ViewMessage(TemplateView):
                 write_answer = form.cleaned_data.get('write_answer')
                 display_condition = None
 
-                print(form.cleaned_data.get('display_condition'))
-
                 if form.cleaned_data.get('display_condition') != '':
                     display_condition = form.\
                                         cleaned_data.\
                                         get('display_condition')
-
+                                        
+                    display_condition = display_condition.lower()
 
                 Message.\
                         objects.\
@@ -149,9 +147,8 @@ class ViewMessage(TemplateView):
                                write_answer=write_answer,
                                display_condition=display_condition)
                 
-                url_for_redirect = reverse('appadmin:show_messages')
 
-                return redirect(url_for_redirect)
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
             else:
                 return render(request, 
                               "http_response/error_422.html", 
@@ -171,6 +168,6 @@ class ViewMessage(TemplateView):
                     filter(id=id_message).\
                     delete()
 
-            return HttpResponseRedirect(reverse('appadmin:show_messages'))
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         else:
             return render(request, "http_response/error_401.html", status=401)

@@ -15,7 +15,6 @@ def get_form_edit_childs(request, id_parent):
     Функция которая возвращает таблицу для редактирования
     потомков
     """
-    print("TESSST")
     if request.user.is_authenticated:
         messages = Message.\
                    objects.\
@@ -115,9 +114,11 @@ class ViewChilds(TemplateView):
                     text_message = form.cleaned_data['text_message']
                     write_answer = form.cleaned_data['write_answer']
                     display_condition = form.cleaned_data['display_condition']
+                    display_condition = display_condition.lower()
 
                     if display_condition == '':
                         display_condition = None
+
 
                     Message.objects.create(text_message=text_message,
                                         write_answer=write_answer,

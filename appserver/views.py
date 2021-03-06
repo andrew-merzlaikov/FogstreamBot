@@ -104,7 +104,8 @@ def get_options_answers(request, id_current_message):
         if message is not None:
             if message.display_condition is not None:
                 options_answer.append(message.display_condition)
-
+    
+    options_answer = sorted(options_answer)
 
     if options_answer:
         return Response({"options_answer": options_answer},

@@ -24,7 +24,7 @@ urlpatterns = [
     path('main', ViewMain.as_view(), name='main'),
 	
     path('delay/get', ViewMessageDelay.as_view(), name="delay_get"),
-	path('delay/get/edit/<int:id_message>', show_edit_delay, name="delay_edit_get"),
+    path('delay/get/edit/<int:id_message>', show_edit_delay, name="delay_edit_get"),
 	path('delay/set/<int:id_message>', ViewMessageDelay.as_view(), name="delay_set"),
     path('delay/delete/<int:id_message>', ViewMessageDelay.as_view(), name="delay_delete"),
 

@@ -52,6 +52,7 @@ def checking_message(message_chat_id):
     if current_message.data['write_answer'] == True and count_child > 1:        
         keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
         buttons = current_message.data['options_answer']
+        print(current_message.data['text_message'])
         keyboard.add(*buttons)
         bot.send_message(message_chat_id, current_message.data['text_message'], reply_markup=keyboard)              
         flag.flag = 3
@@ -66,14 +67,16 @@ def checking_message(message_chat_id):
         #print(current_message.data)
         print("current_message.data['write_answer'] == False and count_child == 2")
         print("Для сообщения имеющего двух потомков не указано, что это вопрос")
-        bot.send_message(message_chat_id, )
+        # bot.send_message(message_chat_id, )
         bot.send_message(message_chat_id, "Сообщение имеет двух потомков, но не указано, что оно является вопросом - Администратор должен исправит логику")
         bot.send_message(message_chat_id, "Чтобы вновь начать диалог - введите /start")    
 		
     # определяем, что сообщение не является вопросом и потомок один
     # если таких сообщений несколько подряд, то они будут
     # выводится один за другим, разделяемые указаной задержкой
-    while current_message.data['write_answer'] == False and count_child == 1:
+    if current_message.data['write_answer'] == False and count_child == 1:
+        print("TEST")
+        print(current_message.data['text_message'])
         bot.send_message(message_chat_id, current_message.data['text_message'])
         time.sleep(current_message.data['delay'])
         current_message.data = bot_server.get_next_fullmessage(current_message.data['id'])
@@ -102,7 +105,7 @@ def cmd_start(message):
     """
     Обработчик для команды /start
     """
-    time.sleep(3) 
+    # time.sleep(3) 
     bot_server.create_user_in_server(message.from_user.id,
                                     message.from_user.username,
                                     message.from_user.first_name,
@@ -115,6 +118,7 @@ def cmd_start(message):
 # сработает, если сообщение является вопросом, но в дереве диалога последнее
 @bot.message_handler(func=lambda message: flag.flag == 1)
 def question_and_zero_followers(message):
+    print("FLAG 1")
     time.sleep(3) 
     bot_server.set_answer_user(message.from_user.id, current_message.data['id'], message.text)	
     time.sleep(15)	
@@ -124,6 +128,7 @@ def question_and_zero_followers(message):
 # сработает, если сообщение является вопросом и есть следущее сообщение
 @bot.message_handler(func=lambda message: flag.flag == 2)
 def question_and_one_follower(message):
+    print("FLAG 2")
     time.sleep(3) 
     bot_server.set_answer_user(message.from_user.id, current_message.data['id'], message.text)
     if current_message.data['delay'] != 0:
@@ -137,6 +142,7 @@ def question_and_one_follower(message):
 @bot.message_handler(func=lambda message: flag.flag == 3)
 def question_and_multiple_followers(message):
     time.sleep(3)
+    print("FLAG 3")
     # все варианты ответов переводим в нижний регистр
     options_answer = [x.lower() for x in current_message.data['options_answer']]
     if message.text.lower() in options_answer:
