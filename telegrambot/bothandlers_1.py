@@ -140,6 +140,7 @@ async def main():
     @dp.message_handler(lambda message: user_id_db[str(message.chat.id)] == 2)
     async def question_and_one_follower(message: types.Message):
         await asyncio.sleep(3) 
+        # берем текущее сообщение с сервера
         cur_mess = bot_server.get_current_message(message.from_user.id)
         bot_server.set_answer_user(message.from_user.id, cur_mess['id'], message.text)
 
@@ -147,6 +148,8 @@ async def main():
             await bot.send_message(message.from_user.id, "Пожалуйста, немного подождите")
             await asyncio.sleep(cur_mess['delay'])	
 
+        # когда берем следующее собщение, то следующее сообщение 
+        # устанавливается как текущее
         bot_server.get_next_fullmessage(message.from_user.id,
                                                        cur_mess['id'])
         await checking_message(message, message.from_user.id)
