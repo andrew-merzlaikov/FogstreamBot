@@ -39,9 +39,77 @@ class BotServer:
         self.url_for_get_count = ("http://" + self.url_host + ':' +
                                    self.url_port + '/api/get/count/child/')
 
+        self.url_for_set_current_message = ("http://" + self.url_host + ':' + 
+                                            self.url_port + '/api/set/current_message/')
+        
+        self.url_for_get_current_message = ("http://" + self.url_host + ':' + 
+                                            self.url_port + '/api/get/current_message/')
+    
+    def get_current_message(self, id_user_telegram):
+        """
+        Функция возвращает текущее сообщение пользователя
+        Текущее сообщение устанавливается в функции get_next_fullmessage
+        :param id_user_telegram: уникальный id пользователя в телеграме
+        возвращает словарь следующего вида:
+        {'id': 61, 
+        'text_message': 'Вы можете получить информацию из следующих источников\r\n1 - instagram.com\r\n2 - vk.com\r\n3 - telegram', 
+        'id_parent': 58, 
+        'display_condition': 'Да', 
+        'write_answer': True, 
+        'delay': 900, 
+        'options_answer': ['2', '1', '3']}
+
+        delay - задержка этого сообщения
+        options_answer - варианты ответа на сообщение
+        (если вариантов нет, то None)
+        id - id_сообщения,
+        text_message - текст сообщения
+        write_answer - Вопрос ли это (надо ли отвечать на этот вопрос)
+        display_condition - Условие отображения
+        """
+        url_for_get_currrent_message = (self.url_for_get_current_message + 
+                                        str(id_user_telegram))
+
+        r_message = requests.get(url_for_get_currrent_message).json()
+        
+        r_options = self.get_options_answers(r_message["message"]["id"])
+        r_delay = self.get_delay_message(r_message["message"]["id"])
+
+        result_dict = r_message["message"]
+        result_dict["delay"] = r_delay
+        result_dict["options_answer"] = r_options["options_answer"]
+
+        return result_dict
+
+    def set_current_message(self, id_user_telegram, id_current_message=None):
+        """
+        Функция устанвливает текущее сообщение в базе данных
+        :param id_user_telegram: уникальное айди пользователя в системе телеграма
+        :param id_current_message: айди текущего сообщения
+        Если id_current_message = None то мы устаналиваем айди корневого сообщения в базе
+        Если id_current_message != None то мы устанавливаем id_current_message в качесте
+        текущего сообщение
+        Пользователю вернется id установленного сообщения
+        """
+        if id_current_message is not None:
+            url_for_request = (self.url_for_set_current_message + 
+                               str(id_user_telegram) + '/' + str(id_current_message))
+            
+            r = requests.post(url_for_request)
+
+            return r.json()['id_current_message']
+        else:
+            url_for_request = (self.url_for_set_current_message + 
+                              str(id_user_telegram) + '/' + '0')
+            
+            r = requests.post(url_for_request)
+            print("RESPONSE: ", r)
+
+            return r.json()['id_current_message']
+
     def set_answer_user(self, user_id_telegram, message_id, answer):
         """
-        Функция которая устанавливает ответ пользователя в Базе данных
+        Функция, которая устанавливает ответ пользователя в Базе данных
         :param user_id_telegram: Уникальный id для пользователя telegram
         :param message_id: Id сообщения на который устанавливается ответ
         :param answer: Текст ответа
@@ -54,7 +122,6 @@ class BotServer:
             "answer": answer
         }
 
-        print("Функция для сохранения ответа")
 
         requests.post(url_for_request, data=data_for_set)
 
@@ -143,9 +210,11 @@ class BotServer:
 
         return r.json()
 
-    def get_next_fullmessage(self, id_current_message = None, answer = None):
+    def get_next_fullmessage(self, id_user_telegram, id_current_message = None, answer = None):
         """ 
         Возврашает словарик в следующем виде:
+        устанавливает следующее полученное сообщение в качестве
+        текущего в базе данных
         {'id': 61, 
         'text_message': 'Вы можете получить информацию из следующих источников\r\n1 - instagram.com\r\n2 - vk.com\r\n3 - telegram', 
         'id_parent': 58, 
@@ -165,11 +234,11 @@ class BotServer:
         """
 
         r_delay = None
+                
         r_message = self.get_next_message(id_current_message, answer)
-        r_delay = self.get_delay_message(r_message["message"]["id"])
-
         r_options = self.get_options_answers(r_message["message"]["id"])
-
+        r_delay = self.get_delay_message(r_message["message"]["id"])
+        self.set_current_message(id_user_telegram, r_message["message"]["id"])
         result_dict = r_message["message"]
         result_dict["delay"] = r_delay
         result_dict["options_answer"] = r_options["options_answer"]
