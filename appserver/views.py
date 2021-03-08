@@ -1,13 +1,13 @@
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-from .models import UserTelegram
 import json
 from .serializers import UserSerializer
 from appadmin.models import (Message,
                              TokenBot,
                              MessageDelay,
-                             AnswerUser)
+                             AnswerUser,
+                             UserTelegram)
 from .serializers import UserSerializer
 from django.db.models import Q
 import json
@@ -15,6 +15,74 @@ import logging
 from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 
+
+@api_view(('GET', ))
+def get_current_message(request, id_user_telegram):
+    """
+    Эндпоинт который возвращает текущее сообщение в базе данных
+    :param id_user_telegram: айди пользователя telegram в базе
+    Возвращает сообщение со всеми его полями
+    """
+    user_telegram  = UserTelegram.\
+                        objects.\
+                        filter(id_user_telegram=id_user_telegram).\
+                        get()
+
+
+    return Response({"message": {
+                        "id": user_telegram.id_current_message.id,
+                        "text_message": user_telegram.id_current_message.text_message,
+                        "id_parent": user_telegram.id_current_message.id_parent,
+                        "display_condition": user_telegram.id_current_message.display_condition,
+                        "write_answer": user_telegram.id_current_message.write_answer
+                    }
+                    },
+                     content_type="json\application")
+
+@api_view(('POST', ))
+def set_current_message(request, id_current_message, id_user_telegram):
+    """
+    Эндпоинт который устанавливает текущее сообщение в базе данных 
+    :param id_current_message: айди текущего сообщения
+    :param id_user_telegram: уникальный айди пользователя в телеграме
+    Возвращает айди пользователя если пользователь существует в базе данных, 
+    иначе выдает ошибку
+    """
+    user_telegram_exists = UserTelegram.\
+                            objects.\
+                            filter(id_user_telegram=id_user_telegram).\
+                            exists()
+
+    if user_telegram_exists:
+
+        user_telegram = UserTelegram.\
+                        objects.\
+                        filter(id_user_telegram=id_user_telegram).\
+                        get()
+
+        if id_current_message == 0:
+            msg = Message.\
+                  objects.\
+                  filter(id_parent=0).\
+                  get()
+
+            user_telegram.id_current_message = msg
+            user_telegram.save()
+        else:
+            msg = Message.\
+                  objects.\
+                  filter(id=id_current_message).\
+                  first()
+
+            user_telegram.id_current_message = msg
+            user_telegram.save()
+
+        return Response({"id_current_message": id_current_message},
+                        content_type="json\application")
+   
+    else:
+        return Response({"error": "Пользователь не существует"},
+                        content_type="json\application")
 
 @api_view(('GET', ))
 def get_delay_for_message(request, id_message):
@@ -62,20 +130,6 @@ def count_childs(request, id_current_message):
     
     return Response({"count": count}, 
                     content_type="json\application")
-
-@api_view(('GET', ))
-def check_end_tree(request, id_current_message):
-    """
-    Эндпоинт проверяет является ли сообщение с 
-    id=id_current_message конечным в дереве диалога
-    """
-
-    check_end_tree = Message.\
-                     objects.\
-                     filter(id_parent=id_current_message).\
-                     exists()
-    
-    return Response({"exists": check_end_tree})
 
 @api_view(('POST', ))
 def set_answer_user(request, id_user_telegram):
@@ -163,11 +217,26 @@ class UserView(APIView):
         serializer = UserSerializer(data=data_user)
 
         if serializer.is_valid():
+            id_user_telegram = data_user['id_user_telegram']
+
+            msg = Message.\
+                  objects.\
+                  filter(id_parent=0).\
+                  get()
+
             user_saved = serializer.save()
+            user_telegram = UserTelegram.\
+                                objects.\
+                                filter(id_user_telegram=id_user_telegram).\
+                                get()
+                
+            user_telegram.id_current_message = msg
+            user_telegram.save()
 
             return Response({"success": "TelegramUser '{user_saved}' " 
-                                        "создан успешно".\
-                                        format(user_saved=user_saved)},
+                                            "создан успешно".\
+                                            format(user_saved=user_saved),
+                             "text_message": user_telegram.id_current_message.text_message},
                              content_type="json\application")
         else:
                         
@@ -189,7 +258,8 @@ class MessageView(APIView):
         :type id_current_message: int
         :return: Возвращает Response JSON объект
         со следующими полями
-        {"message": {
+        {
+        "message": {
             "id": message.id,
             "text_message": message.text_message,
             "id_parent": message.id_parent,
@@ -233,12 +303,23 @@ class MessageView(APIView):
                     filter(id_parent=id_current_message).\
                     all()
             
+            for msg in message:
+                print(msg)
+            
+            print("Answer = ", answer)
+
+            for msg in message:
+                print(msg.display_condition)
+
             if message[0].display_condition is not None:
+
                 message = Message.\
                           objects.\
-                            filter(id_parent=id_current_message).\
-                            filter(display_condition=answer).\
-                            get()
+                          filter(id_parent=id_current_message).\
+                          filter(display_condition=answer).\
+                          get()
+                
+                print(message)
             else:
                 message = Message.\
                           objects.\

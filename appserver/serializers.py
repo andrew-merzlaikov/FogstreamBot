@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UserTelegram
+from appadmin.models import UserTelegram
 from django.db.models import Q
 
 

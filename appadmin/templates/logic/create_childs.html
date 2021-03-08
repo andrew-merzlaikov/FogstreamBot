@@ -64,6 +64,14 @@
             </div>
         </div>
 
+        {% if message.write_answer %}
+        <div class="row mt-2">
+                <div class="col-md-12 alert alert-danger">
+                    Внимание, родительское сообщение это вопрос
+                </div>
+        </div>
+        {% endif %}
+
         <form action={% url 'appadmin:get_form_create_childs' message.id %} method="GET">
             {% csrf_token %}
 

@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from appserver.models import UserTelegram
+from ..models import UserTelegram
 from django.shortcuts import render
 from appadmin.models import AnswerUser
 
