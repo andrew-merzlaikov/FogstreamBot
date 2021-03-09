@@ -150,7 +150,11 @@ class ViewChilds(TemplateView):
             url_for_redirect = reverse('appadmin:get_form_create_childs',
                                        kwargs={'id_parent':id_parent})
 
+<<<<<<< HEAD
             url_for_redirect += ('?count_childs=' + str(count_childs))
+=======
+            url_for_redirect += ('?count_childs=' + count_childs)
+>>>>>>> c5ffb8f5a0664f40ef4301c2918ea93a6a868f37
 
             return HttpResponseRedirect(url_for_redirect)
 
