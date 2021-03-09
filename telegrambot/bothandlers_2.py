@@ -5,27 +5,30 @@ import config
 
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.utils import executor
-from botflag import BotFlag
-from aiogram.utils.exceptions import ValidationError
 import asyncio
+
 """
 Илья Пятриков 
 Асинхронный бот (потом сделаем merge наших веток)
 """
 
+TOKEN = '1639370701:AAE-wsM4pNioUGoCdVcmqmXpQo2bAp8HWqo'
+
+bot = Bot(token=TOKEN)
+storage = MemoryStorage()
+dp = Dispatcher(bot, storage=storage)
+
+class Form(StatesGroup):
+    question_and_zero_followers = State()
+    question_and_one_follower = State()
+    question_and_multiple_followers = State()
+
+#bot = telebot.TeleBot('1625427693:AAHWf0xwIQziquQFa78ofxHObHUT20lJLY8')
 bot_server = BotServer()
-TOKEN = bot_server.get_token()['token']
-
-try:
-    bot = Bot(token=TOKEN)
-    dp = Dispatcher(bot)
-except ValidationError:
-    print("Администратор указал не валидный токен"
-          ", пожалуйста обратитесь к нему")       
-    exit()
-
-bot_flag = BotFlag()
+token = bot_server.get_token()
 
 
 async def checking_message(message, message_chat_id):
@@ -47,14 +50,14 @@ async def checking_message(message, message_chat_id):
     if cur_mess['write_answer'] == True and count_child == 0:        
         await bot.send_message(message_chat_id, cur_mess['text_message'])
 	# флаг принимает значение для срабатывания соответствующего обработчика
-        bot_flag.set_flag_user(message_chat_id, 1)
+        await Form.question_and_zero_followers.set()
 		
     # определяем, что сообщение является вопросом и есть следущее сообщение
     # тут так же ответ пользователя заранее не определён и является произвольным
     # следущее сообщение будет без вариантов, то есть у данного сообщения один потомок	
     if cur_mess['write_answer'] == True and count_child == 1:    
         await bot.send_message(message_chat_id, cur_mess['text_message'])
-        bot_flag.set_flag_user(message_chat_id, 2)
+        await Form.question_and_one_follower.set()
 
     # определяем, что сообщение является вопросом и потомоков более одного
     # этом варианте события, где ответ пользователя заранее определён заданными вариантами
@@ -63,8 +66,8 @@ async def checking_message(message, message_chat_id):
         buttons = cur_mess['options_answer']
         print(buttons)
         keyboard.add(*buttons)
-        await bot.send_message(message_chat_id, cur_mess['text_message'], reply_markup=keyboard)              
-        bot_flag.set_flag_user(message_chat_id, 3)
+        await bot.send_message(message_chat_id, cur_mess['text_message'], reply_markup=keyboard)
+        await Form.question_and_multiple_followers.set()
 
     # определяем, что сообщение не является вопросом и потомоков более одного
     # это ошибочное состояние, не верно указано логика администратором бота
@@ -130,7 +133,7 @@ async def main():
  
 
     # сработает, если сообщение является вопросом, но в дереве диалога последнее
-    @dp.message_handler(lambda message: bot_flag.get_flag_user(message.chat.id) == 1)
+    @dp.message_handler(state=Form.question_and_zero_followers)
     async def question_and_zero_followers(message: types.Message):
         await asyncio.sleep(3) 
         cur_mess = bot_server.get_current_message(message.from_user.id)
@@ -140,7 +143,7 @@ async def main():
 
 
     # сработает, если сообщение является вопросом и есть следущее сообщение
-    @dp.message_handler(lambda message: bot_flag.get_flag_user(message.chat.id) == 2)
+    @dp.message_handler(state=Form.question_and_one_follower)
     async def question_and_one_follower(message: types.Message):
         await asyncio.sleep(3) 
         # берем текущее сообщение с сервера
@@ -159,7 +162,7 @@ async def main():
 
 
     # сработает, если сообщение является вопросом и потомоков более одного
-    @dp.message_handler(lambda message:  bot_flag.get_flag_user(message.chat.id) == 3)
+    @dp.message_handler(state=Form.question_and_multiple_followers)
     async def question_and_multiple_followers(message: types.Message):
         await asyncio.sleep(3)
         # все варианты ответов переводим в нижний регистр
