@@ -57,14 +57,14 @@ class UserTelegram(models.Model):
     username = models.CharField(max_length=30, default=None)
     id_user_telegram = models.IntegerField(primary_key=True)
 
-    id_current_message =  models.ForeignKey(Message, 
+    current_message =  models.ForeignKey(Message, 
                                             on_delete=models.CASCADE, 
                                             default=None)
 
     first_name.null = True
     last_name.null = True
     username.null = True
-    id_current_message.null = True
+    current_message.null = True
 
     def __str__(self):
         """ Representation the User """

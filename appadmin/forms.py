@@ -22,8 +22,8 @@ class MessageForm(forms.Form):
                                         widget=forms.Textarea(attrs={
                                                             'rows': 1, 
                                                             'cols': 60}),
-                                        label="Условие перехода если "
-                                              "родительское сообщение это вопрос",
+                                        label="Как надо ответить на родительский "
+                                              "вопрос, чтобы это сообщение было показано?",
                                         required=False,
                                         initial=None)
 

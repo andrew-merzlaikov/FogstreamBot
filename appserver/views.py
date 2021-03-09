@@ -30,11 +30,11 @@ def get_current_message(request, id_user_telegram):
 
 
     return Response({"message": {
-                        "id": user_telegram.id_current_message.id,
-                        "text_message": user_telegram.id_current_message.text_message,
-                        "id_parent": user_telegram.id_current_message.id_parent,
-                        "display_condition": user_telegram.id_current_message.display_condition,
-                        "write_answer": user_telegram.id_current_message.write_answer
+                        "id": user_telegram.current_message.id,
+                        "text_message": user_telegram.current_message.text_message,
+                        "id_parent": user_telegram.current_message.id_parent,
+                        "display_condition": user_telegram.current_message.display_condition,
+                        "write_answer": user_telegram.current_message.write_answer
                     }
                     },
                      content_type="json\application")
@@ -66,7 +66,7 @@ def set_current_message(request, id_current_message, id_user_telegram):
                   filter(id_parent=0).\
                   get()
 
-            user_telegram.id_current_message = msg
+            user_telegram.current_message = msg
             user_telegram.save()
         else:
             msg = Message.\
@@ -74,7 +74,7 @@ def set_current_message(request, id_current_message, id_user_telegram):
                   filter(id=id_current_message).\
                   first()
 
-            user_telegram.id_current_message = msg
+            user_telegram.current_message = msg
             user_telegram.save()
 
         return Response({"id_current_message": id_current_message},
@@ -303,13 +303,6 @@ class MessageView(APIView):
                     filter(id_parent=id_current_message).\
                     all()
             
-            for msg in message:
-                print(msg)
-            
-            print("Answer = ", answer)
-
-            for msg in message:
-                print(msg.display_condition)
 
             if message[0].display_condition is not None:
 
