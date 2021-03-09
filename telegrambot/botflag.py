@@ -1,3 +1,5 @@
+import logging
+
 class BotFlag:
 
     def __init__(self):

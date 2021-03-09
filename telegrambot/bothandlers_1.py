@@ -9,10 +9,14 @@ from aiogram.utils import executor
 from botflag import BotFlag
 from aiogram.utils.exceptions import ValidationError
 import asyncio
+import logging
 """
-Илья Пятриков 
+Илья Пeтряков 
 Асинхронный бот (потом сделаем merge наших веток)
 """
+
+FORMAT = '%(name)s - %(levelname)s - %(message)s'
+logging.basicConfig(filename='bot.log', filemode='w')
 
 bot_server = BotServer()
 TOKEN = bot_server.get_token()['token']
@@ -21,8 +25,7 @@ try:
     bot = Bot(token=TOKEN)
     dp = Dispatcher(bot)
 except ValidationError:
-    print("Администратор указал не валидный токен"
-          ", пожалуйста обратитесь к нему")       
+    logging.error("Администратор указал не верный токен")    
     exit()
 
 bot_flag = BotFlag()
@@ -61,7 +64,6 @@ async def checking_message(message, message_chat_id):
     if cur_mess['write_answer'] == True and count_child > 1:        
         keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
         buttons = cur_mess['options_answer']
-        print(buttons)
         keyboard.add(*buttons)
         await bot.send_message(message_chat_id, cur_mess['text_message'], reply_markup=keyboard)              
         bot_flag.set_flag_user(message_chat_id, 3)
