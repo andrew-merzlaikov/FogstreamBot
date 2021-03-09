@@ -18,16 +18,17 @@ def show_edit_form_message(request, id_message):
     if request.user.is_authenticated:
 
         message = Message.\
-                    objects.\
-                    filter(id=id_message).\
-                    get()
+                  objects.\
+                  filter(id=id_message).\
+                  get()
 
-        message_form = MessageForm(initial={"text_message": message.\
-                                                            text_message,
-                                            "write_answer": message.\
-                                                            write_answer,
-                                            "display_condition": message.\
-                                                                 display_condition})
+        dict_initial_form = {
+            "text_message": message.text_message,
+            "write_answer": message.write_answer,
+            "display_condition": message.display_condition
+        }
+
+        message_form = MessageForm(initial=dict_initial_form)
 
         return render(request, 
                       "messages/edit_message.html", 
@@ -50,10 +51,8 @@ def set_root_message(request):
             objects.\
             create(text_message=message_form.\
                                 cleaned_data['text_message'],
-                
-                id_parent=0,
-                
-                write_answer=message_form.\
+                   id_parent=0,
+                   write_answer=message_form.\
                                 cleaned_data['write_answer'])
 
             url_for_redirect = reverse('appadmin:get_create_logic')

@@ -22,8 +22,10 @@ class MessageForm(forms.Form):
                                         widget=forms.Textarea(attrs={
                                                             'rows': 1, 
                                                             'cols': 60}),
-                                        label="Как надо ответить на родительский "
-                                              "вопрос, чтобы это сообщение было показано?",
+                                        label="Как надо ответить" 
+                                              "на родительский "
+                                              "вопрос, чтобы это сообщение" 
+                                              "было показано?",
                                         required=False,
                                         initial=None)
 

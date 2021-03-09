@@ -82,9 +82,6 @@ class ViewChilds(TemplateView):
                      filter(id_parent=id_parent).\
                      all()
 
-            for child in childs:
-                print(child)
-
             message = Message.\
                     objects.\
                     filter(id=id_parent).\
@@ -142,19 +139,17 @@ class ViewChilds(TemplateView):
                         display_condition = None
 
 
-                    Message.objects.create(text_message=text_message,
-                                           write_answer=write_answer,
-                                           id_parent=id_parent,
-                                           display_condition=display_condition)
+                    Message.\
+                    objects.\
+                    create(text_message=text_message,
+                           write_answer=write_answer,
+                           id_parent=id_parent,
+                           display_condition=display_condition)
 
             url_for_redirect = reverse('appadmin:get_form_create_childs',
                                        kwargs={'id_parent':id_parent})
 
-<<<<<<< HEAD
             url_for_redirect += ('?count_childs=' + str(count_childs))
-=======
-            url_for_redirect += ('?count_childs=' + count_childs)
->>>>>>> c5ffb8f5a0664f40ef4301c2918ea93a6a868f37
 
             return HttpResponseRedirect(url_for_redirect)
 

@@ -50,7 +50,12 @@ class MessageDelay(models.Model):
 
 class UserTelegram(models.Model):
     """
-    Stores a single user entry, related to :model:`use.User`
+    Модель для представления пользователя телеграм
+    first_name - имя пользователя
+    last_name - фамилия пользователя
+    username - никнейм пользователя
+    id_user_telegram - id пользователя telegram
+    current_message - id текущего сообщения
     """
     first_name = models.CharField(max_length=30, default=None)
     last_name = models.CharField(max_length=30, default=None)
@@ -69,10 +74,10 @@ class UserTelegram(models.Model):
     def __str__(self):
         """ Representation the User """
        
-        return "{first_name} {last_name} {username} ".format(
-                                                            username=self.username,
-                                                            first_name=self.first_name,
-                                                            last_name=self.last_name)
+        return "{first_name} {last_name} {username} ".\
+                format(username=self.username,
+                       first_name=self.first_name,
+                       last_name=self.last_name)
 
 
 class AnswerUser(models.Model):
@@ -85,9 +90,11 @@ class AnswerUser(models.Model):
     answer - ответ пользователя на вопрос
     """
     telegram_user = models.ForeignKey(UserTelegram, 
-                                      on_delete=models.CASCADE)
+                                      on_delete=models.\
+                                                CASCADE)
     
     message = models.ForeignKey(Message,
-                                on_delete=models.CASCADE)
+                                on_delete=models.\
+                                          CASCADE)
     
     answer = models.CharField(max_length=100)

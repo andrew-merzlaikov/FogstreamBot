@@ -56,8 +56,8 @@ class ViewMessageDelay(TemplateView):
         if request.user.is_authenticated:
             messages_all = Message.objects.all()
             messages_with_delay = MessageDelay.\
-                                    objects.\
-                                    all()
+                                  objects.\
+                                  all()
 
 
             return render(request, 

@@ -14,9 +14,9 @@ def get_info_user(request, telegram_user_id):
 
     if request.user.is_authenticated:
         answers = AnswerUser.\
-                    objects.\
-                    filter(telegram_user_id=telegram_user_id).\
-                    all()
+                  objects.\
+                  filter(telegram_user_id=telegram_user_id).\
+                  all()
 
         return render(request, "answers/answer.html", {"answers": answers})
     else:
