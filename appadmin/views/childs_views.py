@@ -76,7 +76,6 @@ class ViewChilds(TemplateView):
         если пользователь авторизован, иначе ошибка
         """
         if request.user.is_authenticated:
-            count_childs_form = CountChildsMessageForm()
             
             childs = Message.\
                      objects.\
@@ -93,9 +92,14 @@ class ViewChilds(TemplateView):
                 
 
             count_childs = int(request.GET.get('count_childs', 0))
+            
+            count_childs_form = CountChildsMessageForm(
+                                            initial={
+                                            'count_childs':count_childs
+                                            })
 
             form_set_childs = formset_factory(MessageForm,
-                                                extra=count_childs)
+                                              extra=count_childs)
 
             return render(request, 
                         "logic/create_childs.html" ,
@@ -139,12 +143,16 @@ class ViewChilds(TemplateView):
 
 
                     Message.objects.create(text_message=text_message,
-                                        write_answer=write_answer,
-                                        id_parent=id_parent,
-                                        display_condition=display_condition)
+                                           write_answer=write_answer,
+                                           id_parent=id_parent,
+                                           display_condition=display_condition)
 
-            return HttpResponseRedirect(reverse('appadmin:get_form_create_childs',
-                                                kwargs={'id_parent':id_parent}))
+            url_for_redirect = reverse('appadmin:get_form_create_childs',
+                                       kwargs={'id_parent':id_parent})
+
+            url_for_redirect += ('?count_childs=' + count_childs)
+
+            return HttpResponseRedirect(url_for_redirect)
 
         else:
             return render(request, "http_response/error_401.html", status=401)
