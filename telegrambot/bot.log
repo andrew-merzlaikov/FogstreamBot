@@ -1,1 +1,52 @@
-WARNING:aiogram.dispatcher.dispatcher:Polling is stopped.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<Dispatcher._process_polling_updates() done, defined at /home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py:380> exception=JSONDecodeError('Expecting value: line 1 column 1 (char 0)')>
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 388, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 225, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 246, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "bothandlers_1.py", line 123, in cmd_start
+    bot_server.create_user_in_server(message.from_user.id,
+  File "/home/jatx/fogstreambot_fix/FogstreamBot/telegrambot/botserver.py", line 211, in create_user_in_server
+    return r.json()
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/requests/models.py", line 900, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at /home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py:380> exception=JSONDecodeError('Expecting value: line 1 column 1 (char 0)')>
+Traceback (most recent call last):
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 388, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 225, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 246, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "bothandlers_1.py", line 123, in cmd_start
+    bot_server.create_user_in_server(message.from_user.id,
+  File "/home/jatx/fogstreambot_fix/FogstreamBot/telegrambot/botserver.py", line 211, in create_user_in_server
+    return r.json()
+  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/requests/models.py", line 900, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

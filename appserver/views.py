@@ -30,11 +30,18 @@ def get_current_message(request, id_user_telegram):
 
 
     return Response({"message": {
-                        "id": user_telegram.current_message.id,
-                        "text_message": user_telegram.current_message.text_message,
-                        "id_parent": user_telegram.current_message.id_parent,
-                        "display_condition": user_telegram.current_message.display_condition,
-                        "write_answer": user_telegram.current_message.write_answer
+                        "id": user_telegram.\
+                              current_message.id,
+                        "text_message": user_telegram.\
+                                        current_message.text_message,
+                        "id_parent": user_telegram.\
+                                     current_message.id_parent,
+                        "display_condition": user_telegram.\
+                                             current_message.\
+                                             display_condition,
+                        "write_answer": user_telegram.\
+                                        current_message.\
+                                        write_answer
                     }
                     },
                      content_type="json\application")
@@ -49,9 +56,9 @@ def set_current_message(request, id_current_message, id_user_telegram):
     иначе выдает ошибку
     """
     user_telegram_exists = UserTelegram.\
-                            objects.\
-                            filter(id_user_telegram=id_user_telegram).\
-                            exists()
+                           objects.\
+                           filter(id_user_telegram=id_user_telegram).\
+                           exists()
 
     if user_telegram_exists:
 
@@ -174,6 +181,7 @@ def get_options_answers(request, id_current_message):
                       filter(id_parent=id_current_message).\
                       all()
     
+
     options_answer = list()
 
     for message in messages:
@@ -236,7 +244,9 @@ class UserView(APIView):
             return Response({"success": "TelegramUser '{user_saved}' " 
                                             "создан успешно".\
                                             format(user_saved=user_saved),
-                             "text_message": user_telegram.id_current_message.text_message},
+                             "text_message": user_telegram.\
+                                             id_current_message.\
+                                             text_message},
                              content_type="json\application")
         else:
                         
@@ -285,10 +295,14 @@ class MessageView(APIView):
 
             return Response({"message": {
                                 "id": message.id,
-                                "text_message": message.text_message,
-                                "id_parent": message.id_parent,
-                                "display_condition": message.display_condition,
-                                "write_answer": message.write_answer
+                                "text_message": message.\
+                                                text_message,
+                                "id_parent": message.\
+                                             id_parent,
+                                "display_condition": message.\
+                                                     display_condition,
+                                "write_answer": message.\
+                                                write_answer
                             }}, content_type="json\application") 
 
         if 'answer' in request.GET.keys():
@@ -312,7 +326,6 @@ class MessageView(APIView):
                           filter(display_condition=answer).\
                           get()
                 
-                print(message)
             else:
                 message = Message.\
                           objects.\

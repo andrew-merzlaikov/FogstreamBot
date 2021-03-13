@@ -4,13 +4,19 @@ from django.db.models import Q
 
 
 class UserSerializer(serializers.Serializer):
+    """
+    Сериализатор для модели UserTelegram
+    """
     first_name = serializers.CharField(max_length=30, allow_null=True)
     last_name = serializers.CharField(max_length=30, allow_null=True)
     username = serializers.CharField(max_length=30, allow_null=True)
     id_user_telegram = serializers.IntegerField(allow_null=True)
 
     def create(self, validated_data):
-
+        """
+        Метод создает пользователя в базе данных если
+        он не существует, иначе возвращает False
+        """
         user_id = validated_data["id_user_telegram"]
 
         user_exists = UserTelegram.\

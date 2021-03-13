@@ -19,6 +19,7 @@ urlpatterns = [
     path('get/count/child/<int:id_current_message>', count_childs),
     path('get/delay/message/<int:id_message>', get_delay_for_message),
     path('set/answer/<int:id_user_telegram>', set_answer_user),
-    path('set/current_message/<int:id_user_telegram>/<int:id_current_message>', set_current_message),
+    path('set/current_message/<int:id_user_telegram>/'
+         '<int:id_current_message>', set_current_message),
     path('get/current_message/<int:id_user_telegram>', get_current_message)
 ]

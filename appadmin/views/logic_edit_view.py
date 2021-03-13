@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from appadmin.models import Message
+from appadmin.models import Message, UserTelegram
 from appadmin.forms import MessageForm
 from django.urls import reverse
 from django.shortcuts import render
@@ -59,6 +59,14 @@ def delete_logic(request):
 
         for message in all_messages:
             message.delete()
+
+        telegram_users = UserTelegram.\
+                         objects.\
+                         all()
+
+        for telegram in telegram_users:
+            telegram.current_message = None
+    
 
         url_for_redirect = reverse("appadmin:get_create_logic")
         params_delete = "?delete_logic=True"
