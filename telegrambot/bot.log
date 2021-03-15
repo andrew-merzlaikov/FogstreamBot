@@ -1,52 +1,39 @@
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-5' coro=<Dispatcher._process_polling_updates() done, defined at /home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py:380> exception=JSONDecodeError('Expecting value: line 1 column 1 (char 0)')>
+ERROR:aiogram.dispatcher.dispatcher:Cause exception while getting updates.
 Traceback (most recent call last):
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 388, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 225, in process_updates
-    return await asyncio.gather(*tasks)
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 246, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "bothandlers_1.py", line 123, in cmd_start
-    bot_server.create_user_in_server(message.from_user.id,
-  File "/home/jatx/fogstreambot_fix/FogstreamBot/telegrambot/botserver.py", line 211, in create_user_in_server
-    return r.json()
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/requests/models.py", line 900, in json
-    return complexjson.loads(self.text, **kwargs)
-  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
-    return _default_decoder.decode(s)
-  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at /home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py:380> exception=JSONDecodeError('Expecting value: line 1 column 1 (char 0)')>
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 359, in start_polling
+    updates = await self.bot.get_updates(limit=limit, offset=offset, timeout=timeout)
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/bot/bot.py", line 97, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/bot/base.py", line 208, in request
+    return await api.make_request(self.session, self.server, self.__token, method, data, files,
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/bot/api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/client.py", line 1117, in __aenter__
+    self._resp = await self._coro
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/client.py", line 544, in _request
+    await resp.start(conn)
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/client_reqrep.py", line 905, in start
+    self._continue = None
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/helpers.py", line 656, in __exit__
+    raise asyncio.TimeoutError from None
+asyncio.exceptions.TimeoutError
+ERROR:aiogram.dispatcher.dispatcher:Cause exception while getting updates.
 Traceback (most recent call last):
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 388, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 225, in process_updates
-    return await asyncio.gather(*tasks)
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 246, in process_update
-    return await self.message_handlers.notify(update.message)
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "bothandlers_1.py", line 123, in cmd_start
-    bot_server.create_user_in_server(message.from_user.id,
-  File "/home/jatx/fogstreambot_fix/FogstreamBot/telegrambot/botserver.py", line 211, in create_user_in_server
-    return r.json()
-  File "/home/jatx/fogstreambot_fix/my_env/lib/python3.8/site-packages/requests/models.py", line 900, in json
-    return complexjson.loads(self.text, **kwargs)
-  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
-    return _default_decoder.decode(s)
-  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/usr/lib/python3.8/json/decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/dispatcher/dispatcher.py", line 359, in start_polling
+    updates = await self.bot.get_updates(limit=limit, offset=offset, timeout=timeout)
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/bot/bot.py", line 97, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/bot/base.py", line 208, in request
+    return await api.make_request(self.session, self.server, self.__token, method, data, files,
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiogram/bot/api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/client.py", line 1117, in __aenter__
+    self._resp = await self._coro
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/client.py", line 544, in _request
+    await resp.start(conn)
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/client_reqrep.py", line 905, in start
+    self._continue = None
+  File "/home/jatx/BotFogstream/my_source/lib/python3.8/site-packages/aiohttp/helpers.py", line 656, in __exit__
+    raise asyncio.TimeoutError from None
+asyncio.exceptions.TimeoutError
+WARNING:aiogram.dispatcher.dispatcher:Polling is stopped.
