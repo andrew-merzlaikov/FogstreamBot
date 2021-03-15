@@ -16,7 +16,7 @@ class BotServer:
         self.url_port = os.environ.get('PORT_SERVER')
         
         self.url_for_users = ("http://" + self.url_host + 
-                              ':' + self.url_port + '/api/users')
+                              ':' + self.url_port + '/api/create/user')
 
         self.url_for_next_message = ("http://" + self.url_host + 
                                     ':' + self.url_port + '/api/get/next/message/')
