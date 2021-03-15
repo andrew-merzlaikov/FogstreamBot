@@ -130,10 +130,24 @@ class ViewChilds(TemplateView):
 
             if formset.is_valid():
                 for form in formset: 
-                    text_message = form.cleaned_data['text_message']
-                    write_answer = form.cleaned_data['write_answer']
-                    display_condition = form.cleaned_data['display_condition']
-                    display_condition = display_condition.lower()
+                    text_message = None
+                    write_answer = None
+                    display_condition = None
+
+                    if ("text_message" in form.cleaned_data.keys() and
+                        "write_answer" in form.cleaned_data.keys() and
+                        "display_condition" in form.cleaned_data.keys()):
+
+                        text_message = form.cleaned_data['text_message']
+                        write_answer = form.cleaned_data['write_answer']
+                        display_condition = form.cleaned_data['display_condition']
+                    else:
+                        url_for_redirect = reverse('appadmin:get_form_create_childs',
+                                       kwargs={'id_parent':id_parent})
+
+                        url_for_redirect += ('?errors=' + 'True')
+                        
+                        return HttpResponseRedirect(url_for_redirect)
 
                     if display_condition == '':
                         display_condition = None
