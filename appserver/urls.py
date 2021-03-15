@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import (UserView, 
-                    MessageView,
+from .views import (create_user, 
+                    get_next_message,
                     get_options_answers,
                     get_token_bot,
                     get_delay_for_message,
@@ -12,8 +12,8 @@ from .views import (UserView,
 app_name = "appserver"
 
 urlpatterns = [
-    path('users', UserView.as_view()),
-    path('get/next/message/<int:id_current_message>', MessageView.as_view()),
+    path('create/user', create_user),
+    path('get/next/message/<int:id_current_message>', get_next_message),
     path('get/options_answers/<int:id_current_message>', get_options_answers),
     path('get/token', get_token_bot),
     path('get/count/child/<int:id_current_message>', count_childs),

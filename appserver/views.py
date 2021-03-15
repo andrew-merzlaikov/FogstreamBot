@@ -28,7 +28,6 @@ def get_current_message(request, id_user_telegram):
                         filter(id_user_telegram=id_user_telegram).\
                         get()
 
-
     return Response({"message": {
                         "id": user_telegram.\
                               current_message.id,
@@ -212,137 +211,129 @@ def get_token_bot(request):
     return Response({"token": str(token)}, 
                     content_type="json\application")
 
-
-class UserView(APIView):
+@api_view(('POST', ))
+def create_user(request):   
     """
-    CBV который описывает пользователя Telegram
-    """
-    def post(self, request):   
-        """
-        Создает пользователя telegram в БД
-        """     
-        data_user = request.data['user'] 
-        serializer = UserSerializer(data=data_user)
+    Создает пользователя telegram в БД
+    """     
+        
+    data_user = request.data['user'] 
+    serializer = UserSerializer(data=data_user)
 
-        if serializer.is_valid():
-            id_user_telegram = data_user['id_user_telegram']
+    if serializer.is_valid():
+        id_user_telegram = data_user['id_user_telegram']
 
-            msg = Message.\
-                  objects.\
-                  filter(id_parent=0).\
-                  get()
+        msg = Message.\
+              objects.\
+              filter(id_parent=0).\
+              get()
 
-            user_saved = serializer.save()
-            user_telegram = UserTelegram.\
-                                objects.\
-                                filter(id_user_telegram=id_user_telegram).\
-                                get()
+        user_saved = serializer.save()
+        
+        user_telegram = UserTelegram.\
+                        objects.\
+                        filter(id_user_telegram=id_user_telegram).\
+                        get()
                 
-            user_telegram.id_current_message = msg
-            user_telegram.save()
+        user_telegram.current_message_id = msg
+        user_telegram.save()
 
-            return Response({"success": "TelegramUser '{user_saved}' " 
-                                            "создан успешно".\
-                                            format(user_saved=user_saved),
-                             "text_message": user_telegram.\
-                                             id_current_message.\
-                                             text_message},
-                             content_type="json\application")
-        else:
-                        
-            return Response({"error": "Не валидные данные"},
-                            content_type="json\application")
+        return Response({"success": "TelegramUser '{user_saved}' " 
+                                    "создан успешно".\
+                                    format(user_saved=user_saved),
+                         "text_message": user_telegram.\
+                                         current_message_id.\
+                                         text_message},
+                          content_type="json\application")
+    else:
+        return Response({"error": "Не валидные данные"},
+                        content_type="json\application")
 
-
-class MessageView(APIView):
+@api_view(('GET', ))
+def get_next_message(request, id_current_message = 0):
     """
-    CBV который описывает сообщения
-    """
-
-    def get(self, request, id_current_message = 0):
-        """
-        Возвращает сообщение с базы данных
-        В эндпоинт также GET параметром может передаваться
-        answer - это ответ на текущее собщение
-        :param id_current_message: id текущего сообщения
-        :type id_current_message: int
-        :return: Возвращает Response JSON объект
-        со следующими полями
-        {
+    Возвращает сообщение с базы данных
+    В эндпоинт также GET параметром может передаваться
+    answer - это ответ на текущее собщение
+    :param id_current_message: id текущего сообщения
+    :type id_current_message: int
+    :return: Возвращает Response JSON объект
+    со следующими полями
+    {
         "message": {
             "id": message.id,
             "text_message": message.text_message,
             "id_parent": message.id_parent,
             "display_condition": message.display_condition,
             "write_answer": message.write_answer
-        }},
-        id - id сообщения
-        text_message - текст сообщения
-        id_parent - id родителя
-        display_condition - условие отображения
-        write_answer - Bool значение, которое отвечает надо ли
-        писать ответ на вопрос
-        """
-        answer = None
-        message = None
+    }},
+    id - id сообщения
+    text_message - текст сообщения
+    id_parent - id родителя
+    display_condition - условие отображения
+    write_answer - Bool значение, которое отвечает надо ли
+    писать ответ на вопрос
+    """
+    answer = None
+    message = None
 
 
-        if id_current_message == 0:
-            message = Message.\
-                      objects.\
-                      filter(id_parent=0).\
-                      get()
+    if id_current_message == 0:
+        message = Message.\
+                  objects.\
+                  filter(id_parent=0).\
+                  get()
 
-            return Response({"message": {
-                                "id": message.id,
-                                "text_message": message.\
-                                                text_message,
-                                "id_parent": message.\
-                                             id_parent,
-                                "display_condition": message.\
-                                                     display_condition,
-                                "write_answer": message.\
-                                                write_answer
-                            }}, content_type="json\application") 
+        return Response({"message": {
+                            "id": message.id,
+                            "text_message": message.\
+                                            text_message,
+                            "id_parent": message.\
+                                         id_parent,
+                            "display_condition": message.\
+                                                 display_condition,
+                            "write_answer": message.\
+                                            write_answer
+                        }}, content_type="json\application") 
 
-        if 'answer' in request.GET.keys():
-            answer = request.GET['answer']
+    if 'answer' in request.GET.keys():
+        answer = request.GET['answer']
 
 
-        if answer is not None:
+    if answer is not None:
         
 
-            message = Message.\
-                    objects.\
-                    filter(id_parent=id_current_message).\
-                    all()
+        message = Message.\
+                  objects.\
+                  filter(id_parent=id_current_message).\
+                  all()
             
 
-            if message[0].display_condition is not None:
+        if message[0].display_condition is not None:
 
-                message = Message.\
-                          objects.\
-                          filter(id_parent=id_current_message).\
-                          filter(display_condition=answer).\
-                          get()
+            message = Message.\
+                      objects.\
+                      filter(id_parent=id_current_message).\
+                      filter(display_condition=answer).\
+                      get()
                 
-            else:
-                message = Message.\
-                          objects.\
-                          filter(id_parent=id_current_message).\
-                          get()
-
         else:
             message = Message.\
                       objects.\
                       filter(id_parent=id_current_message).\
                       get()
 
-        return Response({"message": {
-                            "id": message.id,
-                            "text_message": message.text_message,
-                            "id_parent": message.id_parent,
-                            "display_condition": message.display_condition,
-                            "write_answer": message.write_answer
-                        }}, content_type="json\application") 
+    else:
+        message = Message.\
+                  objects.\
+                  filter(id_parent=id_current_message).\
+                  get()
+
+    return Response({"message": {
+                        "id": message.id,
+                        "text_message": message.text_message,
+                        "id_parent": message.id_parent,
+                        "display_condition": message.display_condition,
+                        "write_answer": message.write_answer
+                    }}, content_type="json\application") 
 
