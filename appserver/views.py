@@ -23,27 +23,38 @@ def get_current_message(request, id_user_telegram):
     :param id_user_telegram: айди пользователя telegram в базе
     Возвращает сообщение со всеми его полями
     """
-    user_telegram  = UserTelegram.\
-                        objects.\
-                        filter(id_user_telegram=id_user_telegram).\
-                        get()
 
-    return Response({"message": {
-                        "id": user_telegram.\
-                              current_message.id,
-                        "text_message": user_telegram.\
-                                        current_message.text_message,
-                        "id_parent": user_telegram.\
-                                     current_message.id_parent,
-                        "display_condition": user_telegram.\
-                                             current_message.\
-                                             display_condition,
-                        "write_answer": user_telegram.\
-                                        current_message.\
-                                        write_answer
-                    }
-                    },
-                     content_type="json\application")
+    user_exists = UserTelegram.\
+                  objects.\
+                  filter(id_user_telegram=id_user_telegram).\
+                  exists()
+
+    if user_exists:
+        user_telegram  = UserTelegram.\
+                            objects.\
+                            filter(id_user_telegram=id_user_telegram).\
+                            get()
+
+        return Response({"message": {
+                            "id": user_telegram.\
+                                current_message.id,
+                            "text_message": user_telegram.\
+                                            current_message.text_message,
+                            "id_parent": user_telegram.\
+                                        current_message.id_parent,
+                            "display_condition": user_telegram.\
+                                                current_message.\
+                                                display_condition,
+                            "write_answer": user_telegram.\
+                                            current_message.\
+                                            write_answer
+                        }
+                        },
+                        content_type="json\application")
+    else:
+        return Response({"error": "Нет пользователя с таким id"},
+                        content_type="json\application",
+                        status=401)
 
 @api_view(('POST', ))
 def set_current_message(request, id_current_message, id_user_telegram):
@@ -129,11 +140,12 @@ def count_childs(request, id_current_message):
     count - задержка сообщения
     :rtype: Response
     """
+
     count = Message.\
             objects.\
             filter(id_parent=id_current_message).\
             count()
-    
+        
     return Response({"count": count}, 
                     content_type="json\application")
 
@@ -215,6 +227,8 @@ def get_token_bot(request):
 def create_user(request):   
     """
     Создает пользователя telegram в БД
+    Устанавливает в качестве текущего сообщения 
+    корневое сообщение
     """     
         
     data_user = request.data['user'] 
@@ -278,6 +292,8 @@ def get_next_message(request, id_current_message = 0):
     message = None
 
 
+    # Если пользователь не передал id_current_message
+    # то возвращается родительское сообщение
     if id_current_message == 0:
         message = Message.\
                   objects.\
@@ -296,20 +312,22 @@ def get_next_message(request, id_current_message = 0):
                                             write_answer
                         }}, content_type="json\application") 
 
+    # Если пользователь передал ответ
+    # на сообщение, то мы сохраняем этот ответ
     if 'answer' in request.GET.keys():
         answer = request.GET['answer']
 
 
+    # Если есть ответ на вопрос, следовательно следующее
+    # сообщение вопрос
     if answer is not None:
         
-
         message = Message.\
                   objects.\
                   filter(id_parent=id_current_message).\
-                  all()
-            
+                  first()
 
-        if message[0].display_condition is not None:
+        if message.display_condition is not None:
 
             message = Message.\
                       objects.\
@@ -323,6 +341,7 @@ def get_next_message(request, id_current_message = 0):
                       filter(id_parent=id_current_message).\
                       get()
 
+    # Следующее сообщение повествовательно
     else:
         message = Message.\
                   objects.\
