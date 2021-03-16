@@ -22,34 +22,39 @@ class BotServer:
         self.url_port = os.environ.get('PORT_SERVER')
         
         self.url_for_users = ("http://" + self.url_host + 
-                              ':' + self.url_port + '/api/create/user')
+                              ':' + self.url_port + 
+                              '/api/create/user')
 
         self.url_for_next_message = ("http://" + self.url_host + 
-                                    ':' + self.url_port + '/api/get/next/message/')
+                                    ':' + self.url_port + 
+                                    '/api/get/next/message/')
         
         self.url_for_options_answers = ("http://" + self.url_host + ':' +
-                                        self.url_port + '/api/get/options_answers/')
-
-        self.url_for_check_end_tree = ("http://" + self.url_host + ':' +
-                                        self.url_port + '/api/get/check/end_tree/')
+                                        self.url_port + 
+                                        '/api/get/options_answers/')
 
         self.url_for_get_token = ("http://" + self.url_host + ':' +
-                                  self.url_port + '/api/get/token') 
+                                  self.url_port + 
+                                  '/api/get/token') 
         
         self.url_for_get_delay = ("http://" + self.url_host + ':' +
-                                  self.url_port + '/api/get/delay/message/') 
+                                  self.url_port + 
+                                  '/api/get/delay/message/') 
 
         self.url_for_set_answer = ("http://" + self.url_host + ':' +
-                                   self.url_port + '/api/set/answer/')
+                                   self.url_port + 
+                                   '/api/set/answer/')
 
         self.url_for_get_count = ("http://" + self.url_host + ':' +
                                    self.url_port + '/api/get/count/child/')
 
         self.url_for_set_current_message = ("http://" + self.url_host + ':' + 
-                                            self.url_port + '/api/set/current_message/')
+                                            self.url_port + 
+                                            '/api/set/current_message/')
         
         self.url_for_get_current_message = ("http://" + self.url_host + ':' + 
-                                            self.url_port + '/api/get/current_message/')
+                                            self.url_port + 
+                                            '/api/get/current_message/')
     
     def get_current_message(self, id_user_telegram):
         """
@@ -58,7 +63,8 @@ class BotServer:
         :param id_user_telegram: уникальный id пользователя в телеграме
         возвращает словарь следующего вида:
         {'id': 61, 
-        'text_message': 'Вы можете получить информацию из следующих источников\r\n1 - instagram.com\r\n2 - vk.com\r\n3 - telegram', 
+        'text_message': 'Вы можете получить информацию из 
+        следующих источников\r\n1 - instagram.com\r\n2 - vk.com\r\n3 - telegram', 
         'id_parent': 58, 
         'display_condition': 'Да', 
         'write_answer': True, 
@@ -164,17 +170,6 @@ class BotServer:
 
         return r.json()
 
-    def get_check_end_tree(self, id_current_message):
-        """
-        Функция которая проверяет является ли сообщение 
-        с id=id_current_message последним в дереве
-        """
-        url_for_check = self.url_for_check_end_tree + str(id_current_message)
-
-        r = requests.get(url_for_check)
-
-        return r.json()["exists"]
-
     def get_next_message(self, id_current_message = None, answer = None):
         """
         Функция которая получает следующее сообщение
@@ -187,10 +182,12 @@ class BotServer:
             url_for_next_message = (self.url_for_next_message + '0')
             print("URL: ", url_for_next_message)
         elif answer is not None:
-            url_for_next_message = (self.url_for_next_message + str(id_current_message) + 
+            url_for_next_message = (self.url_for_next_message + 
+                                    str(id_current_message) + 
                                    '?answer=' + answer)
         else:
-            url_for_next_message = self.url_for_next_message + str(id_current_message)
+            url_for_next_message = (self.url_for_next_message + 
+                                    str(id_current_message))
 
 
         r = requests.get(url_for_next_message)
@@ -211,7 +208,8 @@ class BotServer:
             }
         }
 
-        r = requests.post(self.url_for_users, json=data_for_create_user)
+        r = requests.post(self.url_for_users, 
+                          json=data_for_create_user)
         
 
         return r.json()
