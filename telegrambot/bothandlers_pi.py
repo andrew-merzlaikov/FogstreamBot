@@ -1,5 +1,4 @@
 from botserver import BotServer
-import config
 from botflag import BotFlag
 
 from aiogram import Bot, types
