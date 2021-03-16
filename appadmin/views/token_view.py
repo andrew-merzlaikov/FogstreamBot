@@ -23,7 +23,9 @@ class ViewToken(TemplateView):
                         {"token_form": token_bot_form,
                          "token": token})
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
 
     def post(self, request):
         """
@@ -45,4 +47,6 @@ class ViewToken(TemplateView):
 
             return HttpResponseRedirect(url_for_redirect)
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)

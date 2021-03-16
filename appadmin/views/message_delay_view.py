@@ -30,7 +30,9 @@ def show_edit_delay(request, id_message):
                       {"message": message,
                        "message_delay_form": message_delay_form})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)
 
 
 class ViewMessageDelay(TemplateView):
@@ -65,7 +67,9 @@ class ViewMessageDelay(TemplateView):
                         {"messages_all": messages_all,
                         "messages_delay": messages_with_delay})
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
     
     def post(self, request, id_message):
         """
@@ -86,7 +90,9 @@ class ViewMessageDelay(TemplateView):
 
             return HttpResponseRedirect(url_for_redirect)
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
     
     def delete(self, request, id_message):
         """
@@ -114,4 +120,6 @@ class ViewMessageDelay(TemplateView):
 
             return HttpResponseRedirect(url_for_redirect)
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)

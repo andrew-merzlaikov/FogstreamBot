@@ -36,7 +36,9 @@ def show_edit_form_message(request, id_message):
                        'id_message': id_message,
                        'message': message})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)
 
 def set_root_message(request):
     """
@@ -59,7 +61,9 @@ def set_root_message(request):
 
             return HttpResponseRedirect(url_for_redirect)
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)
 
 
 class ViewMessage(TemplateView):
@@ -123,7 +127,9 @@ class ViewMessage(TemplateView):
                               status=422)
 
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
 
     def put(self, request, id_message):
         """
@@ -163,7 +169,9 @@ class ViewMessage(TemplateView):
                               status=422)
 
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
 
     def delete(self, request, id_message):
         """
@@ -181,4 +189,6 @@ class ViewMessage(TemplateView):
 
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                           status=401)

@@ -10,7 +10,6 @@ class BotServer:
     запросы к API сервера на Django
     """
 
-
     def __init__(self):
         """
         Инициализируются переменные окружения,
@@ -105,7 +104,8 @@ class BotServer:
         """
         if id_current_message is not None:
             url_for_request = (self.url_for_set_current_message + 
-                               str(id_user_telegram) + '/' + str(id_current_message))
+                               str(id_user_telegram) + '/' + 
+                               str(id_current_message))
             
             r = requests.post(url_for_request)
 
@@ -115,7 +115,6 @@ class BotServer:
                               str(id_user_telegram) + '/' + '0')
             
             r = requests.post(url_for_request)
-            print("RESPONSE: ", r)
 
             return r.json()['id_current_message']
 
@@ -180,7 +179,6 @@ class BotServer:
     
         if id_current_message is None:
             url_for_next_message = (self.url_for_next_message + '0')
-            print("URL: ", url_for_next_message)
         elif answer is not None:
             url_for_next_message = (self.url_for_next_message + 
                                     str(id_current_message) + 
@@ -211,10 +209,12 @@ class BotServer:
         r = requests.post(self.url_for_users, 
                           json=data_for_create_user)
         
-
         return r.json()
 
-    def get_next_fullmessage(self, id_user_telegram, id_current_message = None, answer = None):
+    def get_next_fullmessage(self, 
+                             id_user_telegram, 
+                             id_current_message = None, 
+                             answer = None):
         """ 
         Возврашает словарик в следующем виде:
         устанавливает следующее полученное сообщение в качестве

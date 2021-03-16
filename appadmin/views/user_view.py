@@ -18,9 +18,13 @@ def get_info_user(request, telegram_user_id):
                   filter(telegram_user_id=telegram_user_id).\
                   all()
 
-        return render(request, "answers/answer.html", {"answers": answers})
+        return render(request, 
+                      "answers/answer.html", 
+                      {"answers": answers})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)
 
 def info_users_list(request):
     """
@@ -36,4 +40,6 @@ def info_users_list(request):
                       "users/info_users.html", 
                       {"users": users_telegram})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)

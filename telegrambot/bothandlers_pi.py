@@ -9,7 +9,6 @@ import asyncio
 import logging
 
 
-FORMAT = '%(name)s - %(levelname)s - %(message)s'
 logging.basicConfig(filename='bot.log', filemode='w')
 
 # BotServer содержит методы, которые выполняют запросы к БД

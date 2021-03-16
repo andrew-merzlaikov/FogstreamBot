@@ -76,6 +76,8 @@ def set_current_message(request, id_current_message, id_user_telegram):
                         filter(id_user_telegram=id_user_telegram).\
                         get()
 
+        # Если id не передан, то в качестве текущего устанавливаем
+        # корневое
         if id_current_message == 0:
             msg = Message.\
                   objects.\
@@ -84,6 +86,8 @@ def set_current_message(request, id_current_message, id_user_telegram):
 
             user_telegram.current_message = msg
             user_telegram.save()
+
+        # Иначе устанавливаем сообщение с id=id_current_message
         else:
             msg = Message.\
                   objects.\

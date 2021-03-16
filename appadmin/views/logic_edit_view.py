@@ -21,10 +21,12 @@ def get_table_for_logic(request):
         messages = Message.objects.all()
         
         return render(request,
-                    "logic/view_logic.html",
-                    {"messages": messages})
+                      "logic/view_logic.html",
+                      {"messages": messages})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)
 
 def get_form_create_logic(request):
     """
@@ -35,23 +37,27 @@ def get_form_create_logic(request):
     """
     if request.user.is_authenticated:
         messages = Message.objects.all()
+        
         exists_logic = Message.\
-                    objects.\
-                    first()
+                       objects.\
+                       first()
 
         message_form = MessageForm()
 
         return render(request, 
-                    "logic/create_logic.html",
-                    {"messages": messages, 
-                    "exists_logic": exists_logic,
-                    "form": message_form})
+                      "logic/create_logic.html",
+                      {"messages": messages, 
+                       "exists_logic": exists_logic,
+                       "form": message_form})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)
 
 def delete_logic(request):
     """
-    Удаляет логику общения бота если пользователь
+    Удаляет логику общения (удаляются все сообщение) 
+    бота если пользователь
     авторизован иначе вернет ошибку
     """
     if request.user.is_authenticated:
@@ -75,4 +81,6 @@ def delete_logic(request):
 
         return HttpResponseRedirect(url_for_redirect)
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)

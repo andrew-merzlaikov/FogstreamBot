@@ -9,6 +9,9 @@ class TokenBot(models.Model):
     token_bot = models.CharField(max_length=500)
 
     def __str__(self):
+        """
+        Представления токена
+        """
         return "{token_bot}".format(token_bot=self.token_bot)
 
 
@@ -33,6 +36,9 @@ class Message(models.Model):
                                        null=True)
 
     def __str__(self):  
+        """
+        Представление сообщения
+        """
         return "{text_message}".format(text_message=self.text_message)
 
 
@@ -63,8 +69,8 @@ class UserTelegram(models.Model):
     id_user_telegram = models.IntegerField(primary_key=True)
 
     current_message =  models.ForeignKey(Message, 
-                                            on_delete=models.CASCADE, 
-                                            default=None)
+                                         on_delete=models.CASCADE, 
+                                         default=None)
 
     first_name.null = True
     last_name.null = True
@@ -72,7 +78,7 @@ class UserTelegram(models.Model):
     current_message.null = True
 
     def __str__(self):
-        """ Representation the User """
+        """ Представления для отображения UserTelegram """
        
         return "{first_name} {last_name} {username} ".\
                 format(username=self.username,

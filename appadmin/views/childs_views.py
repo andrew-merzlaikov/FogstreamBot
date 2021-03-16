@@ -26,10 +26,12 @@ def get_form_edit_childs(request, id_parent):
                    all()
         
         return render(request, 
-                    "logic/edit_childs.html",
-                    {"messages": messages})
+                      "logic/edit_childs.html",
+                      {"messages": messages})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                      "http_response/error_401.html", 
+                      status=401)
 
 
 def get_childs_message(request, id_message):
@@ -43,27 +45,30 @@ def get_childs_message(request, id_message):
     """
     if request.user.is_authenticated:
         messages_childs = Message.\
-                        objects.\
-                        filter(id_parent=id_message).\
-                        all()
+                          objects.\
+                          filter(id_parent=id_message).\
+                          all()
         
+
         message = Message.\
-                objects.\
-                filter(id=id_message).\
-                get()
+                  objects.\
+                  filter(id=id_message).\
+                  get()
 
         root = False
-
+        
+        # Проверка на корневое сообщение
         if message.id_parent == 0:
             root = True
         
-
         return render(request, 
                     "logic/view_childs.html",
                     {"childs": messages_childs,
                     "root": root})
     else:
-        return render(request, "http_response/error_401.html", status=401)
+        return render(request, 
+                     "http_response/error_401.html", 
+                      status=401)
 
 
 class ViewChilds(TemplateView):
@@ -83,9 +88,9 @@ class ViewChilds(TemplateView):
                      all()
 
             message = Message.\
-                    objects.\
-                    filter(id=id_parent).\
-                    get()
+                        objects.\
+                        filter(id=id_parent).\
+                        get()
                 
 
             count_childs = int(request.GET.get('count_childs', 0))
@@ -99,15 +104,17 @@ class ViewChilds(TemplateView):
                                               extra=count_childs)
 
             return render(request, 
-                        "logic/create_childs.html" ,
-                        {"message": message,
-                        "count_childs_form": count_childs_form,
-                        "form_set_childs": form_set_childs,
-                        "count_childs": count_childs,
-                        "childs": childs})
+                          "logic/create_childs.html" ,
+                          {"message": message,
+                           "count_childs_form": count_childs_form,
+                           "form_set_childs": form_set_childs,
+                           "count_childs": count_childs,
+                           "childs": childs})
         
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
         
     def post(self, request, id_parent, count_childs):
         """
@@ -168,4 +175,6 @@ class ViewChilds(TemplateView):
             return HttpResponseRedirect(url_for_redirect)
 
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)

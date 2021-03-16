@@ -21,6 +21,7 @@ from .views.user_view import (get_info_user,
 app_name = "appadmin"
 
 urlpatterns = [
+      
     path('main', 
          ViewMain.as_view(), 
          name='main'),

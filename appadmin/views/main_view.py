@@ -13,4 +13,6 @@ class ViewMain(TemplateView):
             return render(request, 
                          "main.html")
         else:
-            return render(request, "http_response/error_401.html", status=401)
+            return render(request, 
+                          "http_response/error_401.html", 
+                          status=401)
