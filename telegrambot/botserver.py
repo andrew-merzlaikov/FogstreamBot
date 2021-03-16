@@ -12,6 +12,12 @@ class BotServer:
 
 
     def __init__(self):
+        """
+        Инициализируются переменные окружения,
+        а также устанавливается url для отправки
+        запросов к API
+        """
+
         self.url_host = os.environ.get('HOST')
         self.url_port = os.environ.get('PORT_SERVER')
         
