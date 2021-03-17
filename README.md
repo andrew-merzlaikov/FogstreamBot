@@ -10,10 +10,11 @@ Appserver - приложение для REST API
    git clone https://github.com/DanilMazurkin/FogstreamBot.git FogstreamBot  
 3) Создать виртуальную среду python3 -m venv <имя_виртуальной_среды>  
 4) В конечном счете структура папок должна быть следующей  
-5) Перейти в нее source <имя_виртуальной_среды>/bin/activate
-6) Установить django командой pip install django  
-7) сd FogstreamBot
-8) Установить все зависимости pip install -r requirements.txt  
+![alt tag](https://github.com/DanilMazurkin/FogstreamBot/blob/main/readme_screen/1.png)
+6) Перейти в нее source <имя_виртуальной_среды>/bin/activate
+7) Установить django командой pip install django  
+8) сd FogstreamBot
+9) Установить все зависимости pip install -r requirements.txt  
 
 Запуск сервера
 
